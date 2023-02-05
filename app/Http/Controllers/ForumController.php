@@ -33,6 +33,14 @@ class ForumController extends Controller
         return view('user.pages.forum.index', compact('forums', 'count'));
     }
 
+    public function admin_forum()
+    {
+        $forums = Forum::orderBy('likes', 'desc')->get();
+
+        $count = Forum::count();
+        return view('admin.pages.forum.index', compact('forums', 'count'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
