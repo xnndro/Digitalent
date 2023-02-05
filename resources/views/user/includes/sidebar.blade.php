@@ -222,7 +222,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-special1" role="button" aria-expanded="false" aria-controls="sidebar-special">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-special2" role="button" aria-expanded="false" aria-controls="sidebar-special">
                         <i class="icon">
                             <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -237,7 +237,7 @@
                             </svg>
                         </i>
                     </a>
-                    <ul class="sub-nav collapse" id="sidebar-special1" data-bs-parent="#sidebar-menu">
+                    <ul class="sub-nav collapse" id="sidebar-special2" data-bs-parent="#sidebar-menu">
                         <li class="nav-item">
                             <a class="nav-link 
                             {{
