@@ -78,7 +78,7 @@
                         <span class="item-name">FindMyRoomate</span>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-special" role="button" aria-expanded="false" aria-controls="sidebar-special">
                         <i class="icon">
                             <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,7 +115,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../../html/public/cart.html">
+                            <a class="nav-link {{
+                                Route::is('cart') ? 'active' : ''
+                            }}" href="{{ route('cart') }}">
                                 <i class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -128,7 +130,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../html/public/history.html">
+                            <a class="nav-link {{
+                                Route::is('history') ? 'active' : ''
+                            }}" href="{{ route('history') }}">
                                 <i class="icon">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +155,7 @@
                             </a>
                         </li>
                     </ul>
-                </li> --}}
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-special1" role="button" aria-expanded="false" aria-controls="sidebar-special">
                         <i class="icon">
@@ -222,7 +226,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-special1" role="button" aria-expanded="false" aria-controls="sidebar-special">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-special2" role="button" aria-expanded="false" aria-controls="sidebar-special">
                         <i class="icon">
                             <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -237,7 +241,7 @@
                             </svg>
                         </i>
                     </a>
-                    <ul class="sub-nav collapse" id="sidebar-special1" data-bs-parent="#sidebar-menu">
+                    <ul class="sub-nav collapse" id="sidebar-special2" data-bs-parent="#sidebar-menu">
                         <li class="nav-item">
                             <a class="nav-link 
                             {{

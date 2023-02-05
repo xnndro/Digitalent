@@ -30,6 +30,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
     Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
 
+    // shopping
+    Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
+    Route::get('/shop/addtocart/{id}/{name}/{price}', [App\Http\Controllers\ShopController::class, 'addToCart'])->name('addtocart');
+    Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
+    Route::get('/cart/incqty/{rowId}', [App\Http\Controllers\CartController::class, 'incQty'])->name('incqty');
+    Route::get('/cart/decqty/{rowId}', [App\Http\Controllers\CartController::class, 'decQty'])->name('decqty');
+    Route::get('/cart/delitm/{rowId}', [App\Http\Controllers\CartController::class, 'delItem'])->name('delitm');
+    Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
+
     // laundry history for user
     Route::get('/user/laundry', [App\Http\Controllers\UserController::class, 'laundry_status'])->name('user.laundry_status');
 

@@ -25,221 +25,75 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Item 1</h6>
-                                            <p class="mb-0">
-                                                Lorem ipsum dolor sit amet, consectetur
-                                                adipiscing elit.
-                                            </p>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-outline-secondary btn-number"
-                                                        disabled="disabled"
-                                                        data-type="minus"
-                                                        data-field="quant[1]"
-                                                    >
-                                                        <i class="ri-subtract-line"></i>
-                                                    </button>
+                                    @foreach (Cart::content() as $item)
+                                        <tr>
+                                            <td>
+                                                <h6 class="mb-0">{{ $item->model->name }}</h6>
+                                                <p class="mb-0">
+                                                    Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing elit.
+                                                </p>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        @if ($item->qty > 1)
+                                                            <a
+                                                                type="button"
+                                                                class="btn btn-outline-secondary btn-number"
+                                                                data-type="minus"
+                                                                data-field="quant[1]"
+                                                                href="{{ route('decqty', $item->rowId) }}"
+                                                            >
+                                                                <i class="ri-subtract-line"></i>
+                                                            </a>
+                                                        @else
+                                                            <a
+                                                                type="button"
+                                                                class="btn btn-outline-secondary btn-number"
+                                                                data-type="minus"
+                                                                data-field="quant[1]"
+                                                                href="{{ route('delitm', $item->rowId) }}"
+                                                            >
+                                                                <i class="ri-subtract-line"></i>
+                                                            </a>
+                                                        @endif
+                                                        
+                                                    </div>
+                                                    <div class="col-lg-2">
+                                                        <input
+                                                            type="text"
+                                                            name="quant[1]"
+                                                            class="form-control input-number"
+                                                            value="{{ $item->qty }}"
+                                                            min="1"
+                                                            max="10"
+                                                        />
+                                                    </div>
+                                                    <div class="input-group-append">
+                                                        <a
+                                                            type="button"
+                                                            class="btn btn-outline-secondary btn-number"
+                                                            data-type="plus"
+                                                            data-field="quant[1]"
+                                                            href="{{ route('incqty', $item->rowId) }}"
+                                                        >
+                                                            <i class="ri-add-line"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-2">
-                                                    <input
-                                                        type="text"
-                                                        name="quant[1]"
-                                                        class="form-control input-number"
-                                                        value="1"
-                                                        min="1"
-                                                        max="10"
-                                                    />
-                                                </div>
-                                                <div class="input-group-append">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-outline-secondary btn-number"
-                                                        data-type="plus"
-                                                        data-field="quant[1]"
-                                                    >
-                                                        <i class="ri-add-line"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">$120.00</td>
-                                        <td class="text-center">$2,880.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Item 2</h6>
-                                            <p class="mb-0">
-                                                Lorem ipsum dolor sit amet, consectetur
-                                                adipiscing elit.
-                                            </p>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-outline-secondary btn-number"
-                                                        disabled="disabled"
-                                                        data-type="minus"
-                                                        data-field="quant[1]"
-                                                    >
-                                                        <i class="ri-subtract-line"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="col-lg-2">
-                                                    <input
-                                                        type="text"
-                                                        name="quant[1]"
-                                                        class="form-control input-number"
-                                                        value="1"
-                                                        min="1"
-                                                        max="10"
-                                                    />
-                                                </div>
-                                                <div class="input-group-append">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-outline-secondary btn-number"
-                                                        data-type="plus"
-                                                        data-field="quant[1]"
-                                                    >
-                                                        <i class="ri-add-line"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">$120.00</td>
-                                        <td class="text-center">$2,880.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Item 1</h6>
-                                            <p class="mb-0">
-                                                Lorem ipsum dolor sit amet, consectetur
-                                                adipiscing elit.
-                                            </p>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-outline-secondary btn-number"
-                                                        disabled="disabled"
-                                                        data-type="minus"
-                                                        data-field="quant[1]"
-                                                    >
-                                                        <i class="ri-subtract-line"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="col-lg-2">
-                                                    <input
-                                                        type="text"
-                                                        name="quant[1]"
-                                                        class="form-control input-number"
-                                                        value="1"
-                                                        min="1"
-                                                        max="10"
-                                                    />
-                                                </div>
-                                                <div class="input-group-append">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-outline-secondary btn-number"
-                                                        data-type="plus"
-                                                        data-field="quant[1]"
-                                                    >
-                                                        <i class="ri-add-line"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">$120.00</td>
-                                        <td class="text-center">$2,880.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Item 1</h6>
-                                            <p class="mb-0">
-                                                Lorem ipsum dolor sit amet, consectetur
-                                                adipiscing elit.
-                                            </p>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-outline-secondary btn-number"
-                                                        disabled="disabled"
-                                                        data-type="minus"
-                                                        data-field="quant[1]"
-                                                    >
-                                                        <i class="ri-subtract-line"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="col-lg-2">
-                                                    <input
-                                                        type="text"
-                                                        name="quant[1]"
-                                                        class="form-control input-number"
-                                                        value="1"
-                                                        min="1"
-                                                        max="10"
-                                                    />
-                                                </div>
-                                                <div class="input-group-append">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-outline-secondary btn-number"
-                                                        data-type="plus"
-                                                        data-field="quant[1]"
-                                                    >
-                                                        <i class="ri-add-line"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">$120.00</td>
-                                        <td class="text-center">$2,880.00</td>
-                                    </tr>
+                                            </td>
+                                            <td class="text-center">Rp. {{ number_format($item->model->price, 0, ",", ".") }}</td>
+                                            <td class="text-center">Rp. {{ number_format($item->subtotal, 0, ",", ".") }}</td>
+                                        </tr>
+                                    @endforeach
                                     <tr>
                                         <td>
                                             <h6 class="mb-0">Total</h6>
                                         </td>
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
-                                        <td class="text-center">$2,880.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Taxs</h6>
-                                        </td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center">$2,880.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Discount</h6>
-                                        </td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center">$2,880.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6 class="mb-0">Net Amount</h6>
-                                        </td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
-                                        <td class="text-center"><b>$2,880.00</b></td>
+                                        <td class="text-center">Rp. {{ number_format((int)Cart::total(0, "", "") - (int)Cart::tax(0, "", ""), 0, ",", ".") }}</td>
                                     </tr>
                                 </tbody>
                             </table>

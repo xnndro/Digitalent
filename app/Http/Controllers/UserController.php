@@ -11,6 +11,8 @@ use App\Models\LaundryVendor;
 use App\Models\User;
 use App\Models\Events;
 use App\Models\Forum;
+use App\Models\ShoppingCart;
+use Cart;
 use Alert;
 
 class UserController extends Controller
@@ -63,6 +65,15 @@ class UserController extends Controller
 
         if(session('success_message')){
             Alert::success('Success', session('success_message'));
+        }
+
+        $shoppingcart = ShoppingCart::all();
+        $shoppingcart_name = '';
+        foreach ($shoppingcart as $s){
+            $shoppingcart_name = $s->identifier;
+            if($shoppingcart_name == Auth::user()->name){
+                Cart::restore(Auth::user()->name);
+            }
         }
 
         return view('user.pages.dashboard', compact('user_total_price', 'count_events','count_forums','forums'));
