@@ -39,6 +39,8 @@ class AdminController extends Controller
         $forums = $forums->take(3);
         $count_forums = $forums->count();
 
+
+        
     
         return view('admin.pages.admin_dashboard',compact('count_request','total_price','count_laundry','femme','bclean','mills','count_forums','forums'));
     }

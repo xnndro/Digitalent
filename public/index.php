@@ -53,3 +53,9 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
+
+$ngrokUrl = getenv('NGROK_URL');
+
+if (!empty($ngrokUrl)) {
+    URL::forceRootUrl($ngrokUrl);
+}

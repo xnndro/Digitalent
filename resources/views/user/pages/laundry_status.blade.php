@@ -42,7 +42,7 @@
                                 </td>
                                 <td>{{$item->tanggalMasuk}}</td>
                                 <td>{{$item->tanggalAmbil}}</td>
-                                <td>{{$item->total_price}}</td>
+                                <td>Rp {{number_format($item->total_price,0,",",".")}}</td>
                                 <td>
                                     @if ($item->status == 'Inputed')
                                         <span class="badge bg-warning">Inputed</span>

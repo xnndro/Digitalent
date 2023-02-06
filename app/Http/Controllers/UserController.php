@@ -11,7 +11,11 @@ use App\Models\LaundryVendor;
 use App\Models\User;
 use App\Models\Events;
 use App\Models\Forum;
+use App\Models\ShoppingCart;
+use Cart;
 use Alert;
+use App\Models\Order;
+
 
 class UserController extends Controller
 {
@@ -46,7 +50,9 @@ class UserController extends Controller
 
         // for widgets
         //laundry total
-        $user_total_price = Laundry::where('user_id', Auth::user()->id)->sum('total_price');
+        $user_total_price = Laundry::where('user_id', Auth::user()->id)
+        ->whereMonth('created_at', date('m'))
+        ->sum('total_price');
 
 
         //for upcoming events remainder
@@ -65,7 +71,35 @@ class UserController extends Controller
             Alert::success('Success', session('success_message'));
         }
 
-        return view('user.pages.dashboard', compact('user_total_price', 'count_events','count_forums','forums'));
+        $shoppingcart = ShoppingCart::all();
+        $shoppingcart_name = '';
+        foreach ($shoppingcart as $s){
+            $shoppingcart_name = $s->identifier;
+            if($shoppingcart_name == Auth::user()->name){
+                Cart::restore(Auth::user()->name);
+            }
+        }
+
+        // get all data order where status is 1 and user_id is auth user id
+        $orders = Order::where('payment_status','1')
+        ->where('user_id',Auth::user()->id)
+        ->get();
+
+        $orders_count = $orders->count();
+
+
+        $orders_done= Order::where('payment_status','2')
+        ->whereMonth('created_at', date('m'))
+        ->where('user_id',Auth::user()->id)
+        ->get();
+
+        $orders_done_count = $orders_done->count();
+        $orders_done = $orders_done->take(4);
+
+        // for widgets shopping
+        $total_shopping = $orders_done->sum('total_price');
+        $total_transaction = $total_shopping + $user_total_price;
+        return view('user.pages.dashboard', compact('user_total_price', 'count_events','count_forums','forums','orders','orders_count','orders_done','orders_done_count','total_transaction','total_shopping'));
     }
 
     public function laundry_status()
@@ -79,5 +113,67 @@ class UserController extends Controller
         // count total_price of laundry where transaction is user_id
 
         return view('user.pages.laundry_status', compact('laundry', 'count'));
+    }
+
+    public function financial_index()
+    {
+        $user_id = Auth::user()->id;
+        $shopping_this_month = Order::where('user_id', $user_id)
+        ->whereMonth('created_at', date('m'))
+        ->where('payment_status', '2')
+        ->get();
+
+        $shopping_last_month = Order::where('user_id', $user_id)
+        ->whereMonth('created_at', date('m')-1)
+        ->where('payment_status', '2')
+        ->get();
+
+        $laundry_this_month = Laundry::where('user_id', $user_id)
+        ->whereMonth('created_at', date('m'))
+        ->where('status', 'Done')
+        ->get();
+
+        $laundry_last_month = Laundry::where('user_id', $user_id)
+        ->whereMonth('created_at', date('m')-1)
+        ->where('status', 'Done')
+        ->get();
+
+        $shopping_this_month_total = $shopping_this_month->sum('total_price');
+        $shopping_last_month_total = $shopping_last_month->sum('total_price');
+        $laundry_this_month_total = $laundry_this_month->sum('total_price');
+        $laundry_last_month_total = $laundry_last_month->sum('total_price');
+
+        $total_transaction = Order::where('user_id', $user_id)
+        ->where('payment_status', '2')
+        ->sum('total_price');
+
+        $total_data_transaction = Order::where('user_id', $user_id)
+        ->where('payment_status', '2')
+        ->count();
+
+
+        if($shopping_last_month_total == 0){
+            $shopping_percentage = 0;
+            $status = 0;
+        }else{
+            $shopping_percentage = ($shopping_this_month_total - $shopping_last_month_total) / $shopping_last_month_total * 100;
+            $status = 1;
+        }
+        
+        if($laundry_last_month_total == 0){
+            $laundry_percentage = 0;
+            $status_laundry = 0;
+        }else{
+            $laundry_percentage = ($laundry_this_month_total - $laundry_last_month_total) / $laundry_last_month_total * 100;
+            $status_laundry = 1;
+        }
+
+        if($shopping_this_month_total == 0 && $shopping_last_month_total == 0 && $laundry_this_month_total == 0 && $laundry_last_month_total == 0){
+            $status = 2;
+        }
+
+        // get all data on laundry where user_id is auth user id
+
+        return view('user.pages.financial.index', compact('shopping_this_month', 'shopping_last_month', 'laundry_this_month', 'laundry_last_month', 'shopping_this_month_total', 'shopping_last_month_total', 'laundry_this_month_total', 'laundry_last_month_total', 'shopping_percentage', 'laundry_percentage', 'status', 'status_laundry', 'total_transaction', 'total_data_transaction'));
     }
 }

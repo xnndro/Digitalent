@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>DigiTalent</title>
 
+    @stack('before-style')
     @include('user.includes.style')
-
+    @stack('after-style')
+    
 </head>
 
 <body class="  ">
@@ -55,7 +57,9 @@
     <!-- Wrapper End-->
 
     {{-- Script --}}
+    @stack('before-script')
     @include('user.includes.script')
+    @stack('after-script')
     {{-- End Script --}}
 
 </body>

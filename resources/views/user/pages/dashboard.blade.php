@@ -10,7 +10,7 @@
                   <div>
                      <span><b>Total Laundry</b></span>
                      <div class="mt-2">
-                        <h2 class="counter">Rp {{$user_total_price}}</h2>
+                        <h2 class="counter">Rp {{number_format($user_total_price,0, "," , ".")}}</h2>
                      </div>
                   </div>
                   <div>
@@ -27,7 +27,7 @@
                   <div>
                      <span><b>Total Shopping</b></span>
                      <div class="mt-2">
-                        <h2 class="counter">Rp {{$user_total_price}}</h2>
+                        <h2 class="counter">Rp {{number_format($total_shopping,0, "," , ".")}}</h2>
                      </div>
                   </div>
                   <div>
@@ -44,7 +44,7 @@
                   <div>
                      <span><b>Total Transaction</b></span>
                      <div class="mt-2">
-                        <h2 class="counter">Rp {{$user_total_price}}</h2>
+                        <h2 class="counter">Rp {{number_format($total_transaction,0, "," , ".")}}</h2>
                      </div>
                   </div>
                   <div>
@@ -59,7 +59,7 @@
 <div class="row">
     {{-- upcoming Remainder --}}
     <div class="col-lg-8">
-        <div class="card">
+        <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
             <div class="card-header d-flex justify-content-between">
                <div class="header-title">
                   <h4 class="card-title">Upcoming</h4>
@@ -87,59 +87,56 @@
                 @endif
             </div>
         </div>
-        <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
+        <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="800">
             <div class="flex-wrap card-header d-flex justify-content-between">
                 <div class="header-title">
-                    <h4 class="mb-2 card-title">Your Shopping Status</h4>
+                    <h4 class="mb-2 card-title">Your Lastest Shopping</h4>
                 </div>
             </div>
             <div class="p-0 card-body">
-                <div class="mt-4 table-responsive">
-                    <table id="basic-table" class="table mb-0 table-striped" role="grid">
-                        <thead>
-                            <tr>
-                                <th>ID Transaction</th>
-                                <th>Date</th>
-                                <th>ORDER</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <h6>TRX-123456</h6>
-                                </td>
-                                <td>Saturday,12/12/2021</td>
-                                <td>$14,000</td>
-                                <td>
-                                    <!-- status with filled -->
-                                    <div class="d-flex align-items-center">
-                                        <div class="badge bg-success me-5">Paid</div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="javascript:void(0);" class="btn btn-primary btn-sm"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M8.09756 12C8.09756 14.1333 9.8439 15.8691 12 15.8691C14.1463 15.8691 15.8927 14.1333 15.8927 12C15.8927 9.85697 14.1463 8.12121 12 8.12121C9.8439 8.12121 8.09756 9.85697 8.09756 12ZM17.7366 6.04606C19.4439 7.36485 20.8976 9.29455 21.9415 11.7091C22.0195 11.8933 22.0195 12.1067 21.9415 12.2812C19.8537 17.1103 16.1366 20 12 20H11.9902C7.86341 20 4.14634 17.1103 2.05854 12.2812C1.98049 12.1067 1.98049 11.8933 2.05854 11.7091C4.14634 6.88 7.86341 4 11.9902 4H12C14.0683 4 16.0293 4.71758 17.7366 6.04606ZM12.0012 14.4124C13.3378 14.4124 14.4304 13.3264 14.4304 11.9979C14.4304 10.6597 13.3378 9.57362 12.0012 9.57362C11.8841 9.57362 11.767 9.58332 11.6597 9.60272C11.6207 10.6694 10.7426 11.5227 9.65971 11.5227H9.61093C9.58166 11.6779 9.56215 11.833 9.56215 11.9979C9.56215 13.3264 10.6548 14.4124 12.0012 14.4124Z"
-                                                fill="currentColor"></path>
-                                        </svg>
-                                        View
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                @if($orders_done_count == 0)
+                    <div class="d-flex justify-content-center align-items-center flex-wrap mt-n4 mb-5">
+                        <div class="text-center">
+                            <lottie-player src="https://assets4.lottiefiles.com/private_files/lf30_x2lzmtdl.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                            <h5 class="mt-n5">No Transaction added</h5>
+                        </div>
+                    </div>
+                @else
+                    <div class="mt-4 table-responsive">
+                        <table id="basic-table" class="table mb-0 table-striped" role="grid">
+                            <thead>
+                                <tr>
+                                    <th>ID Transaction</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($orders_done as $order_done)
+                                    <tr>
+                                        <td>TRX-{{$order_done->number}}</td>
+                                        <td>{{$order_done->created_at}}</td>
+                                        <td>
+                                            <span class="badge bg-success">Success</span>
+                                        </td>
+                                        <td>
+                                            {{-- <a href="{{route('user.order.show', $order_done->id)}}" class="btn btn-primary btn-sm">Detail</a> --}}
+                                            <a href="" class="btn btn-primary btn-sm">Detail</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
     <!-- End Upcoming -->
 
     <div class="col-lg-4">
-        <div class="card">
+        <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="850">
             <div class="card-header">
                 <div class="header-title">
                     <h4 class="card-title">New Threads</h4>
@@ -177,6 +174,49 @@
                     </div>
                 </div>
                 <hr class="my-4">
+                @endforeach
+                @endif
+            </div>
+        </div>
+        <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="900">
+            <div class="card-header">
+                <div class="header-title">
+                    <h4 class="card-title">Transaction To Pay</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                @if($orders_count == 0)
+                    <div class="d-flex justify-content-center align-items-center flex-wrap mt-n5">
+                        <div class="text-center">
+                            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_c8zlc8qn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                            <h5 class="mt-n5">You dont have transaction to pay</h5>
+                        </div>
+                    </div>
+                @else
+                @foreach($orders as $o)
+                    {{-- <form action="{{route('toPay',$o->id)}}" method="POST"> --}}
+                        @csrf
+                    <div class="twit-feed">
+                        <div class="d-flex justify-content-between mb-1">
+                            <div class="">
+                                <h3>Rp {{$o->total_price}}</h3>
+                                <h6>TRX-{{$o->number}}</h6> <p>on {{$o->created_at}}</p>   
+                            </div>
+                            <div class="">
+                                <div class="badge bg-success p-3">
+                                    <a class="text-white" href="{{route('toPay',$o->id)}}">
+                                        <svg width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.4274 2.5783C20.9274 2.0673 20.1874 1.8783 19.4974 2.0783L3.40742 6.7273C2.67942 6.9293 2.16342 7.5063 2.02442 8.2383C1.88242 8.9843 2.37842 9.9323 3.02642 10.3283L8.05742 13.4003C8.57342 13.7163 9.23942 13.6373 9.66642 13.2093L15.4274 7.4483C15.7174 7.1473 16.1974 7.1473 16.4874 7.4483C16.7774 7.7373 16.7774 8.2083 16.4874 8.5083L10.7164 14.2693C10.2884 14.6973 10.2084 15.3613 10.5234 15.8783L13.5974 20.9283C13.9574 21.5273 14.5774 21.8683 15.2574 21.8683C15.3374 21.8683 15.4274 21.8683 15.5074 21.8573C16.2874 21.7583 16.9074 21.2273 17.1374 20.4773L21.9074 4.5083C22.1174 3.8283 21.9274 3.0883 21.4274 2.5783Z" fill="currentColor"></path>
+                                            <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M3.01049 16.8079C2.81849 16.8079 2.62649 16.7349 2.48049 16.5879C2.18749 16.2949 2.18749 15.8209 2.48049 15.5279L3.84549 14.1619C4.13849 13.8699 4.61349 13.8699 4.90649 14.1619C5.19849 14.4549 5.19849 14.9299 4.90649 15.2229L3.54049 16.5879C3.39449 16.7349 3.20249 16.8079 3.01049 16.8079ZM6.77169 18.0003C6.57969 18.0003 6.38769 17.9273 6.24169 17.7803C5.94869 17.4873 5.94869 17.0133 6.24169 16.7203L7.60669 15.3543C7.89969 15.0623 8.37469 15.0623 8.66769 15.3543C8.95969 15.6473 8.95969 16.1223 8.66769 16.4153L7.30169 17.7803C7.15569 17.9273 6.96369 18.0003 6.77169 18.0003ZM7.02539 21.5683C7.17139 21.7153 7.36339 21.7883 7.55539 21.7883C7.74739 21.7883 7.93939 21.7153 8.08539 21.5683L9.45139 20.2033C9.74339 19.9103 9.74339 19.4353 9.45139 19.1423C9.15839 18.8503 8.68339 18.8503 8.39039 19.1423L7.02539 20.5083C6.73239 20.8013 6.73239 21.2753 7.02539 21.5683Z" fill="currentColor"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <hr class="my-4 mt-n2">
+                    {{-- </form> --}}
                 @endforeach
                 @endif
             </div>

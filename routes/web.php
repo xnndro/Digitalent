@@ -29,6 +29,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
     Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+    Route::get('/financial', [App\Http\Controllers\UserController::class, 'financial_index'])->name('user.financial');
+
+    // shopping
+    Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
+    Route::get('/shop/addtocart/{id}/{name}/{price}', [App\Http\Controllers\ShopController::class, 'addToCart'])->name('addtocart');
+    Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
+    Route::get('/cart/incqty/{rowId}', [App\Http\Controllers\CartController::class, 'incQty'])->name('incqty');
+    Route::get('/cart/decqty/{rowId}', [App\Http\Controllers\CartController::class, 'decQty'])->name('decqty');
+    Route::get('/cart/delitm/{rowId}', [App\Http\Controllers\CartController::class, 'delItem'])->name('delitm');
+    Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
+    Route::get('/checkout/{id}', [App\Http\Controllers\CartController::class, 'toPay'])->name('toPay');
+    // CALLBACK MIDTRANS
+    Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
 
     // laundry history for user
     Route::get('/user/laundry', [App\Http\Controllers\UserController::class, 'laundry_status'])->name('user.laundry_status');
@@ -96,4 +109,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/broadcast/create',[App\Http\Controllers\BroadcastController::class, 'create'])->name('broadcast.create');
     Route::post('/broadcast',[App\Http\Controllers\BroadcastController::class, 'store'])->name('broadcast.store'); 
     Route::delete('/broadcast/{id}',[App\Http\Controllers\BroadcastController::class, 'destroy'])->name('broadcast.destroy');
+
+    // midtrans
+    Route::get('/orders', [App\Http\Controllers\OrderController::class,'show'])->name('orders');
 });

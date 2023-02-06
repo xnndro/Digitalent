@@ -9,17 +9,26 @@
         "andreiio/blade-remix-icon": "^1.1",
         "ay4t/whatsapp-helper": "dev-main",
         "guzzlehttp/guzzle": "^7.5",
+        "hardevine/shoppingcart": "^3.1",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/socialite": "^5.6",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
+        "midtrans/midtrans-php": "^2.5",
         "realrashid/sweet-alert": "^5.1",
         "sheetdb/sheetdb-php": "^1.0",
-        "twilio/sdk": "^6.44"
+        "twilio/sdk": "^6.44",
+        "google/cloud-storage": "^1.6",
+        "slim/slim": "^4.0",
+        "slim/psr7": "^1.0",
+        "slim/twig-view": "^3.0",
+        "php-di/slim-bridge": "^3.1",
+        "symfony/yaml": "^5.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "jn-jairo/laravel-ngrok": "^2.0",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
@@ -31,7 +40,8 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Google\\Cloud\\Samples\\AppEngine\\GettingStarted\\": "src"
         }
     },
     "autoload-dev": {
