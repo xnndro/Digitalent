@@ -24,6 +24,8 @@ class User extends Authenticatable
         'role',
         'class_id',
         'phone',
+        'form_status',
+        'roommate_status',
     ];
 
     /**

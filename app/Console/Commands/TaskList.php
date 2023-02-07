@@ -187,7 +187,7 @@ class TaskList extends Command
 
         //check if tanggalSekarang adalah tanggal 1
         $tanggalSekarang = Carbon::now()->format('d');
-        if($tanggalSekarang == '07')
+        if($tanggalSekarang == '01')
         {
             $bulanLalu = Carbon::now()->subMonth()->format('m');
             $laundries = DB::table('laundries')

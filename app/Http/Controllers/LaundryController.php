@@ -135,7 +135,7 @@ class LaundryController extends Controller
     {
         //get class from table users and if the admin choose the class, then show all users with that class
         // $users = User::all();
-        $class = Classes::all();
+        $class = Classes::where('jumlahSiswa', '>', 0)->get();
         $type = LaundryType::all();
         $count = Classes::count();
         return view('admin.pages.laundry.create', compact('class','count','type'));

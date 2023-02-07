@@ -11,7 +11,7 @@ class Classes extends Model
 
     protected $table = 'classes';
 
-    protected $fillable = ['namaKelas'];
+    protected $fillable = ['namaKelas','jumlahSiswa','status'];
 
     public function user()
     {

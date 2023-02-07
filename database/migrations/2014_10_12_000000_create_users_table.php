@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('class_id')->nullable();
             $table->string('gender')->nullable();
             $table->string('phone')->nullable();
+            $table->string('form_status')->nullable();
+            $table->string('roommate_status')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

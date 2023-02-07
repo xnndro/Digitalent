@@ -7,6 +7,7 @@ use App\Models\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Classes;
 use App\Models\Laundry;
+use App\Models\User;
 // user
 use App\Models\LaundryVendor;
 
@@ -34,7 +35,16 @@ class HomeController extends Controller
         if ($role == 'admin') {
             return redirect()->route('admin.index');
         } else if ($role == 'user') {
-            return redirect()->route('user.index');
+            // cek si user uda isi form atau belom, kalo misal belom, direct ke form, kalo uda direct ke dashboard
+            $user_id = Auth::user()->id;
+            $user = User::where('id', $user_id)->first();
+            if ($user->form_status == null) {
+                return redirect()->route('roommates.create');
+            } else {
+                return redirect()->route('user.index');
+            }
+
+            // return redirect()->route('user.index');
         }else if($role == 'vendor'){
             return redirect()->route('laundry_vendor.dashboard');
         }

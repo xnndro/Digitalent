@@ -112,5 +112,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/broadcast/{id}',[App\Http\Controllers\BroadcastController::class, 'destroy'])->name('broadcast.destroy');
 
     // midtrans
-    Route::get('/orders', [App\Http\Controllers\OrderController::class,'show'])->name('orders');
+    // Route::get('/orders', [App\Http\Controllers\OrderController::class,'show'])->name('orders');
+
+    //complain
+    Route::get('/complains', [App\Http\Controllers\ComplainController::class, 'index'])->name('complains.index');
+    Route::get('/complains/create', [App\Http\Controllers\ComplainController::class, 'create'])->name('complains.create');
 });

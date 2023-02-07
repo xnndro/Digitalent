@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('classes', function (Blueprint $table) {
             $table->id();
             $table->string('namaKelas');
+            $table->integer('jumlahSiswa')->default(0);
+            $table->string('status')->default('Belum Lulus');
             $table->timestamps();
         });
 
@@ -30,7 +32,7 @@ return new class extends Migration
             ['namaKelas' => 'PPTI 13'],
             ['namaKelas' => 'PPTI 14'],
             ['namaKelas' => 'PPTI 15'],
-            ['namaKelas' => 'PPTI 16'],
+            ['namaKelas' => 'PPTI 16']
         ]);
     }
 

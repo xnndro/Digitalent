@@ -26,6 +26,30 @@
                         </div>
                     </div>
                 </div>
+                @elseif($status == 'single')
+                    <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
+                            <div class="text-center">
+                                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ghg0pifn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                                <h5 class="mt-n5">You dont have roommate, Request to single Room</h5>
+                                <div class="d-flex justify-content-center">
+                                    <form action="{{ route('roommates.request', 'single') }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary">Request</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @elseif($status == 'wait')
+                    <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
+                            <div class="text-center">
+                                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ghg0pifn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                                <h5 class="mt-n5">Waiting your friends to register</h5>
+                            </div>
+                        </div>
+                    </div>
                 @else 
                 <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
                     <div class="flex-wrap card-header d-flex justify-content-between">
