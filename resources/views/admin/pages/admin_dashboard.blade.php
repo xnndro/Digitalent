@@ -131,40 +131,53 @@
          </div>
     </div>
 
-    <div class="col-lg-12 mb-3">
-        <h3>Most Liked Posts</h3>
-    </div>
-
-    @foreach($forums as $forum)
-    <div class="col-lg-4">
-        <div class="card">
-            <div class="card-body">
-                <div class="twit-feed">
-                    <div class="d-flex align-items-center mb-4">
-                        <img class="rounded-pill p-1 bg-soft-primary img-fluid avatar-60 me-3" src="../../assets/images/avatars/03.png" alt="">
-                        <div class="media-support-info">
-                        <h6 class="mb-0">
-                            {{ $forum->judul }}
-                        </h6>
-                        <p class="mb-0">@penghunirtb 
-                            <span class="text-primary">
-                                <svg width="15" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path>
-                                </svg>
-                            </span>
-                        </p>
-                        </div>
-                    </div>
-                    <div class="media-support-body">
-                        <p>{{$forum->deskripsi}}</p>
-                        <div class="twit-date">{{$forum->created_at}}</div>
-                    </div>
-                </div>
-                <hr class="my-4">
+   @if($count_forums == 0)
+      <div class="col-lg-12">
+         <div class="card">
+            <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
+               <div class="text-center">
+                     <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_noq8b0i9.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                     <h5 class="mt-n5">No Threads Added by Penghuni RTB</h5>
+               </div>
             </div>
-        </div>
-    </div>
-    @endforeach
+         </div>
+      </div>
+   @else
+      <div class="col-lg-12 mb-3">
+         <h3>Most Liked Threads</h3>
+      </div>
+
+      @foreach($forums as $forum)
+      <div class="col-lg-4">
+            <div class="card">
+               <div class="card-body">
+                  <div class="twit-feed">
+                        <div class="d-flex align-items-center mb-4">
+                           <img class="rounded-pill p-1 bg-soft-primary img-fluid avatar-60 me-3" src="../../assets/images/avatars/03.png" alt="">
+                           <div class="media-support-info">
+                           <h6 class="mb-0">
+                              {{ $forum->judul }}
+                           </h6>
+                           <p class="mb-0">@penghunirtb 
+                              <span class="text-primary">
+                                    <svg width="15" viewBox="0 0 24 24">
+                                       <path fill="currentColor" d="M10,17L5,12L6.41,10.58L10,14.17L17.59,6.58L19,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path>
+                                    </svg>
+                              </span>
+                           </p>
+                           </div>
+                        </div>
+                        <div class="media-support-body">
+                           <p>{{$forum->deskripsi}}</p>
+                           <div class="twit-date">{{$forum->created_at}}</div>
+                        </div>
+                  </div>
+                  <hr class="my-4">
+               </div>
+            </div>
+      </div>
+      @endforeach
+ @endif
 
     
 

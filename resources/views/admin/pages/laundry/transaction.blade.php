@@ -121,7 +121,7 @@
                                 <td>
                                     {{-- button to change status to done --}}
                                     <a href="{{route('laundries.edit',$l->id)}}" class="btn btn-warning">Edit</a>
-                                    <a href="{{ route('laundries.taked', $l->id) }}" class="btn btn-primary">Taked by Vendor</a>
+                                    <a href="{{ route('laundries.done', $l->id) }}" class="btn btn-primary">Taked by User</a>
                                     {{-- <a href="{{ route('laundries.destroy', $l->id) }}" class="btn btn-danger">Delete</a> --}}
                                     {{-- form delete --}}
                                     <form action="{{ route('laundries.destroy', $l->id) }}" method="post" class="d-inline">

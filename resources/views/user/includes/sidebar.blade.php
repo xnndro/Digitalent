@@ -294,7 +294,8 @@
                 <li class="nav-item">
                     <a class="
                     nav-link {{
-                        Route::is('user.financial') ? 'active' : ''
+                        //when route is user.financial or user.financial.show then active
+                        Route::is('user.financial') || Route::is('user.financial_show') ? 'active' : ''
                     }}
                     " aria-current="page" href="{{route('user.financial')}}">
                         <i class="icon">

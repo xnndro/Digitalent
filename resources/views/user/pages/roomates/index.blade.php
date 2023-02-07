@@ -22,7 +22,7 @@
                             <h5 class="mt-n5">You have a roommate</h5>
                             <div class="mt-3">Your Roomie: <span>{{$roomie->name}}</span></div>
                             <div>No.Kamar: <span class="ms-3">{{$roomName}}</span></div>
-                            <div>Kamar: <span class="ms-3">{{$floor}}</span></div>
+                            <div>Lantai: <span class="ms-3">{{$floor}}</span></div>
                         </div>
                     </div>
                 </div>

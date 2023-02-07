@@ -10,6 +10,7 @@ use App\Models\Laundry;
 use App\Models\Storage;
 use App\Models\BroadcastMessage;
 use App\Models\Events;
+use App\Models\Financial;
 
 use Carbon\Carbon;
 
@@ -182,6 +183,59 @@ class TaskList extends Command
                     $wa->sendMessage($data);
                 }
             }
+        }
+
+        //check if tanggalSekarang adalah tanggal 1
+        $tanggalSekarang = Carbon::now()->format('d');
+        if($tanggalSekarang == '07')
+        {
+            $bulanLalu = Carbon::now()->subMonth()->format('m');
+            $laundries = DB::table('laundries')
+            ->whereMonth('created_at', $bulanLalu)
+            ->get();
+
+            $orders = DB::table('orders')
+            ->whereMonth('created_at', $bulanLalu)
+            ->get();
+
+            $users = User::where('role', 'user')->get();
+            foreach($users as $user)
+            {
+                $financials = new Financial();
+                $financials->name = $bulanLalu;
+                $financials->user_id = $user->id;
+                $total_laundry = 0;
+
+                foreach($laundries as $l)
+                {
+                    if($l->user_id == $user->id)
+                    {
+                        $total_laundry += $l->total_price;
+                    }
+                }
+
+                $total_shopping = 0;
+                foreach($orders as $or)
+                {
+                    if($or->user_id == $user->id)
+                    {
+                        $total_shopping += $or->total_price;
+                    }
+                }
+
+                $financials->transaction_amount = $total_laundry+$total_shopping;
+                $financials->save();
+                
+                $phone = $user->phone;
+                $name = $user->name;
+                
+                $data = [
+                    'toNumber' => $phone,
+                    'message' => 'Haloww '.$name.' gimana kabarnya nih?'. `\n`.'Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks',
+                ];
+                $wa = new WhatsAppController();
+                $wa->sendMessage($data);
+            }  
         }
     }
 }

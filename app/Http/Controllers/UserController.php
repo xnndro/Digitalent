@@ -15,6 +15,10 @@ use App\Models\ShoppingCart;
 use Cart;
 use Alert;
 use App\Models\Order;
+use App\Models\Financial;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+
 
 
 class UserController extends Controller
@@ -172,8 +176,51 @@ class UserController extends Controller
             $status = 2;
         }
 
-        // get all data on laundry where user_id is auth user id
+        $financial = Financial::where('user_id', $user_id)->get();
+        $name= '';
+        foreach($financial as $f)
+        {
+            $name = $f->name;
+            $bulan = date('F',strtotime($name));
+            $f->name = $bulan;
+        }
 
-        return view('user.pages.financial.index', compact('shopping_this_month', 'shopping_last_month', 'laundry_this_month', 'laundry_last_month', 'shopping_this_month_total', 'shopping_last_month_total', 'laundry_this_month_total', 'laundry_last_month_total', 'shopping_percentage', 'laundry_percentage', 'status', 'status_laundry', 'total_transaction', 'total_data_transaction'));
+        $financial_count = $financial->count();
+
+        return view('user.pages.financial.index', compact('shopping_this_month', 'shopping_last_month', 'laundry_this_month', 'laundry_last_month', 'shopping_this_month_total', 'shopping_last_month_total', 'laundry_this_month_total', 'laundry_last_month_total', 'shopping_percentage', 'laundry_percentage', 'status', 'status_laundry', 'total_transaction', 'total_data_transaction','financial','financial_count'));
+    }
+
+    public function financial_show($id)
+    {
+        $financial = Financial::find($id);
+        $name = $financial->name;
+        $user_id = $financial->user_id;
+        //get transaction name by transaction_id 
+        $laundry_on_the_month = Laundry::where('user_id',$user_id)
+        ->whereMonth('created_at',$name)
+        ->orderBy('created_at','desc')
+        ->get();
+
+        $total_laundry = $laundry_on_the_month->sum('total_price');
+        $total_laundry_transaction = $laundry_on_the_month->count();
+
+        $shopping_on_the_month = Order::where('user_id',$user_id)
+        ->whereMonth('created_at',$name)
+        ->orderBy('created_at','desc')
+        ->get();
+
+        $total_shopping = $shopping_on_the_month->sum('total_price');
+        $total_shopping_transaction = $shopping_on_the_month->count();
+
+        $total_transaction = $total_laundry+$total_shopping;
+        $total_data_transaction = $total_laundry_transaction + $total_shopping_transaction;
+
+        $name = date('F',strtotime($name));
+
+        
+        return view('user.pages.financial.show', compact('financial',
+         'name','laundry_on_the_month','total_laundry','total_laundry_transaction',
+         'shopping_on_the_month','total_shopping','total_shopping_transaction',
+         'total_transaction','total_data_transaction'));
     }
 }

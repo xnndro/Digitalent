@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Forum::class,'likes');
     }
+
+    public function financial()
+    {
+        return $this->hasMany(Financial::class);
+    }
 }

@@ -181,24 +181,41 @@
             <h3>History</h3>
         </div>
 
-        <div class="col-lg-4">
-            <div class="card cards">
-                <div class="card-body">
-                   <div class="d-flex align-items-center justify-content-between">
-                        <div class=" bg-soft-success rounded p-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="35px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
+        @if($financial_count == 0)
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
+                        <div class="text-center">
+                            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_QGHiAw.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                            <h5 class="mt-n3">You dont have any transaction history yet</h5>
                         </div>
-                        <div>
-                            <h1 class="text-success counter">Rp</h1>
-                            <p class="text-success mb-0">Total Transaction on january</p>
-                        </div>
-                   </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        @else
+            @foreach($financial as $fi)
+            <div class="col-lg-4">
+                <a href="{{route('user.financial_show',$fi->id)}}" class="">
+                    <div class="card cards">
+                        <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class=" bg-soft-success rounded p-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h1 class="text-success counter">Rp {{$fi->transaction_amount}}</h1>
+                                <p class="text-success mb-0">Total Transaction on {{$fi->name}}</p>
 
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        @endif
         
 
     

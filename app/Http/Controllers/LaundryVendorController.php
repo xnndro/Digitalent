@@ -207,6 +207,6 @@ class LaundryVendorController extends Controller
         $laundry = Laundry::find($id);
         $laundry->status = 'Delivered';
         $laundry->save();
-        return redirect()->route('laundry_vendor.index')->withSuccessMessage('Laundry has been delivered');
+        return redirect()->route('laundry_vendor.transactionforadmin')->withSuccessMessage('Laundry has been delivered');
     }
 }

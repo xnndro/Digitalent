@@ -26147,3 +26147,1777 @@ object(stdClass)#1613 (2) {
     bool(false)
   }
 }
+
+   Error 
+
+  Class "App\Console\Commands\Financials" not found
+
+  at app/Console/Commands/TaskList.php:199
+    195▕ 
+    196▕             $users = User::where('role', 'user')->get();
+    197▕             foreach($users as $user)
+    198▕             {
+  ➜ 199▕                 $financials = new Financials();
+    200▕                 $financials->name = $bulanLalu;
+    201▕                 $financials->user_id = $user->id;
+    202▕                 $total_laundry = 0;
+    203▕
+
+      [2m+13 vendor frames [22m
+  14  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   Error 
+
+  Class "App\Console\Commands\Financials" not found
+
+  at app/Console/Commands/TaskList.php:199
+    195▕ 
+    196▕             $users = User::where('role', 'user')->get();
+    197▕             foreach($users as $user)
+    198▕             {
+  ➜ 199▕                 $financials = new Financials();
+    200▕                 $financials->name = $bulanLalu;
+    201▕                 $financials->user_id = $user->id;
+    202▕                 $total_laundry = 0;
+    203▕
+
+      [2m+13 vendor frames [22m
+  14  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   Error 
+
+  Class "App\Models\Financials" not found
+
+  at app/Console/Commands/TaskList.php:200
+    196▕ 
+    197▕             $users = User::where('role', 'user')->get();
+    198▕             foreach($users as $user)
+    199▕             {
+  ➜ 200▕                 $financials = new Financials();
+    201▕                 $financials->name = $bulanLalu;
+    202▕                 $financials->user_id = $user->id;
+    203▕                 $total_laundry = 0;
+    204▕
+
+      [2m+13 vendor frames [22m
+  14  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42S22]: Column not found: 1054 Unknown column 'total_amount' in 'field list' (SQL: insert into `financials` (`name`, `user_id`, `total_amount`, `updated_at`, `created_at`) values (01, 2, 0, 2023-02-07 07:13:00, 2023-02-07 07:13:00))
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+  i   A column was not found: You might have forgotten to run your database migrations. 
+      https://laravel.com/docs/master/migrations#running-migrations
+
+      [2m+12 vendor frames [22m
+  13  app/Console/Commands/TaskList.php:223
+      Illuminate\Database\Eloquent\Model::save()
+
+      [2m+13 vendor frames [22m
+  27  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[HY000]: General error: 1364 Field 'transaction_id' doesn't have a default value (SQL: insert into `financials` (`name`, `user_id`, `transaction_amount`, `updated_at`, `created_at`) values (01, 2, 0, 2023-02-07 07:14:00, 2023-02-07 07:14:00))
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+      [2m+12 vendor frames [22m
+  13  app/Console/Commands/TaskList.php:223
+      Illuminate\Database\Eloquent\Model::save()
+
+      [2m+13 vendor frames [22m
+  27  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[HY000]: General error: 1364 Field 'type' doesn't have a default value (SQL: insert into `financials` (`name`, `user_id`, `transaction_amount`, `updated_at`, `created_at`) values (01, 2, 0, 2023-02-07 07:15:00, 2023-02-07 07:15:00))
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+      [2m+12 vendor frames [22m
+  13  app/Console/Commands/TaskList.php:223
+      Illuminate\Database\Eloquent\Model::save()
+
+      [2m+13 vendor frames [22m
+  27  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[HY000]: General error: 1364 Field 'type' doesn't have a default value (SQL: insert into `financials` (`name`, `user_id`, `transaction_amount`, `updated_at`, `created_at`) values (01, 2, 0, 2023-02-07 07:16:00, 2023-02-07 07:16:00))
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+      [2m+12 vendor frames [22m
+  13  app/Console/Commands/TaskList.php:223
+      Illuminate\Database\Eloquent\Model::save()
+
+      [2m+13 vendor frames [22m
+  27  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[HY000]: General error: 1364 Field 'type' doesn't have a default value (SQL: insert into `financials` (`name`, `user_id`, `transaction_amount`, `updated_at`, `created_at`) values (01, 2, 0, 2023-02-07 07:17:00, 2023-02-07 07:17:00))
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+      [2m+12 vendor frames [22m
+  13  app/Console/Commands/TaskList.php:223
+      Illuminate\Database\Eloquent\Model::save()
+
+      [2m+13 vendor frames [22m
+  27  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+object(stdClass)#1750 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1734 (18) {
+    ["_data"]=>
+    object(stdClass)#1744 (29) {
+      ["id"]=>
+      object(stdClass)#1748 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1733 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB091D4C22174F8E7E2"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB091D4C22174F8E7E2"
+      }
+      ["body"]=>
+      string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675754280)
+      ["from"]=>
+      object(stdClass)#1737 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1735 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1749 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1741 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB091D4C22174F8E7E2"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB091D4C22174F8E7E2"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675754280)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1751 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1735 (18) {
+    ["_data"]=>
+    object(stdClass)#1745 (29) {
+      ["id"]=>
+      object(stdClass)#1749 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1734 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0EF649C4B00F00D43"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB0EF649C4B00F00D43"
+      }
+      ["body"]=>
+      string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675754340)
+      ["from"]=>
+      object(stdClass)#1738 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1736 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1750 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1742 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0EF649C4B00F00D43"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB0EF649C4B00F00D43"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675754340)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+
+   TypeError 
+
+  ay4t\WhatsAppHelper\WhatsAppSG::setRecepient(): Argument #1 ($recepient) must be of type int, null given, called in /Users/alexandroalvin/Documents/coba_digitalent/app/Http/Controllers/WhatsAppController.php on line 62
+
+  at vendor/ay4t/whatsapp-helper/src/Traits/GetSetTrait.php:64
+     60▕      * Set the value of recepient
+     61▕      * @param   int  $recepient  
+     62▕      * @return  self
+     63▕      */
+  ➜  64▕     public function setRecepient(int $recepient)
+     65▕     {
+     66▕         $this->recepient = $recepient;
+     67▕         return $this;
+     68▕     }
+
+  1   app/Http/Controllers/WhatsAppController.php:62
+      ay4t\WhatsAppHelper\WhatsAppSG::setRecepient()
+
+  2   app/Console/Commands/TaskList.php:233
+      App\Http\Controllers\WhatsAppController::sendMessage(["Haloww janet gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"])
+object(stdClass)#1751 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1735 (18) {
+    ["_data"]=>
+    object(stdClass)#1745 (29) {
+      ["id"]=>
+      object(stdClass)#1749 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1734 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0CB5B84F7EDDE49F5"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB0CB5B84F7EDDE49F5"
+      }
+      ["body"]=>
+      string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675754401)
+      ["from"]=>
+      object(stdClass)#1738 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1736 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1750 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1742 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0CB5B84F7EDDE49F5"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB0CB5B84F7EDDE49F5"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675754401)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1754 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1727 (18) {
+    ["_data"]=>
+    object(stdClass)#1729 (29) {
+      ["id"]=>
+      object(stdClass)#1731 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1728 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6282170731737"
+          ["_serialized"]=>
+          string(18) "6282170731737@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB032B6D3D86132B5E0"
+        ["_serialized"]=>
+        string(44) "true_6282170731737@c.us_3EB032B6D3D86132B5E0"
+      }
+      ["body"]=>
+      string(109) "Haloww janet gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675754403)
+      ["from"]=>
+      object(stdClass)#1725 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1726 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282170731737"
+        ["_serialized"]=>
+        string(18) "6282170731737@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1733 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1732 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282170731737"
+        ["_serialized"]=>
+        string(18) "6282170731737@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB032B6D3D86132B5E0"
+      ["_serialized"]=>
+      string(44) "true_6282170731737@c.us_3EB032B6D3D86132B5E0"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(109) "Haloww janet gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675754403)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6282170731737@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1751 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1735 (18) {
+    ["_data"]=>
+    object(stdClass)#1745 (29) {
+      ["id"]=>
+      object(stdClass)#1749 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1734 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB006FC9683BF2B0023"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB006FC9683BF2B0023"
+      }
+      ["body"]=>
+      string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675755120)
+      ["from"]=>
+      object(stdClass)#1738 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1736 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1750 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1742 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB006FC9683BF2B0023"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB006FC9683BF2B0023"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675755120)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1754 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1727 (18) {
+    ["_data"]=>
+    object(stdClass)#1729 (29) {
+      ["id"]=>
+      object(stdClass)#1731 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1728 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6282170731737"
+          ["_serialized"]=>
+          string(18) "6282170731737@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB06AEBB6682336E001"
+        ["_serialized"]=>
+        string(44) "true_6282170731737@c.us_3EB06AEBB6682336E001"
+      }
+      ["body"]=>
+      string(109) "Haloww janet gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675755121)
+      ["from"]=>
+      object(stdClass)#1725 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1726 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282170731737"
+        ["_serialized"]=>
+        string(18) "6282170731737@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1733 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1732 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282170731737"
+        ["_serialized"]=>
+        string(18) "6282170731737@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB06AEBB6682336E001"
+      ["_serialized"]=>
+      string(44) "true_6282170731737@c.us_3EB06AEBB6682336E001"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(109) "Haloww janet gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675755121)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6282170731737@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+
+   TypeError 
+
+  date(): Argument #2 ($timestamp) must be of type ?int, string given
+
+  at app/Console/Commands/TaskList.php:195
+    191▕         {
+    192▕             // get laundries where just created on 1 month ago
+    193▕             $bulanLalu = Carbon::now()->subMonth()->format('m');
+    194▕             //get the laundries where created_at is 1 month ago, just take the month on created_at
+  ➜ 195▕             $laundries = DB::table('laundries')->where(date('m','created_at'), '=',$bulanLalu)->get();
+    196▕             $orders = DB::table('orders')->where(date('m','created_at'), '=',$bulanLalu)->get();
+    197▕ 
+    198▕             $users = User::where('role', 'user')->get();
+    199▕             foreach($users as $user)
+
+  1   app/Console/Commands/TaskList.php:195
+      date("m", "created_at")
+
+      [2m+13 vendor frames [22m
+  15  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   Carbon\Exceptions\InvalidFormatException 
+
+  Could not parse 'created_at': DateTime::__construct(): Failed to parse time string (created_at) at position 0 (c): The timezone could not be found in the database
+
+  at vendor/nesbot/carbon/src/Carbon/Traits/Creator.php:190
+    186▕         } catch (Exception $exception) {
+    187▕             $date = @static::now($tz)->change($time);
+    188▕ 
+    189▕             if (!$date) {
+  ➜ 190▕                 throw new InvalidFormatException("Could not parse '$time': ".$exception->getMessage(), 0, $exception);
+    191▕             }
+    192▕ 
+    193▕             return $date;
+    194▕         }
+
+      [2m+5 vendor frames [22m
+  6   app/Console/Commands/TaskList.php:195
+      Carbon\Carbon::parse("created_at")
+
+      [2m+13 vendor frames [22m
+  20  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   Carbon\Exceptions\InvalidFormatException 
+
+  Could not parse 'created_at': DateTime::__construct(): Failed to parse time string (created_at) at position 0 (c): The timezone could not be found in the database
+
+  at vendor/nesbot/carbon/src/Carbon/Traits/Creator.php:190
+    186▕         } catch (Exception $exception) {
+    187▕             $date = @static::now($tz)->change($time);
+    188▕ 
+    189▕             if (!$date) {
+  ➜ 190▕                 throw new InvalidFormatException("Could not parse '$time': ".$exception->getMessage(), 0, $exception);
+    191▕             }
+    192▕ 
+    193▕             return $date;
+    194▕         }
+
+      [2m+5 vendor frames [22m
+  6   app/Console/Commands/TaskList.php:195
+      Carbon\Carbon::parse("created_at")
+
+      [2m+13 vendor frames [22m
+  20  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+object(stdClass)#1751 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1735 (18) {
+    ["_data"]=>
+    object(stdClass)#1745 (29) {
+      ["id"]=>
+      object(stdClass)#1749 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1734 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0A8911D94EA57EE16"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB0A8911D94EA57EE16"
+      }
+      ["body"]=>
+      string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675756800)
+      ["from"]=>
+      object(stdClass)#1738 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1736 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1750 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1742 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0A8911D94EA57EE16"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB0A8911D94EA57EE16"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675756800)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1754 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1727 (18) {
+    ["_data"]=>
+    object(stdClass)#1729 (29) {
+      ["id"]=>
+      object(stdClass)#1731 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1728 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6282170731737"
+          ["_serialized"]=>
+          string(18) "6282170731737@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0A47EF5E3AC84ED14"
+        ["_serialized"]=>
+        string(44) "true_6282170731737@c.us_3EB0A47EF5E3AC84ED14"
+      }
+      ["body"]=>
+      string(109) "Haloww janet gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675756801)
+      ["from"]=>
+      object(stdClass)#1725 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1726 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282170731737"
+        ["_serialized"]=>
+        string(18) "6282170731737@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1733 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1732 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282170731737"
+        ["_serialized"]=>
+        string(18) "6282170731737@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0A47EF5E3AC84ED14"
+      ["_serialized"]=>
+      string(44) "true_6282170731737@c.us_3EB0A47EF5E3AC84ED14"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(109) "Haloww janet gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675756801)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6282170731737@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1752 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1736 (18) {
+    ["_data"]=>
+    object(stdClass)#1746 (29) {
+      ["id"]=>
+      object(stdClass)#1750 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1735 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB060E9E6F984586CEC"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB060E9E6F984586CEC"
+      }
+      ["body"]=>
+      string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675757700)
+      ["from"]=>
+      object(stdClass)#1739 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1737 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1751 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1743 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB060E9E6F984586CEC"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB060E9E6F984586CEC"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(108) "Haloww User gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675757700)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1755 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1728 (18) {
+    ["_data"]=>
+    object(stdClass)#1730 (29) {
+      ["id"]=>
+      object(stdClass)#1732 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1729 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6282170731737"
+          ["_serialized"]=>
+          string(18) "6282170731737@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0BB06A2FFF582F1B5"
+        ["_serialized"]=>
+        string(44) "true_6282170731737@c.us_3EB0BB06A2FFF582F1B5"
+      }
+      ["body"]=>
+      string(109) "Haloww janet gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1675757701)
+      ["from"]=>
+      object(stdClass)#1726 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1727 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282170731737"
+        ["_serialized"]=>
+        string(18) "6282170731737@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1734 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1733 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282170731737"
+        ["_serialized"]=>
+        string(18) "6282170731737@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0BB06A2FFF582F1B5"
+      ["_serialized"]=>
+      string(44) "true_6282170731737@c.us_3EB0BB06A2FFF582F1B5"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(109) "Haloww janet gimana kabarnya nih?Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1675757701)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6282170731737@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}

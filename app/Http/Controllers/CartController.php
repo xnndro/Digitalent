@@ -47,8 +47,11 @@ class CartController extends Controller
     public function checkout(){
         $user = User::find(Auth::user()->id);
         $number = rand(10000000, 99999999);
+        $transaction_id_order = 'INV-'.$number;
+
         $order = Order::create([
             'name' => $user->name,
+            'order_transaction_id' => $transaction_id_order,
             'user_id' => $user->id,
             'number' => $number,
             'total_price' => floatval(Cart::total()),

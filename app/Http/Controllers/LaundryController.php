@@ -399,7 +399,7 @@ class LaundryController extends Controller
         $laundry = Laundry::find($id);
         $laundry->status = 'Done';
         $laundry->save();
-        return redirect()->route('laundries.index')->withSuccessMessage('Laundry successfully Done');
+        return redirect()->route('laundries.vendortoadmin')->withSuccessMessage('Laundry successfully Done');
     }
    
 }

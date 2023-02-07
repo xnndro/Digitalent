@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
     Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
     Route::get('/financial', [App\Http\Controllers\UserController::class, 'financial_index'])->name('user.financial');
+    Route::get('/financial/{id}', [App\Http\Controllers\UserController::class, 'financial_show'])->name('user.financial_show');
 
     // shopping
     Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');

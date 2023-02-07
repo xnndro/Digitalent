@@ -21,13 +21,13 @@ class RoomateController extends Controller
         $roommate = Roommate::where(function($query) {
             $query->where('user_id', Auth::user()->id)
             ->orWhere('requested_user_id', Auth::user()->id);
-            })->where('status', 'accepted')->first();
+            })->first();
 
         if(session('success_message'))
         {
             Alert::success('Success', session('success_message'));
         }
-        if($roommate == null || $roommate == "rejected"){
+        if($roommate == null || $roommate->status == "rejected"){
             $status = "not requested";
             $dataArray = [];
             $user = Auth::user()->name;
@@ -37,6 +37,10 @@ class RoomateController extends Controller
             $output[0] = explode(',', $output[0]);
             $result = $output[0];
             return view('user.pages.roomates.index',compact('result', 'status'));
+        }else if($roommate->status == "pending")
+        {
+            $status = "pending";
+            return view('user.pages.roomates.index',compact('status'));
         }else{
             if($roommate->user_id == Auth::user()->id){
                 $roomie = User::find($roommate->requested_user_id);
@@ -50,6 +54,8 @@ class RoomateController extends Controller
             $status = $roommate->status;
             return view('user.pages.roomates.index',compact('status','roomName','floor','roomie'));
         }
+
+        // dd($roommate->status);
     }
 
     public function create()
