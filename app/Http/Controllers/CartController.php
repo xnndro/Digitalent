@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Cart;
 use App\Models\Order;
+use App\Models\OrderDetails;
 // products
 use App\Models\Product;
 use Darryldecode\Cart\CartCondition;
@@ -47,16 +48,18 @@ class CartController extends Controller
     public function checkout(){
         $user = User::find(Auth::user()->id);
         $number = rand(10000000, 99999999);
-        $transaction_id_order = 'INV-'.$number;
+        $order_transaction_id = 'INV-'.$number;
+        $total_price = (int)Cart::total(0, "", "") - (int)Cart::tax(0, "", "");
 
         $order = Order::create([
             'name' => $user->name,
-            'order_transaction_id' => $transaction_id_order,
+            'order_transaction_id' => $order_transaction_id,
             'user_id' => $user->id,
             'number' => $number,
-            'total_price' => floatval(Cart::total()),
+            'total_price' => $total_price,
             'payment_status' => 1,
         ]);
+
         foreach(Cart::content() as $item){
             //get product
             $products = Product::find($item->id);
@@ -69,6 +72,13 @@ class CartController extends Controller
             $products->update([
                 'stock' => $stock,
             ]); 
+            
+            // create order details
+            OrderDetails::create([
+                'order_transaction_id' => $order_transaction_id,
+                'product_id' => $item->id,
+                'qty' => $qty,
+            ]);
         }
 
         // Set your Merchant Server Key
@@ -86,7 +96,7 @@ class CartController extends Controller
         $params = array(
             'transaction_details' => array(
                 'order_id' => $number,
-                'gross_amount' => floatval(Cart::total()),
+                'gross_amount' => $total_price,
             ), 'customer_details' => array(
                 'name' => $name,
             )
@@ -101,6 +111,9 @@ class CartController extends Controller
         // dd($snapToken);
         
         // return redirect()->route('orders',['order' => $order]);
+        Cart::destroy();
+        Cart::store(Auth::user()->name);
+
         return view('user.pages.shopping.checkout', compact('snapToken', 'order'));
     }
 
@@ -112,7 +125,7 @@ class CartController extends Controller
         //     }
         // }
         $order = Order::find($id);
-        // dd($order);
+        dd($order, $id);
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = $_ENV['MIDTRANS_SERVER_KEY'];
         $clientKey = $_ENV['MIDTRANS_CLIENT_KEY'];
@@ -148,19 +161,23 @@ class CartController extends Controller
     }
 
     public function callback(Request $request){
-        $server_key = $_ENV['MIDTRANS_SERVER_KEY'];
-        $hash = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount . $server_key);
-        if($hash == $request->signature_key){
+        // $server_key = $_ENV['MIDTRANS_SERVER_KEY'];
+        // $hash = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount . $server_key);
+        // if($hash == $request->signature_key){
            if($request->transaction_status == 'capture'){
                if($request->status_code == '200'){
                    $order = Order::where('number', $request->order_id)->first();
                    $order->update([
                        'payment_status' => 2,
                    ]);
-                   Cart::destroy();
+                   
+                   
+                //    Cart::destroy();
                 //    Cart::store($user()->name);
                }
            }
-        }
+        // }
+
+        return view('user.pages.shopping.cart');
     }
 }

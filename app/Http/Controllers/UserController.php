@@ -31,20 +31,20 @@ class UserController extends Controller
             )
         );
         
-        $result = json_decode
-        (file_get_contents
-            ("https://sheetdb.io/api/v1/azny6h0q2lrka", false, stream_context_create($options))
-        );
+        // $result = json_decode
+        // (file_get_contents
+        //     ("https://sheetdb.io/api/v1/azny6h0q2lrka", false, stream_context_create($options))
+        // );
 
         $user = Auth::user()->name;
         $class = "";
         $gender ="";
-        foreach($result as $row){
-            if($row->Nama == $user){
-                $class = $row->Kelas;
-                $gender = $row->Gender;
-            }
-        }
+        // foreach($result as $row){
+        //     if($row->Nama == $user){
+        //         $class = $row->Kelas;
+        //         $gender = $row->Gender;
+        //     }
+        // }
 
         $user = Auth::user();
         $class = \App\Models\Classes::firstOrCreate(['namaKelas' => $class]);

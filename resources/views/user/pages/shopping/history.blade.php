@@ -31,785 +31,106 @@
     </div>
 </div>
 <div class="row">
-      <div class="col-lg-3">
-          <div class="card">
-              <div class="card-body">                           
-                  <div class="d-flex align-items-center justify-content-between">
-                      <h6 class="text-pink mb-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#invoiceModal1">Invoice 1</h6>
-                      <div class="modal fade" id="invoiceModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-fullscreen">
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Invoice 1</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                      <div class="row">
-                                          <div class="col-sm-12 mt-4">
-                                              <div class="table-responsive-lg">
-                                                  <table class="table">
-                                                      <thead>
-                                                          <tr>
-                                                              <th scope="col">Item</th>
-                                                              <th class="text-center" scope="col">Quantity</th>
-                                                              <th class="text-center" scope="col">Price</th>
-                                                              <th class="text-center" scope="col">Totals</th>
-                                                          </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Total</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Taxs</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Discount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Net Amount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"><b>$2,880.00</b></td>
-                                                          </tr>
-                                                      </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="dropdown">
-                          <span class="d-flex align-items-center h5 mb-0" id="dropdownMenuButton07" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <g>
-                                      <g>
-                                          <circle cx="7" cy="12" r="1" fill="black"/>
-                                          <circle cx="12" cy="12" r="1" fill="black"/>
-                                          <circle cx="17" cy="12" r="1" fill="black"/>
-                                      </g>
-                                  </g>
-                              </svg>
-                          </span>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton07" >
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M13.7476 20.4428H21.0002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.78 3.79479C13.5557 2.86779 14.95 2.73186 15.8962 3.49173C15.9485 3.53296 17.6295 4.83879 17.6295 4.83879C18.669 5.46719 18.992 6.80311 18.3494 7.82259C18.3153 7.87718 8.81195 19.7645 8.81195 19.7645C8.49578 20.1589 8.01583 20.3918 7.50291 20.3973L3.86353 20.443L3.04353 16.9723C2.92866 16.4843 3.04353 15.9718 3.3597 15.5773L12.78 3.79479Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M11.021 6.00098L16.4732 10.1881" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Rename
-                          </a>
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Delete
-                          </a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                      <p class="mb-0">Date: 1/1/2023</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="card">
-              <div class="card-body">                           
-                  <div class="d-flex align-items-center justify-content-between">
-                      <h6 class="text-pink mb-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#invoiceModal2">Invoice 2</h6>
-                      <div class="modal fade" id="invoiceModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-fullscreen">
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Invoice 2</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                      <div class="row">
-                                          <div class="col-sm-12 mt-4">
-                                              <div class="table-responsive-lg">
-                                                  <table class="table">
-                                                      <thead>
-                                                          <tr>
-                                                              <th scope="col">Item</th>
-                                                              <th class="text-center" scope="col">Quantity</th>
-                                                              <th class="text-center" scope="col">Price</th>
-                                                              <th class="text-center" scope="col">Totals</th>
-                                                          </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Total</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Taxs</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Discount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Net Amount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"><b>$2,880.00</b></td>
-                                                          </tr>
-                                                      </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="dropdown">
-                          <span class="d-flex align-items-center h5 mb-0" id="dropdownMenuButton07" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <g>
-                                      <g>
-                                          <circle cx="7" cy="12" r="1" fill="black"/>
-                                          <circle cx="12" cy="12" r="1" fill="black"/>
-                                          <circle cx="17" cy="12" r="1" fill="black"/>
-                                      </g>
-                                  </g>
-                              </svg>
-                          </span>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton07" >
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M13.7476 20.4428H21.0002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.78 3.79479C13.5557 2.86779 14.95 2.73186 15.8962 3.49173C15.9485 3.53296 17.6295 4.83879 17.6295 4.83879C18.669 5.46719 18.992 6.80311 18.3494 7.82259C18.3153 7.87718 8.81195 19.7645 8.81195 19.7645C8.49578 20.1589 8.01583 20.3918 7.50291 20.3973L3.86353 20.443L3.04353 16.9723C2.92866 16.4843 3.04353 15.9718 3.3597 15.5773L12.78 3.79479Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M11.021 6.00098L16.4732 10.1881" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Rename
-                          </a>
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Delete
-                          </a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                      <p class="mb-0">Date: 2/1/2023</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="card">
-              <div class="card-body">                           
-                  <div class="d-flex align-items-center justify-content-between">
-                      <h6 class="text-pink mb-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#invoiceModal3">Invoice 3</h6>
-                      <div class="modal fade" id="invoiceModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-fullscreen">
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Invoice 3</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                      <div class="row">
-                                          <div class="col-sm-12 mt-4">
-                                              <div class="table-responsive-lg">
-                                                  <table class="table">
-                                                      <thead>
-                                                          <tr>
-                                                              <th scope="col">Item</th>
-                                                              <th class="text-center" scope="col">Quantity</th>
-                                                              <th class="text-center" scope="col">Price</th>
-                                                              <th class="text-center" scope="col">Totals</th>
-                                                          </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Total</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Taxs</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Discount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Net Amount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"><b>$2,880.00</b></td>
-                                                          </tr>
-                                                      </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="dropdown">
-                          <span class="d-flex align-items-center h5 mb-0" id="dropdownMenuButton07" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <g>
-                                      <g>
-                                          <circle cx="7" cy="12" r="1" fill="black"/>
-                                          <circle cx="12" cy="12" r="1" fill="black"/>
-                                          <circle cx="17" cy="12" r="1" fill="black"/>
-                                      </g>
-                                  </g>
-                              </svg>
-                          </span>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton07" >
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M13.7476 20.4428H21.0002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.78 3.79479C13.5557 2.86779 14.95 2.73186 15.8962 3.49173C15.9485 3.53296 17.6295 4.83879 17.6295 4.83879C18.669 5.46719 18.992 6.80311 18.3494 7.82259C18.3153 7.87718 8.81195 19.7645 8.81195 19.7645C8.49578 20.1589 8.01583 20.3918 7.50291 20.3973L3.86353 20.443L3.04353 16.9723C2.92866 16.4843 3.04353 15.9718 3.3597 15.5773L12.78 3.79479Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M11.021 6.00098L16.4732 10.1881" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Rename
-                          </a>
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Delete
-                          </a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                      <p class="mb-0">Date: 3/1/2023</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="card">
-              <div class="card-body">                           
-                  <div class="d-flex align-items-center justify-content-between">
-                      <h6 class="text-pink mb-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#invoiceModal4">Invoice 4</h6>
-                      <div class="modal fade" id="invoiceModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-fullscreen">
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Invoice 4</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                      <div class="row">
-                                          <div class="col-sm-12 mt-4">
-                                              <div class="table-responsive-lg">
-                                                  <table class="table">
-                                                      <thead>
-                                                          <tr>
-                                                              <th scope="col">Item</th>
-                                                              <th class="text-center" scope="col">Quantity</th>
-                                                              <th class="text-center" scope="col">Price</th>
-                                                              <th class="text-center" scope="col">Totals</th>
-                                                          </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Total</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Taxs</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Discount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Net Amount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"><b>$2,880.00</b></td>
-                                                          </tr>
-                                                      </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="dropdown">
-                          <span class="d-flex align-items-center h5 mb-0" id="dropdownMenuButton07" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <g>
-                                      <g>
-                                          <circle cx="7" cy="12" r="1" fill="black"/>
-                                          <circle cx="12" cy="12" r="1" fill="black"/>
-                                          <circle cx="17" cy="12" r="1" fill="black"/>
-                                      </g>
-                                  </g>
-                              </svg>
-                          </span>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton07" >
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M13.7476 20.4428H21.0002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.78 3.79479C13.5557 2.86779 14.95 2.73186 15.8962 3.49173C15.9485 3.53296 17.6295 4.83879 17.6295 4.83879C18.669 5.46719 18.992 6.80311 18.3494 7.82259C18.3153 7.87718 8.81195 19.7645 8.81195 19.7645C8.49578 20.1589 8.01583 20.3918 7.50291 20.3973L3.86353 20.443L3.04353 16.9723C2.92866 16.4843 3.04353 15.9718 3.3597 15.5773L12.78 3.79479Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M11.021 6.00098L16.4732 10.1881" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Rename
-                          </a>
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Delete
-                          </a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                      <p class="mb-0">Date: 4/1/2023</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="card">
-              <div class="card-body">                           
-                  <div class="d-flex align-items-center justify-content-between">
-                      <h6 class="text-pink mb-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#invoiceModal5">Invoice 5</h6>
-                      <div class="modal fade" id="invoiceModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-fullscreen">
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Invoice 5</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                      <div class="row">
-                                          <div class="col-sm-12 mt-4">
-                                              <div class="table-responsive-lg">
-                                                  <table class="table">
-                                                      <thead>
-                                                          <tr>
-                                                              <th scope="col">Item</th>
-                                                              <th class="text-center" scope="col">Quantity</th>
-                                                              <th class="text-center" scope="col">Price</th>
-                                                              <th class="text-center" scope="col">Totals</th>
-                                                          </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Item 1</h6>
-                                                                  <p class="mb-0">
-                                                                      Lorem ipsum dolor sit amet, consectetur
-                                                                      adipiscing elit.
-                                                                  </p>
-                                                              </td>
-                                                              <td class="text-center">1</td>																				</td>
-                                                              <td class="text-center">$120.00</td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Total</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Taxs</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Discount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center">$2,880.00</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>
-                                                                  <h6 class="mb-0">Net Amount</h6>
-                                                              </td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"></td>
-                                                              <td class="text-center"><b>$2,880.00</b></td>
-                                                          </tr>
-                                                      </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="dropdown">
-                          <span class="d-flex align-items-center h5 mb-0" id="dropdownMenuButton07" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <g>
-                                      <g>
-                                          <circle cx="7" cy="12" r="1" fill="black"/>
-                                          <circle cx="12" cy="12" r="1" fill="black"/>
-                                          <circle cx="17" cy="12" r="1" fill="black"/>
-                                      </g>
-                                  </g>
-                              </svg>
-                          </span>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton07" >
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M13.7476 20.4428H21.0002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.78 3.79479C13.5557 2.86779 14.95 2.73186 15.8962 3.49173C15.9485 3.53296 17.6295 4.83879 17.6295 4.83879C18.669 5.46719 18.992 6.80311 18.3494 7.82259C18.3153 7.87718 8.81195 19.7645 8.81195 19.7645C8.49578 20.1589 8.01583 20.3918 7.50291 20.3973L3.86353 20.443L3.04353 16.9723C2.92866 16.4843 3.04353 15.9718 3.3597 15.5773L12.78 3.79479Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M11.021 6.00098L16.4732 10.1881" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Rename
-                          </a>
-                          <a class="dropdown-item" href="#">
-                              <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                                  <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                              </svg>
-                              Delete
-                          </a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                      <p class="mb-0">Date: 5/1/2023</p>
-                  </div>
-              </div>
-          </div>
-      </div>
+    @for ($i = 0; $i < count($histories); $i++)
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body">                           
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h6 class="text-pink mb-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#invoiceModal{{ $i }}">{{ $histories[$i]->order_transaction_id }}</h6>
+                        <div class="modal fade" id="invoiceModal{{ $i }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">{{ $histories[$i]->order_transaction_id }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-12 mt-4">
+                                                <div class="table-responsive-lg">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Item</th>
+                                                                <th class="text-center" scope="col">Quantity</th>
+                                                                <th class="text-center" scope="col">Price</th>
+                                                                <th class="text-center" scope="col">Totals</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach ($histories_details[$i] as $item)
+                                                                <tr>
+                                                                    <td>
+                                                                        <h6 class="mb-0">{{ $item->name }}</h6>
+                                                                        <p class="mb-0">
+                                                                            Lorem ipsum dolor sit amet, consectetur
+                                                                            adipiscing elit.
+                                                                        </p>
+                                                                    </td>
+                                                                    <td class="text-center">{{ $item->qty }}</td>
+                                                                    <td class="text-center">Rp. {{ number_format($item->price, 0, ",", ".") }}</td>
+                                                                    <td class="text-center">Rp. {{ number_format($item->price * $item->qty, 0, ",", ".") }}</td>
+                                                                </tr>
+                                                            @endforeach
+                                                            <tr>
+                                                                <td>
+                                                                    <h6 class="mb-0">Total</h6>
+                                                                </td>
+                                                                <td class="text-center"></td>
+                                                                <td class="text-center"></td>
+                                                                <td class="text-center">Rp. {{ number_format($histories[$i]->total_price, 0, ",", ".") }}</td>
+                                                            </tr>
+                                                    </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <span class="d-flex align-items-center h5 mb-0" id="dropdownMenuButton07" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <g>
+                                        <g>
+                                            <circle cx="7" cy="12" r="1" fill="black"/>
+                                            <circle cx="12" cy="12" r="1" fill="black"/>
+                                            <circle cx="17" cy="12" r="1" fill="black"/>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </span>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton07" >
+                            <a class="dropdown-item" href="#">
+                                <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                                    <path d="M13.7476 20.4428H21.0002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.78 3.79479C13.5557 2.86779 14.95 2.73186 15.8962 3.49173C15.9485 3.53296 17.6295 4.83879 17.6295 4.83879C18.669 5.46719 18.992 6.80311 18.3494 7.82259C18.3153 7.87718 8.81195 19.7645 8.81195 19.7645C8.49578 20.1589 8.01583 20.3918 7.50291 20.3973L3.86353 20.443L3.04353 16.9723C2.92866 16.4843 3.04353 15.9718 3.3597 15.5773L12.78 3.79479Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M11.021 6.00098L16.4732 10.1881" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                                Rename
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                                    <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                                Delete
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">Date: {{ substr($histories[$i]->created_at, 0, 10) }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endfor
+      
 </div>
 @endsection

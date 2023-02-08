@@ -40,7 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cart/decqty/{rowId}', [App\Http\Controllers\CartController::class, 'decQty'])->name('decqty');
     Route::get('/cart/delitm/{rowId}', [App\Http\Controllers\CartController::class, 'delItem'])->name('delitm');
     Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
-    Route::get('/checkout/{id}', [App\Http\Controllers\CartController::class, 'toPay'])->name('toPay');
+    // Route::get('/checkout/{id}', [App\Http\Controllers\CartController::class, 'toPay'])->name('toPay');
+    Route::get('/checkout/callback', [App\Http\Controllers\CartController::class, 'callback'])->name('callback');
     // CALLBACK MIDTRANS
     Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
 
