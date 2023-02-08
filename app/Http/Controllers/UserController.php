@@ -25,7 +25,32 @@ class UserController extends Controller
 {
     public function index()
     {
-       
+        $options = array(
+            'http' => array(
+                'method'  => 'GET'
+            )
+        );
+        
+        $result = json_decode
+        (file_get_contents
+            ("https://sheetdb.io/api/v1/azny6h0q2lrka", false, stream_context_create($options))
+        );
+
+        $user = Auth::user()->name;
+        $class = "";
+        $gender ="";
+        foreach($result as $row){
+            if($row->Nama == $user){
+                $class = $row->Kelas;
+                $gender = $row->Gender;
+            }
+        }
+
+        $user = Auth::user();
+        $class = \App\Models\Classes::firstOrCreate(['namaKelas' => $class]);
+        $user->class_id = $class->id;
+        $user->gender = $gender;
+        $user->save();
 
         // for widgets
         //laundry total

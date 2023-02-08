@@ -66,6 +66,7 @@ data-client-key="{{config('midtrans.client_key')}}"></script>
         onSuccess: function(result){
           /* You may add your own implementation here */
         //   alert("payment success!"); console.log(result);
+            console.log("coba");
             swal({
                 title: "Success!",
                 text: "Payment Success",

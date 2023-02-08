@@ -13,7 +13,7 @@ class Midtrans {
     public function __construct()
     {
         $this->serverKey = $_ENV['MIDTRANS_SERVER_KEY'];
-        $this->isProduction = $_ENV['MIDTRANS_IS_PRODUCTION'];
+        $this->isProduction = $_ENV['MIDTRANS_IS_SANDBOX'];
         $this->isSanitized = config('midtrans.is_sanitized');
         $this->is3ds = config('midtrans.is_3ds');
  
