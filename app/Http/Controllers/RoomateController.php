@@ -87,12 +87,13 @@ class RoomateController extends Controller
                 foreach($result as $key => $value)
                 {
                     $user = User::where('name', $value)->first();
-                    if($user->roommate_status == 1)
+                    if($user && ($user->roommate_status == '1' || $user->roommate_status == '2'))
                     {
                         unset($result[$key]);
                     }
                 }
 
+                // dd($result,$status, $user->roommate_status);
                 return view('user.pages.roomates.index',compact('result', 'status'));
             }else if($roommate->status == "pending")
             {
@@ -121,6 +122,33 @@ class RoomateController extends Controller
 
     public function store(Request $request)
     {
+        $options = array(
+            'http' => array(
+                'method'  => 'GET'
+            )
+        );
+        
+        $result = json_decode
+        (file_get_contents
+            ("https://sheetdb.io/api/v1/6n38dr2edrj22", false, stream_context_create($options))
+        );
+        
+        $user = Auth::user()->name;
+        $class = "";
+        $gender ="";
+        foreach($result as $row){
+            if($row->Nama == $user){
+                $class = $row->Kelas;
+                $gender = $row->Gender;
+            }
+        }
+
+        $user = Auth::user();
+        $class = \App\Models\Classes::firstOrCreate(['namaKelas' => $class]);
+        $user->class_id = $class->id;
+        $user->gender = $gender;
+        $user->save();
+
         $request->validate([
             'nama' => 'required|string|max:255',
             'kelas' => 'required|string',
@@ -142,7 +170,7 @@ class RoomateController extends Controller
         ]);
 
         $client = new Client();
-        $response = $client->post('https://sheetdb.io/api/v1/azny6h0q2lrka' , [
+        $response = $client->post('https://sheetdb.io/api/v1/6n38dr2edrj22' , [
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
@@ -231,20 +259,11 @@ class RoomateController extends Controller
                     $requested_user_id = $user->id;
                 }
             }
-            
+
             $roommate->user_id = $user_id;
             $roommate->requested_user_id = $requested_user_id;
             $roommate->class_id = $user_class;
-
-            // check jika $requested_user_id ternyata di request oleh orang lain, maka reject request orang lain
-            $roommate_check = Roommate::where('requested_user_id', $requested_user_id)->first();
-            $roommate_check2 = Roommate::where('user_id', $requested_user_id)->first();
-            if($roommate_check != null || $roommate_check2 != null){
-                $roommate_check->status = 'rejected';
-                $roommate_check->save();
-            }
             $roommate->save();
-
 
             //send to wa
             $data = [
@@ -264,6 +283,11 @@ class RoomateController extends Controller
                 'message' => 'Kamu telah dipilih oleh '. $user_name .' untuk menjadi roommate, silahkan tunggu konfirmasi dari admin :)'
             ];
             $whatsapp->sendMessage($data);
+
+            $user = new User;
+            // save status 2 to user and user_requested
+            $user->where('id', $user_id)->update(['roommate_status' => '2']);
+            $user->where('id', $requested_user_id)->update(['roommate_status' => '2']);
         }
 
 
@@ -306,6 +330,8 @@ class RoomateController extends Controller
 
         $room = Room::where('gender', $gender)->where('status', '=','Available')->get();
         $count = $room->count();
+
+        // dd($room);   
 
         return view('admin.pages.roomates.details', compact('roommates','room','count'));
     }

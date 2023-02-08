@@ -17,10 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('complain_id');
             $table->string('user_id');
+            $table->string('user_room')->nullable();
             $table->string('complain_type');
-            $table->string('transaction_id');
-            $table->string('complain');
+            $table->string('transaction_id')->nullable();
+            $table->string('fotoBarang')->nullable();
+            $table->string('complain_name');
             $table->text('description');
+            $table->string('jumlahBarang')->nullable();
             $table->string('status')->default('pending');
 
             $table->timestamps();

@@ -99,6 +99,9 @@ class CartController extends Controller
 
         $snapToken = \Midtrans\Snap::getSnapToken($params, $redirectUrl);
         // dd($snapToken);
+
+        Cart::destroy();
+        Cart::store(Auth::user()->name);
         
         // return redirect()->route('orders',['order' => $order]);
         return view('user.pages.shopping.checkout', compact('snapToken', 'order'));
@@ -157,8 +160,6 @@ class CartController extends Controller
                    $order->update([
                        'payment_status' => 2,
                    ]);
-                   Cart::destroy();
-                //    Cart::store($user()->name);
                }
            }
         }

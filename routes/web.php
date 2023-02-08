@@ -117,4 +117,6 @@ Route::group(['middleware' => 'auth'], function () {
     //complain
     Route::get('/complains', [App\Http\Controllers\ComplainController::class, 'index'])->name('complains.index');
     Route::get('/complains/create', [App\Http\Controllers\ComplainController::class, 'create'])->name('complains.create');
+    Route::get('/complains/laundry', [App\Http\Controllers\ComplainController::class, 'laundry'])->name('complains.laundry');
+    Route::post('/complains', [App\Http\Controllers\ComplainController::class, 'store'])->name('complains.store');
 });

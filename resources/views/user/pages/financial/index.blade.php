@@ -56,7 +56,7 @@
                                     
                                     {{$laundry_percentage}}
                                 </span>
-                                <span>Data</span>
+                                <span>Data from Prevorius month </span>
                             </div>
                         @else
                             @if($laundry_percentage < 0)
@@ -108,7 +108,7 @@
                                 <span>
                                     {{$shopping_percentage}}
                                 </span>
-                                <span>Data</span>
+                                <span>Data from Prevorius month</span>
                             </div>
                         @else
                             @if($shopping_percentage < 0)

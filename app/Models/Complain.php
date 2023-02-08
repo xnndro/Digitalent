@@ -11,6 +11,6 @@ class Complain extends Model
 
     protected $table = 'complains';
 
-    protected $fillable = ['complain_id','user_id','complain_type','transaction_id','complain','description','status'];
+    protected $fillable = ['complain_id','user_id','complain_type','transaction_id','fotoBarang','complain_name','description','jumlahBarang','status', 'user_room'];
 
 }
