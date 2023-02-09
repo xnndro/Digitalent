@@ -51,9 +51,14 @@ class CartController extends Controller
         $order_transaction_id = 'INV-'.$number;
         $total_price = (int)Cart::total(0, "", "") - (int)Cart::tax(0, "", "");
 
+        if($total_price == 0){
+            return view('user.pages.shopping.cart');
+        }
+
         $order = Order::create([
             'name' => $user->name,
             'order_transaction_id' => $order_transaction_id,
+            'invoice_name' => $order_transaction_id,
             'user_id' => $user->id,
             'number' => $number,
             'total_price' => $total_price,
