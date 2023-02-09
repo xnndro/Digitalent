@@ -1,4 +1,4 @@
-@extends('admin.layouts.default')
+@extends('adminVendor.layouts.default')
 
 @section('content')
 <div class="row">

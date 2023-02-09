@@ -14,6 +14,7 @@ use Alert;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Models\Room;
+use App\Http\Controllers\WhatsappController;
 
 class ComplainController extends Controller
 {
@@ -100,8 +101,41 @@ class ComplainController extends Controller
             $laundry = Laundry::where('id',$request->transaction)->first();
             $complain->laundry_vendor_id = $laundry->laundry_vendor_id;
 
+            //send message
+            $whatsapp = new WhatsappController;
+
+            $vendor_name = LaundryVendor::where('id',$laundry->laundry_vendor_id)->first();
+            $vendor_name = $vendor_name->name;
+
+            $vendor_phone = User::where('name',$vendor_name)->first();
+            $vendor_phone = $vendor_phone->phone;
+
+            $transaction_name = Laundries::where('id',$request->transaction)->first();
+            $transaction_name = $transaction_name->laundry_transaction_id;
+
+            $data = [
+                'phone' => $vendor_phone,
+                'message' => 'Order Laundry dengan kode Laundry' . $transaction_name . 'memiliki complain, silahkan cek aplikasi'
+            ];
+
+            $whatsapp->sendMessage($data);
+            $user_phone = Auth::user()->phone;
+            $data = [
+                'phone' => $user_phone,
+                'message' => 'Komplain order Laundry dengan kode Laundry' . $transaction_name . 'telah berhasil tercomplain, silahkan cek aplikasi untuk updatenya'
+            ];
+            $whatsapp->sendMessage($data);
         }else if($request->type == 'Fasilitas'){
             $complain->user_room = $user_room->room_id;
+            //send message
+            $whatsapp = new WhatsappController;
+            $user_phone = Auth::user()->phone;
+            $data = [
+                'phone' => $user_phone,
+                'message' => 'Komplain fasilitas dengan kode complain' . $complain->complain_id . 'telah berhasil tercomplain, silahkan cek aplikasi untuk updatenya'
+            ];
+            $whatsapp->sendMessage($data);
+
         }
 
         $complain->save();
@@ -129,29 +163,29 @@ class ComplainController extends Controller
                 return $complain;
             });
             $count= $complains->count();
+            
             return view('admin.pages.complains.index',compact('complains','count'));
         }
-        else
+        else if($user == 'vendor')
         {
-
             $complains = Complain::where('complain_type','Laundry')
             ->where('status','!=','done')
             ->get();
 
             // get vendor id by check the laundry vendor table, if the name is same, take the id
             $vendor_id = LaundryVendor::where('name',Auth::user()->name)->first();
-            if($vendor_id == '1'){
+            if($vendor_id == 'Femme'){
                 $complains = Complain::where('complain_type','Laundry')
                 ->where('status','!=','done')
                 ->where('laundry_vendor_id','1')
                 ->get();
                 
-            }else if($vendor_id == '2'){
+            }else if($vendor_id == 'Bclean'){
                 $complains = Complain::where('complain_type','Laundry')
                 ->where('status','!=','done')
                 ->where('laundry_vendor_id','2')
                 ->get();
-            }else if($vendor_id == '3'){
+            }else if($vendor_id == 'Mills'){
                 $complains = Complain::where('complain_type','Laundry')
                 ->where('status','!=','done')
                 ->where('laundry_vendor_id','3')
@@ -162,7 +196,6 @@ class ComplainController extends Controller
                 $complain->noTransaksi = $laundry->laundry_transaction_id;
                 return $complain;
             });
-            // dd($complains->transaction_id);
             $count= $complains->count();
             return view('adminVendor.pages.complain.index',compact('complains','count'));
         }
@@ -173,6 +206,16 @@ class ComplainController extends Controller
         $complain = Complain::where('id',$id)->first();
         $complain->status = 'proceed';
         $complain->save();
+
+        //send message
+        $user_phone = User::where('id',$complain->user_id)->first();
+        $user_phone = $user_phone->phone;
+        $whatsapp = new WhatsappController;
+        $data = [
+            'phone' => $user_phone,
+            'message' => 'Komplain kamu dengan kode complain '. $complain->complain_id . ' sedang diproses, silahkan cek aplikasi untuk updatenya'
+        ];
+        $whatsapp->sendMessage($data);
         return redirect()->route('complains.show')->with('success_message','Complain has been proceed');
     }
 
@@ -181,6 +224,15 @@ class ComplainController extends Controller
         $complain = Complain::where('id',$id)->first();
         $complain->status = 'done';
         $complain->save();
+
+        $user_phone = User::where('id',$complain->user_id)->first();
+        $user_phone = $user_phone->phone;
+        $whatsapp = new WhatsappController;
+        $data = [
+            'phone' => $user_phone,
+            'message' => 'Komplain kamu dengan kode complain '. $complain->complain_id . ' telah selesai diproses, Mohon maaf untuk ketidaknyamanannya'
+        ];
+        $whatsapp->sendMessage($data);
         return redirect()->route('complains.show')->with('success_message','Complain has been done');
     }
 }
