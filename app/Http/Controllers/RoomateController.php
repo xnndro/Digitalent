@@ -122,32 +122,6 @@ class RoomateController extends Controller
 
     public function store(Request $request)
     {
-        $options = array(
-            'http' => array(
-                'method'  => 'GET'
-            )
-        );
-        
-        $result = json_decode
-        (file_get_contents
-            ("https://sheetdb.io/api/v1/6n38dr2edrj22", false, stream_context_create($options))
-        );
-        
-        $user = Auth::user()->name;
-        $class = "";
-        $gender ="";
-        foreach($result as $row){
-            if($row->Nama == $user){
-                $class = $row->Kelas;
-                $gender = $row->Gender;
-            }
-        }
-
-        $user = Auth::user();
-        $class = \App\Models\Classes::firstOrCreate(['namaKelas' => $class]);
-        $user->class_id = $class->id;
-        $user->gender = $gender;
-        $user->save();
 
         $request->validate([
             'nama' => 'required|string|max:255',
@@ -220,6 +194,33 @@ class RoomateController extends Controller
 
         $class->jumlahSiswa += 1;
         $class->save();
+
+        $options = array(
+            'http' => array(
+                'method'  => 'GET'
+            )
+        );
+        
+        $result = json_decode
+        (file_get_contents
+            ("https://sheetdb.io/api/v1/6n38dr2edrj22", false, stream_context_create($options))
+        );
+        
+        $user = Auth::user()->name;
+        $class = "";
+        $gender ="";
+        foreach($result as $row){
+            if($row->Nama == $user){
+                $class = $row->Kelas;
+                $gender = $row->Gender;
+            }
+        }
+
+        $user = Auth::user();
+        $class = \App\Models\Classes::firstOrCreate(['namaKelas' => $class]);
+        $user->class_id = $class->id;
+        $user->gender = $gender;
+        $user->save();
 
         return redirect()->route('dashboard');
     }

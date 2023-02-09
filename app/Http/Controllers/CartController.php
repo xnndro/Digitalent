@@ -128,7 +128,7 @@ class CartController extends Controller
         //     }
         // }
         $order = Order::find($id);
-        dd($order, $id);
+        // dd($order, $id);
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = $_ENV['MIDTRANS_SERVER_KEY'];
         $clientKey = $_ENV['MIDTRANS_CLIENT_KEY'];

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('user_room')->nullable();
             $table->string('complain_type');
             $table->string('transaction_id')->nullable();
+            $table->string('laundry_vendor_id')->nullable();
             $table->string('fotoBarang')->nullable();
             $table->string('complain_name');
             $table->text('description');

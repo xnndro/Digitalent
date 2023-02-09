@@ -40,9 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cart/decqty/{rowId}', [App\Http\Controllers\CartController::class, 'decQty'])->name('decqty');
     Route::get('/cart/delitm/{rowId}', [App\Http\Controllers\CartController::class, 'delItem'])->name('delitm');
     Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
-    // Route::get('/checkout/{id}', [App\Http\Controllers\CartController::class, 'toPay'])->name('toPay');
+    Route::get('/checkout/{id}', [App\Http\Controllers\CartController::class, 'toPay'])->name('toPay');
     Route::get('/checkout/callback', [App\Http\Controllers\CartController::class, 'callback'])->name('callback');
-    // CALLBACK MIDTRANS
     Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
 
     // laundry history for user
@@ -120,4 +119,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/complains/create', [App\Http\Controllers\ComplainController::class, 'create'])->name('complains.create');
     Route::get('/complains/laundry', [App\Http\Controllers\ComplainController::class, 'laundry'])->name('complains.laundry');
     Route::post('/complains', [App\Http\Controllers\ComplainController::class, 'store'])->name('complains.store');
+    Route::get('/complains/show', [App\Http\Controllers\ComplainController::class, 'show'])->name('complains.show');
+    Route::get('/complains/proceed/{id}', [App\Http\Controllers\ComplainController::class, 'adminProceed'])->name('complains.adminProceed');
+    Route::get('/complains/finish/{id}', [App\Http\Controllers\ComplainController::class, 'adminFinish'])->name('complains.adminFinish');
 });
