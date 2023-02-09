@@ -36,12 +36,12 @@
             <div class="card">
                 <div class="card-body">                           
                     <div class="d-flex align-items-center justify-content-between">
-                        <h6 class="text-pink mb-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#invoiceModal{{ $i }}">{{ $histories[$i]->order_transaction_id }}</h6>
+                        <h6 class="text-pink mb-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#invoiceModal{{ $i }}">{{ $histories[$i]->invoice_name }}</h6>
                         <div class="modal fade" id="invoiceModal{{ $i }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-fullscreen">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">{{ $histories[$i]->order_transaction_id }}</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">{{ $histories[$i]->invoice_name }}</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
@@ -105,15 +105,18 @@
                                 </svg>
                             </span>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton07" >
-                            <a class="dropdown-item" href="#">
+                            {{-- <a class="dropdown-item" href="{{ route('') }}">
+                                Rename
+                            </a> --}}
+                            <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#renameModal{{ $i }}">
                                 <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
                                     <path d="M13.7476 20.4428H21.0002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.78 3.79479C13.5557 2.86779 14.95 2.73186 15.8962 3.49173C15.9485 3.53296 17.6295 4.83879 17.6295 4.83879C18.669 5.46719 18.992 6.80311 18.3494 7.82259C18.3153 7.87718 8.81195 19.7645 8.81195 19.7645C8.49578 20.1589 8.01583 20.3918 7.50291 20.3973L3.86353 20.443L3.04353 16.9723C2.92866 16.4843 3.04353 15.9718 3.3597 15.5773L12.78 3.79479Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                     <path d="M11.021 6.00098L16.4732 10.1881" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg>
                                 Rename
-                            </a>
-                            <a class="dropdown-item" href="#">
+                            </button>
+                            <a class="dropdown-item" href="{{ route('history.del', [$histories[$i]->order_transaction_id]) }}">
                                 <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
                                     <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                     <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -126,6 +129,26 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <p class="mb-0">Date: {{ substr($histories[$i]->created_at, 0, 10) }}</p>
+                    </div>
+                    <div class="modal fade" id="renameModal{{ $i }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Rename invoice to...</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form method="POST" action="{{ route('history.confirmRename', [$histories[$i]->order_transaction_id]) }}">
+                                @csrf
+                                <div class="modal-body">
+                                    <input name="new_name" type="text" class="form-control" placeholder="Input new name here">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary" >Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

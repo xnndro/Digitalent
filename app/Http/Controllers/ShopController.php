@@ -21,4 +21,9 @@ class ShopController extends Controller
         $products = Product::all();
         return view('user.pages.shopping.shop', ['products' => $products]);
     }
+
+    public function admin_index(){
+        $products = Product::all();
+        return view('admin.pages.shopping.manageProducts', ['products' => $products]);
+    }
 }
