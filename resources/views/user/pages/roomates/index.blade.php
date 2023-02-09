@@ -10,7 +10,7 @@
                     <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
                         <div class="text-center">
                             <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ghg0pifn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-                            <h5 class="mt-n5">You have requested a roommate</h5>
+                            <h5 class="mt-n5">You Have Requested a Roommate</h5>
                         </div>
                     </div>
                 </div>
@@ -21,8 +21,8 @@
                             <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ghg0pifn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
                             <h5 class="mt-n5">You have a roommate</h5>
                             <div class="mt-3">Your Roomie: <span>{{$roomie->name}}</span></div>
-                            <div>No.Kamar: <span class="ms-3">{{$roomName}}</span></div>
-                            <div>Lantai: <span class="ms-3">{{$floor}}</span></div>
+                            <div>No.Room: <span class="ms-3">{{$roomName}}</span></div>
+                            <div>Floor: <span class="ms-3">{{$floor}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
                             <div class="text-center">
                                 <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ghg0pifn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-                                <h5 class="mt-n5">You dont have roommate, Request to single Room</h5>
+                                <h5 class="mt-n5">You Don't Have Roommate, Request to Single Room</h5>
                                 <div class="d-flex justify-content-center">
                                     <form action="{{ route('roommates.request', 'single') }}" method="post">
                                         @csrf
@@ -46,7 +46,7 @@
                         <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
                             <div class="text-center">
                                 <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ghg0pifn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-                                <h5 class="mt-n5">Waiting your friends to register</h5>
+                                <h5 class="mt-n5">Waiting Your Friends to Register</h5>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                 <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
                     <div class="flex-wrap card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="mb-2 card-title">You're a good fit for roommates with</h4>
+                            <h4 class="mb-2 card-title">You're a Good Fit for Roommates With</h4>
                         </div>
                     </div>
                     <div class="p-0 card-body">

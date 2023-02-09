@@ -13,7 +13,7 @@
                 <form action="{{ route('rooms.store') }}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label class="form-label" for="name">Rooms Name</label>
+                        <label class="form-label" for="name">Room Number</label>
                         <input type="text" class="form-control" name="name">
 
                         @if ($errors->has('name'))
@@ -21,19 +21,26 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="floor">Rooms Floor</label>
-                        <input type="text" class="form-control" name="lantai">
+                        <label class="form-label" for="floor">Room Floor</label>
+                        {{-- <input type="text" class="form-control" name="lantai"> --}}
+                        <select name="lantai" class="form-control" required>
+                            <option value="">Choose one</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                        </select>
 
                         @if ($errors->has('lantai'))
                             <span class="text-danger">{{ $errors->first('lantai') }}</span>
                         @endif
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="gender">Rooms Gender</label>
+                        <label class="form-label" for="gender">Room Gender</label>
                         <select name="gender" class="form-control">
-                            <option value="">-- Pilih Jenis Kelamin --</option>
-                            <option value="Pria">Pria</option>
-                            <option value="Wanita">Wanita</option>
+                            <option value="">-- Choose Gender --</option>
+                            <option value="Pria">Male</option>
+                            <option value="Wanita">Female</option>
                         </select>
 
                         @if($errors->has('gender'))

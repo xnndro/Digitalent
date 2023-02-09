@@ -33,9 +33,7 @@
         @foreach($complains as $c)
             <div class="col-lg-4">
                 <div class="card">
-                    <img height="100px" src="{{asset(
-                    'storage/uploads/complain/'.$c->fotoBarang 
-                    )}}" class="card-img-top" alt="...">
+                    
                     <div class="card-body">
                         <div class="user-post-data">
                             <div class="d-flex flex-wrap">

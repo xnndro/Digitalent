@@ -189,7 +189,7 @@
                     <div class="d-flex justify-content-center align-items-center flex-wrap mt-n5">
                         <div class="text-center">
                             <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_c8zlc8qn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-                            <h5 class="mt-n5">You dont have transaction to pay</h5>
+                            <h5 class="mt-n5">You Don't Have Transaction to Pay</h5>
                         </div>
                     </div>
                 @else

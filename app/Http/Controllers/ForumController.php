@@ -72,7 +72,7 @@ class ForumController extends Controller
 
         $forum->save();
 
-        return redirect()->route('forum.index')->withSuccessMessage('Threads berhasil dibuat');
+        return redirect()->route('forum.index')->withSuccessMessage('Threads successfully created!');
     }
 
     /**

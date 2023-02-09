@@ -13,7 +13,7 @@
                 <form action="{{ route('laundries.store') }}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="nama">Nama</label>
+                        <label for="nama">Student Name</label>
                         <select name="nama" class="form-control" required>
                             @if($count == 0)
                                 <option value="">No Student Added</option>
@@ -29,7 +29,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label for="total_pcs">Jumlah pcs</label>
+                        <label for="total_pcs">Total Pieces</label>
                         <input type="number" name="total_pcs" class="form-control" value="{{ old('total_pcs') }}" required>
 
                         @if ($errors->has('total_pcs'))
@@ -38,7 +38,7 @@
                     </div>
                     @if($type == '1')
                         <div class="form-group">
-                            <label for="total_kg">Jumlah kg</label>
+                            <label for="total_kg">Total Weight</label>
                             <input type="number" name="total_kg" class="form-control" value="{{ old('total_kg') }}" required>
                             
                             @if ($errors->has('total_kg'))
@@ -47,7 +47,7 @@
                         </div>
                     @endif
                     <div class="form-group">
-                        <label for="vendor">Pilih vendor</label>
+                        <label for="vendor">Choose Vendor</label>
                         <select name="vendor" class="form-control" required>
                             <option value="">Choose one</option>
                             @foreach($vendors as $v)
@@ -60,7 +60,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label for="tanggalMasuk">Tanggal Masuk</label>
+                        <label for="tanggalMasuk">Date of Entry</label>
                         <input type="date" name="tanggalMasuk" class="form-control" value="{{ old('tanggalMasuk') }}" required>
 
                         @if ($errors->has('tanggalMasuk'))
@@ -77,7 +77,7 @@
                     @endif
 
 
-                    <button type="submit" class="btn btn-primary">Next</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
                 </form>
             </div>
         </div>

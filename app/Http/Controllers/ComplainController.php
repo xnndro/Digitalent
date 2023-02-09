@@ -40,7 +40,7 @@ class ComplainController extends Controller
             })->first();
         
         if($user_room == null){
-            return redirect()->route('complains.index')->with('error_message','You have no roommate and room');
+            return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Room Yet");
         }else
         {
             $user_class_id = Auth::user()->class_id;
@@ -56,7 +56,7 @@ class ComplainController extends Controller
         $laundry_count = $laundry->count();
 
         if($laundry_count == 0){
-            return redirect()->route('complains.index')->with('error_message','You have no laundry transaction');
+            return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Laundry Transaction");
         }else
         {
 
@@ -110,18 +110,21 @@ class ComplainController extends Controller
             $vendor_phone = User::where('name',$vendor_name)->first();
             $vendor_phone = $vendor_phone->phone;
 
-            $transaction_name = Laundries::where('id',$request->transaction)->first();
+            $transaction_name = Laundry::where('id',$request->transaction)->first();
             $transaction_name = $transaction_name->laundry_transaction_id;
 
+            $user_phone = Auth::user()->phone;
+            
+            
             $data = [
-                'phone' => $vendor_phone,
+                'toNumber' => $vendor_phone,
                 'message' => 'Order Laundry dengan kode Laundry' . $transaction_name . 'memiliki complain, silahkan cek aplikasi'
             ];
 
             $whatsapp->sendMessage($data);
             $user_phone = Auth::user()->phone;
             $data = [
-                'phone' => $user_phone,
+                'toNumber' => $user_phone,
                 'message' => 'Komplain order Laundry dengan kode Laundry' . $transaction_name . 'telah berhasil tercomplain, silahkan cek aplikasi untuk updatenya'
             ];
             $whatsapp->sendMessage($data);
@@ -131,7 +134,7 @@ class ComplainController extends Controller
             $whatsapp = new WhatsappController;
             $user_phone = Auth::user()->phone;
             $data = [
-                'phone' => $user_phone,
+                'toNumber' => $user_phone,
                 'message' => 'Komplain fasilitas dengan kode complain' . $complain->complain_id . 'telah berhasil tercomplain, silahkan cek aplikasi untuk updatenya'
             ];
             $whatsapp->sendMessage($data);
@@ -212,7 +215,7 @@ class ComplainController extends Controller
         $user_phone = $user_phone->phone;
         $whatsapp = new WhatsappController;
         $data = [
-            'phone' => $user_phone,
+            'toNumber' => $user_phone,
             'message' => 'Komplain kamu dengan kode complain '. $complain->complain_id . ' sedang diproses, silahkan cek aplikasi untuk updatenya'
         ];
         $whatsapp->sendMessage($data);
@@ -229,7 +232,7 @@ class ComplainController extends Controller
         $user_phone = $user_phone->phone;
         $whatsapp = new WhatsappController;
         $data = [
-            'phone' => $user_phone,
+            'toNumber' => $user_phone,
             'message' => 'Komplain kamu dengan kode complain '. $complain->complain_id . ' telah selesai diproses, Mohon maaf untuk ketidaknyamanannya'
         ];
         $whatsapp->sendMessage($data);

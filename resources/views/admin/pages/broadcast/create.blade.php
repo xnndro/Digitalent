@@ -13,7 +13,7 @@
                 <form action="{{ route('broadcast.store') }}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="title">Judul</label>
+                        <label for="title">Title</label>
                         <input type="text" name="title" id="title" class="form-control">
 
                         @if ($errors->has('title'))
@@ -21,7 +21,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label for="message">Pesan</label>
+                        <label for="message">Message</label>
                         <textarea name="message" id="content" cols="30" rows="10" class="form-control"></textarea>
                     </div>
 

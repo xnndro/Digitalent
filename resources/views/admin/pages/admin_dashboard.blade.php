@@ -14,7 +14,7 @@
                   </div>
                   <div>
                     <h1>{{$count_request}}</h1>
-                     <p class="mb-0">Total Roomates Request</p>
+                     <p class="mb-0">Roommates Request</p>
                   </div>
                </div>
             </div>
@@ -50,7 +50,7 @@
                   </div>
                   <div>
                     <h1>{{$count_laundry}}</h1>
-                     <p class="mb-0">Total Laundry to Vendor today</p>
+                     <p class="mb-0">Total Laundry</p>
                   </div>
                </div>
             </div>

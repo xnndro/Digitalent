@@ -29,13 +29,15 @@ data-client-key="{{config('midtrans.client_key')}}"></script>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="control-label col-sm-3 align-self-center mb-0" for="total_harga">Total Harga: </label>
+                    <label class="control-label col-sm-3 align-self-center mb-0" for="total_harga">Total Price: </label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="total_harga" value="{{$order->total_price}}" readonly>
+                        <input type="text" class="form-control" id="total_harga" value="Rp {{
+                            number_format($order->total_price, 0, ',', '.')
+                        }}" readonly>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="control-label col-sm-3 align-self-center mb-0" for="status">Status Pembayaran: </label>
+                    <label class="control-label col-sm-3 align-self-center mb-0" for="status">Payment Status: </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="status" value="{{$order->payment_status}}" readonly>
                     </div>
@@ -43,7 +45,7 @@ data-client-key="{{config('midtrans.client_key')}}"></script>
                 
                 <div class="form-group">
                     @if ($order->payment_status == 1)
-                    <button class="btn btn-primary" id="pay-button">Bayar Sekarang</button>
+                    <button class="btn btn-primary" id="pay-button">Pay Now</button>
                     @else
                     Pembayaran berhasil
                     @endif

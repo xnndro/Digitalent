@@ -8,7 +8,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="mb-2">Apa gitu nanti</h4>
+                        <h4 class="mb-2">Don't Just Keep It!</h4>
                         <!-- <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p> -->
                     </div>
                 </div>
@@ -31,10 +31,10 @@
                                                 <tr>
                                                     <td>
                                                         <h6 class="mb-0">{{ $item->model->name }}</h6>
-                                                        <p class="mb-0">
+                                                        {{-- <p class="mb-0">
                                                             Lorem ipsum dolor sit amet, consectetur
                                                             adipiscing elit.
-                                                        </p>
+                                                        </p> --}}
                                                     </td>
                                                     <td class="text-center">
                                                         <div class="input-group">

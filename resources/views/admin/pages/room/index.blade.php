@@ -4,13 +4,15 @@
 <div class="row">
     @if($count == 0)
         <div class="col-lg-12">
-            <div class="card-body">
-                <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
-                    <div class="text-center">
-                        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_vgumtcs7.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-                        <h5 class="mt-n2">No rooms available at this time</h5>
-                    </div>
-                </div> 
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
+                        <div class="text-center">
+                            <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_vgumtcs7.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                            <h5 class="mt-n2">No Rooms Available at This Time</h5>
+                        </div>
+                    </div> 
+                </div>
             </div>
         </div>
     @else
@@ -88,7 +90,13 @@
                                             <h6>{{ $r->lantai }}</h6>
                                         </td>
                                         <td>
-                                            <h6>{{$r->gender}}</h6>
+                                            <h6>
+                                                @if($r->gender == 'Pria')
+                                                    Male
+                                                @else
+                                                    Female
+                                                @endif
+                                            </h6>
                                         </td>
                                         <td>
                                             <a class="btn btn-warning" href="{{route('rooms.edit', $r->id)}}">Edit</a>

@@ -9,7 +9,7 @@
                     <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
                         <div class="text-center">
                             <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_b4jgnk3h.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-                            <h5 class="mt-3">You haven't added a laundry transaction yet</h5>
+                            <h5 class="mt-3">You Haven't Added a Laundry Transaction Yet</h5>
                         </div>
                     </div> 
                 </div>
@@ -82,7 +82,7 @@
                             <tr>
                                 <th>Laundry ID</th>
                                 <th>Name</th>
-                                <th>Tanggal Vendor Ambil</th>
+                                <th>Pick Up Date</th>
                                 <th>Vendor</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -120,15 +120,15 @@
                                 </td>
                                 <td>
                                     {{-- button to change status to done --}}
-                                    <a href="{{route('laundries.edit',$l->id)}}" class="btn btn-warning">Edit</a>
+                                    {{-- <a href="{{route('laundries.edit',$l->id)}}" class="btn btn-warning">Edit</a> --}}
                                     <a href="{{ route('laundries.done', $l->id) }}" class="btn btn-primary">Taked by User</a>
                                     {{-- <a href="{{ route('laundries.destroy', $l->id) }}" class="btn btn-danger">Delete</a> --}}
                                     {{-- form delete --}}
-                                    <form action="{{ route('laundries.destroy', $l->id) }}" method="post" class="d-inline">
+                                    {{-- <form action="{{ route('laundries.destroy', $l->id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                                    </form> --}}
                                 </td>
                             </tr>
                             @endforeach

@@ -32,11 +32,11 @@ return new class extends Migration
         });
 
         DB::table('users')->insert([
-            ['name' => 'Admin', 'email' => 'admin@digitalent.id','password' => Hash::make('admin'), 'role' => 'admin','class_id' => 'NULL','phone' => 'NULL'],
+            ['name' => 'Admin', 'email' => 'admin@digitalent.id','password' => Hash::make('admin'), 'role' => 'admin','class_id' => 'NULL','phone' => '088275169992'],
             ['name' => 'User', 'email' => 'user@digitalent.id','password' => Hash::make('user'), 'role' => 'user','class_id' => '1','phone' => '088275169992'],
-            ['name' => 'Femme', 'email' => 'femme@vendor.id', 'password' => Hash::make('femme'), 'role' => 'vendor','class_id' => 'NULL','phone' => 'NULL'],
-            ['name' => 'Bclean', 'email' => 'Bclean@vendor.id', 'password' => Hash::make('bclean'), 'role' => 'vendor','class_id' => 'NULL','phone' => 'NULL'],
-            ['name' => 'Mills', 'email' => 'mills@vendor.id', 'password' => Hash::make('mills'), 'role' => 'vendor','class_id' => 'NULL','phone' => 'NULL'],
+            ['name' => 'Femme', 'email' => 'femme@vendor.id', 'password' => Hash::make('femme'), 'role' => 'vendor','class_id' => 'NULL','phone' => '088275169992'],
+            ['name' => 'Bclean', 'email' => 'Bclean@vendor.id', 'password' => Hash::make('bclean'), 'role' => 'vendor','class_id' => 'NULL','phone' => '088275169992'],
+            ['name' => 'Mills', 'email' => 'mills@vendor.id', 'password' => Hash::make('mills'), 'role' => 'vendor','class_id' => 'NULL','phone' => '088275169992'],
         ]);
     }
 

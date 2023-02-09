@@ -14,7 +14,7 @@
             <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
                 <div class="text-center">
                     <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_b4jgnk3h.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-                    <h5 class="mt-3">You do not have Laundry Transactions</h5>
+                    <h5 class="mt-3">You Don't Have Laundry Transactions</h5>
                 </div>
             </div> 
             @else
@@ -23,9 +23,10 @@
                     <thead>
                         <tr>
                             <th>Transaction ID</th>
-                            <th>Date Picked Up</th>
-                            <th>Date Antar</th>
-                            <th>Total pcs</th>
+                            <th>Pick Up Date</th>
+                            <th>Delivery Date</th>
+                            <th>Total Pieces</th>
+                            <th>Total Weight</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -38,6 +39,7 @@
                             <td>{{$l->tanggalVendor}}</td>
                             <td>{{$l->tanggalAmbil}}</td>
                             <td>{{$l->total_pcs}}</td>
+                            <td>{{$l->total_kg}}</td>
                             <td>
                                 @if ($l->status == 'Inputed')
                                     <span class="badge bg-warning">Inputed</span>

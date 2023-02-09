@@ -82,7 +82,7 @@
     <div class="col-lg-4">
       <div class="card">
          <div class="card-body">
-            <div class="text-center">Total User</div>
+            <div class="text-center">Total Customer</div>
             <div class="d-flex align-items-center justify-content-between mt-3">
                <div>
                   <h3 class="counter">{{$count_user}} person</h3>
@@ -109,7 +109,7 @@
             <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
                <div class="text-center">
                   <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_k10ku8at.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-                   <h5 class="mt-3">You do not have Incoming Transactions</h5>
+                   <h5 class="mt-3">You Don't Have Incoming Transactions</h5>
                </div>
            </div> 
          </div>

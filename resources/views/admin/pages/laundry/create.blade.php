@@ -13,7 +13,7 @@
                 <form action="{{ route('laundries.bridge') }}" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="class">Kelas</label>
+                        <label for="class">Class</label>
                         <select name="class" id="class" class="form-control" required>
                             @if($count == 0)
                                 <option value="Gada kelas">No Class Added</option>

@@ -71,7 +71,7 @@ class StoragesController extends Controller
         })->where('status', 'accepted')->first();
         
         if (!$roommate) {
-            return redirect()->route('storages.index')->withErrorMessage('Anda belum memiliki kamar, silahkan hubungi admin');
+            return redirect()->route('storages.index')->withErrorMessage("You Don't Have a Room Right Now! Request a Roommate First!");
         }else
         {
             $room = Room::find($roommate->room_id);

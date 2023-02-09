@@ -56,7 +56,7 @@
                                     
                                     {{$laundry_percentage}}
                                 </span>
-                                <span>Data from Prevorius month </span>
+                                <span>Data from Previous Month </span>
                             </div>
                         @else
                             @if($laundry_percentage < 0)
@@ -108,7 +108,7 @@
                                 <span>
                                     {{$shopping_percentage}}
                                 </span>
-                                <span>Data from Prevorius month</span>
+                                <span>Data from Previous Month</span>
                             </div>
                         @else
                             @if($shopping_percentage < 0)
@@ -187,7 +187,7 @@
                     <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
                         <div class="text-center">
                             <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_QGHiAw.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-                            <h5 class="mt-n3">You dont have any transaction history yet</h5>
+                            <h5 class="mt-n3">You Don't Have any Transaction History yet</h5>
                         </div>
                     </div>
                 </div>

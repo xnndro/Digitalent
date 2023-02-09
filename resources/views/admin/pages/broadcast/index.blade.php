@@ -36,19 +36,19 @@
                         </div>
                         <div class="d-flex flex-wrap">
                             <div class="media-support-info mt-2">
-                                <p class="mb-1">Judul Broadcast: </p>
+                                <p class="mb-1">Broadcast Title: </p>
                                 <h5 class="mb-2 d-inline-block">{{$b->title}}</h5>
                             </div>
                         </div>
                         <div class="d-flex flex-wrap">
                             <div class="media-support-info mt-2">
-                                <p class="mb-1">Tanggal: </p>
+                                <p class="mb-1">Date: </p>
                                 <p class="mb-0 text-primary fs-6">{{$b->created_at}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="mt-3">
-                        <p class="mb-1">Pesan: </p>
+                        <p class="mb-1">Message: </p>
                         <p>{{$b->message}}</p>
                     </div>
                 </div>

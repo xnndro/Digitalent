@@ -18,6 +18,21 @@
         </div>
     @else
         @foreach($complains as $c)
+            <div class="modal fade" id="gambar" aria-hidden="true" aria-labelledby="gambar" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="gambar">Picture</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{asset(
+                            'storage/uploads/complain/'.$c->fotoBarang 
+                            )}}" class="img-fluid" alt="...">
+                    </div>
+                </div>
+                </div>
+            </div>
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
@@ -54,6 +69,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-end">
+                        <button class="btn btn-soft-warning" data-bs-target="#gambar" data-bs-toggle="modal">See Picture</button>
                         @if($c->status == 'pending')
                             <a href="{{route('complains.adminProceed', $c->id)}}" class="btn btn-primary">Proceed</a>
                         @elseif($c->status == 'proceed')
@@ -62,6 +78,7 @@
                     </div>
                 </div>
             </div>
+            
         @endforeach
 
 
