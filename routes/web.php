@@ -46,7 +46,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/history/delhistory/{id}', [App\Http\Controllers\HistoryController::class, 'delHistory'])->name('history.del');
     Route::post('/history/renamehistory/{id}', [App\Http\Controllers\HistoryController::class, 'renameHistory'])->name('history.confirmRename');
     // manage products
-    Route::get('/shop/manage', [App\Http\Controllers\ShopController::class, 'admin_index'])->name('shop.manage');
 
     // laundry history for user
     Route::get('/user/laundry', [App\Http\Controllers\UserController::class, 'laundry_status'])->name('user.laundry_status');
@@ -126,4 +125,27 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/complains/show', [App\Http\Controllers\ComplainController::class, 'show'])->name('complains.show');
     Route::get('/complains/proceed/{id}', [App\Http\Controllers\ComplainController::class, 'adminProceed'])->name('complains.adminProceed');
     Route::get('/complains/finish/{id}', [App\Http\Controllers\ComplainController::class, 'adminFinish'])->name('complains.adminFinish');
+
+    //class
+    Route::get('/classes', [App\Http\Controllers\ClassController::class, 'index'])->name('class.index');
+    Route::get('/classes/create', [App\Http\Controllers\ClassController::class, 'create'])->name('class.create');
+    Route::post('/classes', [App\Http\Controllers\ClassController::class, 'store'])->name('class.store');
+    Route::get('/classes/{id}/edit', [App\Http\Controllers\ClassController::class, 'edit'])->name('class.edit');
+    Route::put('/classes/{id}', [App\Http\Controllers\ClassController::class, 'update'])->name('class.update');
+    Route::get('/classes/{id}/status', [App\Http\Controllers\ClassController::class, 'status'])->name('class.status');
+    Route::delete('/classes/{id}', [App\Http\Controllers\ClassController::class, 'destroy'])->name('class.destroy');
+
+    //products
+    Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/create', [App\Http\Controllers\ProductController::class, 'create'])->name('products.create');
+    Route::post('/products', [App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
+    Route::get('/products/{id}/edit', [App\Http\Controllers\ProductController::class, 'edit'])->name('products.edit');
+    Route::put('/products/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('products.update');
+    Route::delete('/products/{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('products.destroy');
+
+
+    Route::get('/admin/financials', [App\Http\Controllers\AdminController::class, 'financials'])->name('admin.financials');
+    Route::get('/vendor/financials', [App\Http\Controllers\LaundryVendorController::class, 'financials'])->name('vendor.financials');
+
+
 });

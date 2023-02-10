@@ -235,6 +235,75 @@ class TaskList extends Command
                 ];
                 $wa = new WhatsAppController();
                 $wa->sendMessage($data);
+
+                $vendor = User::where('role', 'vendor')->get();
+                foreach($vendor as $v)
+                {
+                    // get laundry transaction by vendor
+                    $laundry = DB::table('laundries')
+                    ->whereMonth('created_at', $bulanLalu)
+                    ->where('laundry_vendor_id', $v->id)
+                    ->get();
+
+                    $total_laundry = 0;
+                    $total_bags = 0;
+                    foreach($laundry as $l)
+                    {
+                        $total_laundry += $l->total_price;
+                        $total_bags += 1;
+                    }
+
+                    $financials = new Financial();
+                    $financials->name = $bulanLalu;
+                    $financials->user_id = $v->id;  
+                    $financials->transaction_amount = $total_laundry;
+                    $financials->total_transaction = $total_bags;
+                    $financials->save();
+
+                    $phone = $v->phone;
+                    $name = $v->name;
+
+                    $data = [
+                        'toNumber' => $phone,
+                        'message' => 'Haloww '.$name.' gimana kabarnya nih?'. `\n`.'Riwayat Finansial bulan lalu kamu sudah ada di MyFinancial nich, yuk di ceks',
+                    ];
+
+                    $wa->sendMessage($data);
+                }
+
+                $admin = User::where('role', 'admin')->get();
+                foreach($admin as $a)
+                {
+                    $order = DB::table('orders')
+                    ->whereMonth('created_at', $bulanLalu)
+                    ->where('payment_status', '2')
+                    ->get();
+
+                    $total_shopping = 0;
+                    $total_orders = 0;
+                    foreach($order as $o)
+                    {
+                        $total_shopping += $o->total_price;
+                        $total_orders += 1;
+                    }
+
+                    $financials = new Financial();
+                    $financials->name = $bulanLalu;
+                    $financials->user_id = $a->id;
+                    $financials->transaction_amount = $total_shopping;
+                    $financials->total_transaction = $total_orders;
+                    $financials->save();
+
+                    $phone = $a->phone;
+                    $name = $a->name;
+
+                    $data = [
+                        'toNumber' => $phone,
+                        'message' => 'Haloww '.$name.' gimana kabarnya nih?'. `\n`.'Riwayat Finansial bulan lalu sudah ada di MyFinancial nich, yuk di ceks',
+                    ];
+
+                    $wa->sendMessage($data);
+                }
             }  
         }
     }

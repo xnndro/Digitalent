@@ -7,6 +7,8 @@ use App\Models\Roommate;
 use App\Models\Laundry;
 use App\Models\Forum;
 use App\Models\Order;
+use App\Models\Financial;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -54,5 +56,13 @@ class AdminController extends Controller
         
     
         return view('admin.pages.admin_dashboard',compact('count_request','total_price','count_laundry','femme','bclean','mills','count_forums','forums'));
+    }
+
+    public function financials()
+    {
+        // financial history
+        $financials = Financial::where('user_id',Auth::user()->id)->get();
+        $count = $financials->count();
+        return view('admin.pages.financials',compact('financials','count'));
     }
 }

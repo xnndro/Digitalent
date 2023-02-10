@@ -19,7 +19,8 @@ class ShopController extends Controller
 
     public function index(){
         $products = Product::all();
-        return view('user.pages.shopping.shop', ['products' => $products]);
+        $count = $products->count();
+        return view('user.pages.shopping.shop', compact('products', 'count'));
     }
 
     public function admin_index(){

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->float('transaction_amount');
+            $table->integer('total_transaction')->nullable()->default(0);
 
             $table->timestamps();
         });

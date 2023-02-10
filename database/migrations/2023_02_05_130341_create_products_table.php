@@ -17,18 +17,13 @@ return new class extends Migration
 
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('fotoBarang');
             $table->string('name');
             $table->float('price');
             $table->integer('stock');
 
             $table->timestamps();
         });
-
-        DB::table('products')->insert([
-            'name' => 'Beng Beng',
-            'price' => 2000,
-            'stock' => 100,
-        ]);
     }
 
     /**

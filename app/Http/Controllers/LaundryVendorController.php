@@ -8,6 +8,9 @@ use App\Models\LaundryType;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Alert;
+use App\Models\LaundryVendor;
+use App\Models\Financial;
+use Illuminate\Support\Facades\Auth;
 
 
 class LaundryVendorController extends Controller
@@ -208,5 +211,15 @@ class LaundryVendorController extends Controller
         $laundry->status = 'Delivered';
         $laundry->save();
         return redirect()->route('laundry_vendor.transactionforadmin')->withSuccessMessage('Laundry has been delivered');
+    }
+
+    public function financials()
+    {
+        $user_id = Auth::user()->id;
+
+        $financials = Financial::where('user_id', $user_id)->get();
+        $count = $financials->count();
+
+        return view('adminVendor.pages.financials', compact('financials', 'count'));
     }
 }

@@ -1,6 +1,20 @@
 @extends('user.layouts.default')
 
 @section('content')
+@if($count == 0)
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
+                <div class="text-center">
+                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_ttnc5lln.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                    <h5 class="mt-3">You Don't Have any Shopping Transactions</h5>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+@else
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -156,4 +170,5 @@
     @endfor
       
 </div>
+@endif
 @endsection
