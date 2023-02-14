@@ -19,17 +19,18 @@
                         </div>
                     </div> 
                 @else
-                <div class="mt-4 table-responsive">
-                    <table id="basic-table" class="table mb-0 table-striped" role="grid">
-                        <thead>
-                            <tr>
-                                <th>Laundry ID</th>
-                                <th>Laundry Vendor</th>
-                                <th>Date in</th>
-                                <th>Date take</th>
-                                <th>Price</th>
-                                <th>Status</th>
-                            </tr>
+
+                <div class="table-responsive">
+                    <table id="user-list-table" class="table table-striped" role="grid" data-toggle="data-table">
+                    <thead>
+                        <tr class="ligth">
+                            <th>Laundry ID</th>
+                            <th>Laundry Vendor</th>
+                            <th>Date in</th>
+                            <th>Date take</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
                         </thead>
                         <tbody>
                             @foreach ($laundry as $item)
@@ -60,7 +61,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                    </div>
                 </div>
+
+              
                 @endif
 
             </div>
