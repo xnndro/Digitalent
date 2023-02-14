@@ -64,6 +64,7 @@
                                                             </div>
                                                             <div class="col-lg-2">
                                                                 <input
+                                                                    onchange="changeQty('{{ $item->rowId }}', this.value)"
                                                                     type="text"
                                                                     name="quant[1]"
                                                                     class="form-control input-number"
@@ -117,3 +118,12 @@
     </div>
 </div>
 @endsection
+
+<script>
+    function changeQty(rowId, qty){
+        url = "/cart/changeqty/" + rowId + "/" + qty
+        $.get(url, {} ,function(data){
+            location.reload();
+        });
+    }
+</script>

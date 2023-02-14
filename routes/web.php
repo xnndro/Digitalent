@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
     Route::get('/cart/incqty/{rowId}', [App\Http\Controllers\CartController::class, 'incQty'])->name('incqty');
     Route::get('/cart/decqty/{rowId}', [App\Http\Controllers\CartController::class, 'decQty'])->name('decqty');
+    Route::get('/cart/changeqty/{rowId}/{qty}', [App\Http\Controllers\CartController::class, 'changeQty'])->name('changeqty');
     Route::get('/cart/delitm/{rowId}', [App\Http\Controllers\CartController::class, 'delItem'])->name('delitm');
     Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
     Route::get('/checkout/{id}', [App\Http\Controllers\CartController::class, 'toPay'])->name('toPay');

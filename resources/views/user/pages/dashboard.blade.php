@@ -122,7 +122,7 @@
                                         </td>
                                         <td>
                                             {{-- <a href="{{route('user.order.show', $order_done->id)}}" class="btn btn-primary btn-sm">Detail</a> --}}
-                                            <a href="" class="btn btn-primary btn-sm">Detail</a>
+                                            <a href="{{ route('history') }}" class="btn btn-primary btn-sm">Detail</a>
                                         </td>
                                     </tr>
                                 @endforeach
