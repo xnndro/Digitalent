@@ -49,15 +49,18 @@ class TaskList extends Command
 
             $users = User::where('role', 'user')->get();
             foreach($users as $user_data) {
-                $user_phone = $user_data->phone;
-
-                $datas = [
-                    'toNumber' => $user_phone,
-                    'message' => 'Judul: '.$title . " \n " .'Pesan: ' . $message,
-                ];
-
-                $wa = new WhatsAppController();
-                $wa->sendMessage($datas);
+               if($user_data->phone != null)
+               {
+                    $user_phone = $user_data->phone;
+     
+                    $datas = [
+                        'toNumber' => $user_phone,
+                        'message' => 'Judul: '.$title . " \n " .'Pesan: ' . $message,
+                    ];
+     
+                    $wa = new WhatsAppController();
+                    $wa->sendMessage($datas);
+               }
             }
             $data = BroadcastMessage::find($data_id);
             $data->status = 'broadcasted';

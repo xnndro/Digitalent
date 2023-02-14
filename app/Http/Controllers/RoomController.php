@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
+use App\Models\Roommate;
+use App\Models\User;
 use Alert;
 
 class RoomController extends Controller
@@ -51,9 +53,16 @@ class RoomController extends Controller
 
     public function history()
     {
-        $rooms = Room::where('status', 'Not Available')->get();
-        $count = $rooms->count();
-        return view('admin.pages.room.history', compact('rooms','count'));
+        $roommates = Roommate::join('users as u1', 'roommates.user_id', '=', 'u1.id')
+            ->join('users as u2', 'roommates.requested_user_id', '=', 'u2.id')
+            ->join('classes as c', 'roommates.class_id', '=', 'c.id')
+            ->join('rooms as r', 'roommates.room_id', '=', 'r.id')
+            ->select('roommates.*', 'u1.name as user_name', 'u2.name as requested_user_name', 'c.namaKelas as class_name','u1.gender as gender', 'r.name as room_name','r.lantai as lantai')
+            ->where('roommates.status', 'accepted')
+            ->get();
+
+        $count = $roommates->count();
+        return view('admin.pages.room.history', compact('roommates', 'count'));
     }
 
     public function edit($id)
@@ -92,5 +101,27 @@ class RoomController extends Controller
         $room->delete();
 
         return redirect()->route('rooms.index')->withSuccessMessage('Room Deleted Successfully');
+    }
+
+    public function delete($id)
+    {
+        $roommates = Roommate::find($id);
+        $room_id = $roommates->room_id;
+
+        $room = Room::where('id', $room_id)->first();
+        $room->status = 'Available';
+
+        $user_id = $roommates->user_id;
+        $user = User::where('id', $user_id)->first();
+        $user->roommate_status = null;
+        $user->save();
+
+        $requested_user_id = $roommates->requested_user_id;
+        $requested_user = User::where('id', $requested_user_id)->first();
+        $requested_user->roommate_status = null;
+        $requested_user->save();
+
+        $roommates->delete();
+        return redirect()->route('rooms.history')->withSuccessMessage('Room Deleted Successfully');
     }
 }

@@ -107,6 +107,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/rooms/{id}/edit', [App\Http\Controllers\RoomController::class, 'edit'])->name('rooms.edit');
     Route::put('/rooms/{id}', [App\Http\Controllers\RoomController::class, 'update'])->name('rooms.update');
     Route::delete('/rooms/{id}', [App\Http\Controllers\RoomController::class, 'destroy'])->name('rooms.destroy');
+    Route::delete('/rooms/{id}/delete', [App\Http\Controllers\RoomController::class, 'delete'])->name('rooms.delete');
 
     //broadcast
     Route::get('/broadcast',[App\Http\Controllers\BroadcastController::class, 'index'])->name('broadcast.index');

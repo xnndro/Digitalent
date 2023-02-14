@@ -37,14 +37,14 @@
    $(document).on('click', '.btn-danger', function (e) {
    e.preventDefault();
    Swal.fire({
-       title: 'Apakah Anda yakin?',
-       text: "Data yang dihapus tidak dapat dikembalikan!",
-       icon: 'warning',
-       showCancelButton: true,
-       confirmButtonColor: '#3085d6',
-       cancelButtonColor: '#d33',
-       confirmButtonText: 'Ya, hapus saja!',
-       cancelButtonText: 'Batal'
+        title: 'Are You Sure??',
+        text: "Deleted Data Can't Be Recovered!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Sure!',
+        cancelButtonText: 'Cancel'
    },function isConfirm(){
        if (isConfirm) {
            Swal.fire(
