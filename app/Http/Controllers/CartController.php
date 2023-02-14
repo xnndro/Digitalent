@@ -35,6 +35,13 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
+    public function changeQty($rowId, $qty){
+        $product = Cart::get($rowId);
+        Cart::update($rowId, $qty);
+        Cart::store(Auth::user()->name);
+        return redirect()->route('cart');
+    }
+
     public function delItem($rowId){
         Cart::remove($rowId);
         Cart::store(Auth::user()->name);

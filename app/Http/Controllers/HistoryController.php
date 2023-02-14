@@ -41,4 +41,5 @@ class HistoryController extends Controller
                 ->update(['invoice_name' => $request->get('new_name')]);
         return redirect()->route('history');
     }
+
 }
