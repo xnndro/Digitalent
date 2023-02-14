@@ -84,6 +84,7 @@ class UserController extends Controller
         $laundry = Laundry::join('laundry_vendors', 'laundry_vendors.id', '=', 'laundries.laundry_vendor_id')
             ->select('laundries.*', 'laundry_vendors.name as vendor_name')
             ->where('laundries.user_id', Auth::user()->id)
+            ->orderBy('laundries.tanggalAmbil', 'desc')
             ->get();
         $count = Laundry::where('user_id', Auth::user()->id)->count();
         // $count= 0;
@@ -120,13 +121,10 @@ class UserController extends Controller
         $laundry_this_month_total = $laundry_this_month->sum('total_price');
         $laundry_last_month_total = $laundry_last_month->sum('total_price');
 
-        $total_transaction = Order::where('user_id', $user_id)
-        ->where('payment_status', '2')
-        ->sum('total_price');
-
-        $total_data_transaction = Order::where('user_id', $user_id)
-        ->where('payment_status', '2')
-        ->count();
+        $total_transaction = $shopping_this_month_total + $laundry_this_month_total;
+        $laundry_total = $laundry_this_month->count();
+        $shopping_total = $shopping_this_month->count();
+        $total_data_transaction = $laundry_total + $shopping_total;
 
 
         if($shopping_last_month_total == 0){

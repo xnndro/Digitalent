@@ -21,12 +21,19 @@ class RoomController extends Controller
         if(session('success_message'))
         {
             Alert::success('Success', session('success_message'));
+        }else if(session('error_message'))
+        {
+            Alert::error('Error', session('error_message'));
         }
         return view('admin.pages.room.index',compact('room', 'count','room_not','count_not'));
     }
 
     public function create()
     {
+        if(session('error_message'))
+        {
+            Alert::error('Error', session('error_message'));
+        }
         return view('admin.pages.room.create');
     }
 

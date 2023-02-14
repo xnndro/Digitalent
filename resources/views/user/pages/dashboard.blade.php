@@ -115,7 +115,7 @@
                             <tbody>
                                 @foreach($orders_done as $order_done)
                                     <tr>
-                                        <td>TRX-{{$order_done->number}}</td>
+                                        <td>{{$order_done->invoice_name}}</td>
                                         <td>{{$order_done->created_at}}</td>
                                         <td>
                                             <span class="badge bg-success">Success</span>

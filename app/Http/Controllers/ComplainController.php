@@ -42,18 +42,21 @@ class ComplainController extends Controller
         $user_room = Roommate::where(function($query) {
             $query->where('user_id', Auth::user()->id)
             ->orWhere('requested_user_id', Auth::user()->id);
-            })->first();
+            })
+            ->get();
         
-        if($user_room->status == null || $user_room->status = 'pending'){
-            return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Room Yet");
-        }else
-        {
-            $user_class_id = Auth::user()->class_id;
-            $classes = Classes::all();
-            $class_name = Classes::where('id',$user_class_id)->first();
-            $class_name = $class_name->namaKelas;
+        foreach($user_room as $room){
+            if($room->status != 'accepted'){
+                return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Room Yet");
+            }else
+            {
+                $user_class_id = Auth::user()->class_id;
+                $classes = Classes::all();
+                $class_name = Classes::where('id',$user_class_id)->first();
+                $class_name = $class_name->namaKelas;
+            }
+            return view('user.pages.complain.create',compact('class_name','user_room'));
         }
-        return view('user.pages.complain.create',compact('class_name','user_room'));
     }
     public function laundry()
     {

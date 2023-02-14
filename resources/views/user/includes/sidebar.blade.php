@@ -29,7 +29,7 @@
             <!-- Sidebar Menu Start -->
             <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
                 <li class="nav-item static-item">
-                    <a class="nav-link static-item disabled" href="{{route('dashboard')}}" tabindex="-1">
+                    <a class="nav-link static-item disabled" href="{{route('user.index')}}" tabindex="-1">
                         <span class="default-icon">Home</span>
                         <span class="mini-icon">-</span>
                     </a>
@@ -37,9 +37,9 @@
                 <li class="nav-item">
                     <a class="
                     nav-link {{
-                        Route::is('dashboard') ? 'active' : ''
+                        Route::is('user.index') ? 'active' : ''
                     }}
-                    " aria-current="page" href="{{route('dashboard')}}">
+                    " aria-current="page" href="{{route('user.index')}}">
                         <i class="icon">
                             <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4"

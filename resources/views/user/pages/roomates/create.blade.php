@@ -97,7 +97,7 @@
                                     <option value="Bisa keduanya">Bisa keduanya</option>
                                 </select>
                             </div>
-                            <div class="from-group">
+                            <div class="form-group">
                                 <label for="belajar">Bagaimana gaya belajar Anda?</label>
                                 <select name="belajar" class="form-control" required>
                                     <option value="">Pilih Gaya Belajar</option>
@@ -105,6 +105,23 @@
                                     <option value="Auditori">Auditori</option>
                                     <option value="Kinestetik">Kinestetik</option>
                                     <option value="Analitik">Analitik</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="suhu">Berapa Range suhu AC yang biasa anda gunakan?</label>
+                                <select name="suhu" class="form-control" required>
+                                    <option value="">Pilih Range</option>
+                                    <option value="Dingin">Dingin (17-22 Derajat Celcius)</option>
+                                    <option value="Sedang">Sedang (23-27 Derajat Celcius)</option>
+                                    <option value="Panas">Panas (28-30 Derajat Celcius)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="agama_sama">Apakah agama anda harus sama dengan teman sekamar anda?</label>
+                                <select name="agama_sama" class="form-control" required>
+                                    <option value="">Pilih Salah Satu</option>
+                                    <option value="Ya">Ya</option>
+                                    <option value="Tidak">Tidak</option>
                                 </select>
                             </div>
                         </div>

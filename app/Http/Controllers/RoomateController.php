@@ -84,6 +84,8 @@ class RoomateController extends Controller
                 $output[0] = explode(',', $output[0]);
                 $result = $output[0];
 
+                echo $output[1];
+
                 foreach($result as $key => $value)
                 {
                     $user = User::where('name', $value)->first();
@@ -167,6 +169,8 @@ class RoomateController extends Controller
                 'Apakah Anda tertarik pada bidang aesthetic (aktivitas yang berkaitan dengan keindahan)?' => $request->get('aesthetic'),
                 'Apakah Anda tertarik pada budaya Korea (drama, bahasa, lagu , public figure, dll)?' => $request->get('korean'),
                 'Apakah Anda tertarik pada budaya Jepang (film, komik, bahasa, lagu , public figure, dll)?' => $request->get('japan'),
+                'Berapa Range suhu AC yang biasa anda gunakan?' => $request->get('suhu'),
+                'Apakah agama anda harus sama dengan teman sekamar anda?' => $request->get('agama_sama'),
             ]
         ]);
 
@@ -332,6 +336,10 @@ class RoomateController extends Controller
 
         $room = Room::where('gender', $gender)->where('status', '=','Available')->get();
         $count = $room->count();
+        if($count == 0)
+        {
+            return redirect()->route('rooms.create')->withErrorMessage('No room available, please create a room first');
+        }
 
         // dd($room);   
 
