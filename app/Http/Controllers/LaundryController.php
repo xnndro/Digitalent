@@ -211,8 +211,16 @@ class LaundryController extends Controller
         
         $tanggalVendor = '';
         $tanggalMasuk = Carbon::parse($request->get('tanggalMasuk'))->format('l');
+        $jamMasuk = Carbon::now()->format('H:i:s');
         if($tanggalMasuk == 'Monday' || $tanggalMasuk == 'Wednesday' || $tanggalMasuk == 'Friday'){
-            $tanggalVendor = $request->get('tanggalMasuk');
+            if($jamMasuk < '08:00:00'){
+                $tanggalVendor = $request->get('tanggalMasuk');
+            }else{
+                if($tanggalMasuk == 'Monday' || $tanggalMasuk == 'Wednesday')
+                    $tanggalVendor = Carbon::parse($request->get('tanggalMasuk'))->addDays(2);
+                else
+                    $tanggalVendor = Carbon::parse($request->get('tanggalMasuk'))->addDays(3);
+            }
         }else{
             if($tanggalMasuk == 'Tuesday' || $tanggalMasuk == 'Thursday' || $tanggalMasuk == 'Sunday'){
                 $tanggalVendor = Carbon::parse($request->get('tanggalMasuk'))->addDays(1);
@@ -235,6 +243,7 @@ class LaundryController extends Controller
             $id = 'LDR' . sprintf('%04s', $id);
         }
 
+        $tanggalAmbil = (new Carbon($tanggalVendor))->addDays(2);
         
         $request->merge([
             'laundry_transaction_id' => $id,
@@ -242,7 +251,8 @@ class LaundryController extends Controller
             'laundry_vendor_id' => $request->get('vendor'),
             'laundry_type_id' => $request->get('type_id'),
             'tanggalVendor' => $tanggalVendor,
-            'tanggalAmbil' => (new Carbon($tanggalVendor))->addDays(2),
+            'tanggalAmbil' => $tanggalAmbil,
+            'tanggalMaxComplain' => (new Carbon($tanggalAmbil))->addDays(2),
             'status' => 'Inputed',
             'total_price' => $total_price,
         ]);
@@ -344,9 +354,17 @@ class LaundryController extends Controller
 
         // declare the date of vendor as date of input
         $tanggalVendor = '';
+        $jamMasuk = Carbon::now()->format('H:i:s');
         $tanggalMasuk = Carbon::parse($request->get('tanggalMasuk'))->format('l');
         if($tanggalMasuk == 'Monday' || $tanggalMasuk == 'Wednesday' || $tanggalMasuk == 'Friday'){
-            $tanggalVendor = $request->get('tanggalMasuk');
+            if($jamMasuk < '08:00:00'){
+                $tanggalVendor = $request->get('tanggalMasuk');
+            }else{
+                if($tanggalMasuk == 'Monday' || $tanggalMasuk == 'Wednesday')
+                    $tanggalVendor = Carbon::parse($request->get('tanggalMasuk'))->addDays(2);
+                else
+                    $tanggalVendor = Carbon::parse($request->get('tanggalMasuk'))->addDays(3);
+            }
         }else{
             if($tanggalMasuk == 'Tuesday' || $tanggalMasuk == 'Thursday' || $tanggalMasuk == 'Sunday'){
                 $tanggalVendor = Carbon::parse($request->get('tanggalMasuk'))->addDays(1);
@@ -355,6 +373,7 @@ class LaundryController extends Controller
             }
         }
 
+        $tanggalAmbil = (new Carbon($tanggalVendor))->addDays(2);
         $laundry = Laundry::find($id);
         $request->merge([
             'user_id' => $request->get('nama'),
@@ -362,7 +381,8 @@ class LaundryController extends Controller
             'laundry_vendor_id' => $request->get('vendor'),
             'laundry_type_id' => $request->get('type'),
             'tanggalVendor' => $tanggalVendor,
-            'tanggalAmbil' => (new Carbon($tanggalVendor))->addDays(2),
+            'tanggalAmbil' => $tanggalAmbil,
+            'tanggalMaxComplain' => (new Carbon($tanggalAmbil))->addDays(2),
             'status' => 'Inputed',
             'total_price' => $total_price,
         ]);

@@ -318,11 +318,12 @@ class RoomateController extends Controller
         $roommates = Roommate::find($id);
         $room = Room::all();
         $roommates = Roommate::join('users as u1', 'roommates.user_id', '=', 'u1.id')
-                        ->join('users as u2', 'roommates.requested_user_id', '=', 'u2.id')
-                        ->join('classes as c', 'roommates.class_id', '=', 'c.id')
-                        ->select('roommates.*', 'u1.name as user_name', 'u2.name as requested_user_name', 'c.namaKelas as class_name','u1.gender as gender')
-                        ->where('roommates.status', 'pending')
-                        ->get();
+            ->join('users as u2', 'roommates.requested_user_id', '=', 'u2.id')
+            ->join('classes as c', 'roommates.class_id', '=', 'c.id')
+            ->select('roommates.*', 'u1.name as user_name', 'u2.name as requested_user_name', 'c.namaKelas as class_name','u1.gender as gender')
+            ->where('roommates.id', $id)
+            ->get();
+        
         $gender = '';
         foreach ($roommates as $roommate) {
             $gender = User::find($roommate->user_id)->gender;
@@ -403,6 +404,8 @@ class RoomateController extends Controller
         $user_id_phone = $roommate->user_id;
         $user = User::find($user_id_phone);
         $user_phone = $user->phone;
+        $user->roommate_status = ' ';
+        $user->save();
 
         $user_name = $user->name;
         $requested_user_name = User::find($roommate->requested_user_id)->name;
@@ -419,6 +422,8 @@ class RoomateController extends Controller
         $requested_user_id_phone = $roommate->requested_user_id;
         $requested_user = User::find($requested_user_id_phone);
         $requested_user_phone = $requested_user->phone;
+        $requested_user->roommate_status = ' ';
+        $requested_user->save();
 
         //send to wa
         $data = [

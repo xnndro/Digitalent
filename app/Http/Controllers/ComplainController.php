@@ -22,7 +22,12 @@ class ComplainController extends Controller
     {
         $complains = Complain::where('user_id',auth()->user()->id)->get();
         $complains_count = $complains->count();
-
+        $complains = $complains->map(function($complain){
+            $room = Room::where('id',$complain->user_room)->first();
+            $complain->room_name = $room->name;
+            return $complain;
+            // dd($complain->user_room);
+        });
         if(session('success_message')){
             Alert::success('Success', session('success_message'));
         }else if(session('error_message'))
@@ -39,7 +44,7 @@ class ComplainController extends Controller
             ->orWhere('requested_user_id', Auth::user()->id);
             })->first();
         
-        if($user_room == null){
+        if($user_room->status == null || $user_room->status = 'pending'){
             return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Room Yet");
         }else
         {
@@ -61,9 +66,10 @@ class ComplainController extends Controller
         {
 
             $laundries = Laundry::where('user_id',Auth::user()->id)
-            ->whereBetween('created_at', [Carbon::now()->subWeek()->startOfWeek(), Carbon::now()->endOfWeek()])
-            ->where('status','=','Done')->get();
+            ->where('tanggalMaxComplain', '>=', Carbon::now()->format('Y-m-d'))
+            ->where('status','Done')->get();
             
+            // dd($laundries);
             return view('user.pages.complain.laundrycreate',compact('laundries'));
         }
     }
@@ -164,6 +170,7 @@ class ComplainController extends Controller
                 $room = Room::where('id',$complain->user_room)->first();
                 $complain->room_name = $room->name;
                 return $complain;
+                // dd($complain->user_room);
             });
             $count= $complains->count();
             

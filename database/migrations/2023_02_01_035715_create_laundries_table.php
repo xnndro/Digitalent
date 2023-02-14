@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('tanggalMasuk');
             $table->date('tanggalVendor');
             $table->date('tanggalAmbil');
+            $table->date('tanggalMaxComplain');
             $table->string('status');
             $table->string('laundry_type_id');
             $table->float('total_price');

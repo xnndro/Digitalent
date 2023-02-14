@@ -1,7 +1,7 @@
 @extends('user.layouts.default')
 
 @section('content')
-@if($count == 0)
+@if(count($histories) == 0)
 <div class="row">
     <div class="card">
         <div class="card-body">

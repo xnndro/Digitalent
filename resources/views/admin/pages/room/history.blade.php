@@ -8,7 +8,7 @@
                 <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
                     <div class="flex-wrap card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="mb-2 card-title">Room History</h4>
+                            <h4 class="mb-2 card-title">Occupied Room</h4>
                         </div>
                     
                     </div>

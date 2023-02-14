@@ -49,7 +49,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="phone">WhatsApp</label>
-                                <input name="phone" type="text" class="form-control" id="phone" placeholder="Masukkan no.WA yang aktif yak" required>
+                                <input name="phone" type="text" class="form-control" id="phone" placeholder="Masukkan no.WA yang aktif yak (08xxx)" required>
                             </div>
                             <div class="form-group">
                                 <label for="gender">Jenis Kelamin</label>

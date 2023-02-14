@@ -57,7 +57,7 @@ class WhatsAppController extends Controller
         // return $result;
 
         $wa     = new WhatsAppSG();
-        $wa->setPort('8888')
+        $wa->setPort('8889')
             ->setSenderPhone('085888372505')
             ->setRecepient($number)
             ->setMessage($message);

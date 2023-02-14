@@ -11,7 +11,7 @@ class Laundry extends Model
 
     protected $table = 'laundries';
 
-    protected $fillable = ['laundry_transaction_id','user_id', 'total_pcs', 'total_kg', 'laundry_vendor_id', 'tanggalVendor','tanggalMasuk','tanggalAmbil', 'status','laundry_type_id','total_price'];
+    protected $fillable = ['laundry_transaction_id','user_id', 'total_pcs', 'total_kg', 'laundry_vendor_id', 'tanggalVendor','tanggalMasuk','tanggalAmbil','tanggalMaxComplain', 'status','laundry_type_id','total_price'];
 
     public function user()
     {
