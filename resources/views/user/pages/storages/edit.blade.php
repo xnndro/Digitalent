@@ -48,7 +48,7 @@
                         <label for="lantai" class="col-lg-12 control-label">Lantai</label>
 
                         <div class="col-lg-12">
-                            <input id="lantai" type="number" class="form-control" name="lantai" value="{{ $storage->lantai }}" required>
+                            <input id="lantai" type="number" class="form-control" name="lantai" value="{{ $storage->lantai }}" readonly>
 
                             @if ($errors->has('lantai'))
                                 <span class="help-block">

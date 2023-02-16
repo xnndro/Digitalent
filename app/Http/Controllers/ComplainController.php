@@ -20,13 +20,13 @@ class ComplainController extends Controller
 {
     public function index()
     {
-        $complains = Complain::where('user_id',auth()->user()->id)->get();
+        $complains = Complain::where('user_id',Auth::user()->id)->get();
         $complains_count = $complains->count();
+        // dd($complains);
         $complains = $complains->map(function($complain){
             $room = Room::where('id',$complain->user_room)->first();
             $complain->room_name = $room->name;
             return $complain;
-            // dd($complain->user_room);
         });
         if(session('success_message')){
             Alert::success('Success', session('success_message'));
@@ -93,6 +93,8 @@ class ComplainController extends Controller
         $complain->complain_type = $request->type;
         $complain->complain_name = $request->name;
         $complain->description = $request->description;
+        $complain->user_room = $user_room->room_id;
+
 
         if($request->type == 'Laundry'){
             if($request->hasFile('fotoBarang')){
@@ -138,7 +140,6 @@ class ComplainController extends Controller
             ];
             $whatsapp->sendMessage($data);
         }else if($request->type == 'Fasilitas'){
-            $complain->user_room = $user_room->room_id;
             //send message
             $whatsapp = new WhatsappController;
             $user_phone = Auth::user()->phone;

@@ -21,7 +21,7 @@ class StoragesController extends Controller
      */
     public function index()
     {
-        $storages = Storage::all();
+        $storages = Storage::where('user_id', Auth::id())->get();
         $storages = $storages->sortBy('tanggalKeluar');
         foreach ($storages as $storage) {
             $type = TypeOfStorage::find($storage->typeOfStorage_id);
@@ -80,11 +80,6 @@ class StoragesController extends Controller
             return view('user.pages.storages.create', compact('typeOfStorages','lantai'));
         }
     }
-
-    
-
-    
-
 
     /**
      * Store a newly created resource in storage.

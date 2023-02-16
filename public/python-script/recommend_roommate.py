@@ -3,6 +3,9 @@ from sklearn.preprocessing import OneHotEncoder
 import pandas as pd
 import numpy as np
 import sys
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def oneHotEncode(data):
     data_np = data.to_numpy()

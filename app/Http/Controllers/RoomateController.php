@@ -84,7 +84,7 @@ class RoomateController extends Controller
                 $output[0] = explode(',', $output[0]);
                 $result = $output[0];
 
-                echo $output[1];
+                // echo $output[1];
 
                 foreach($result as $key => $value)
                 {

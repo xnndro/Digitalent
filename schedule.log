@@ -74883,3 +74883,3675 @@ object(stdClass)#1827 (2) {
     bool(false)
   }
 }
+object(stdClass)#1792 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1776 (18) {
+    ["_data"]=>
+    object(stdClass)#1786 (29) {
+      ["id"]=>
+      object(stdClass)#1790 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1775 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0FC096BFE1A3C3CB6"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB0FC096BFE1A3C3CB6"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444100)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1777 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1791 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1783 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0FC096BFE1A3C3CB6"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB0FC096BFE1A3C3CB6"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444100)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1794 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1769 (18) {
+    ["_data"]=>
+    object(stdClass)#1771 (29) {
+      ["id"]=>
+      object(stdClass)#1773 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1778 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6281236512384"
+          ["_serialized"]=>
+          string(18) "6281236512384@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB016C6219D4576D28B"
+        ["_serialized"]=>
+        string(44) "true_6281236512384@c.us_3EB016C6219D4576D28B"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444101)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1768 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281236512384"
+        ["_serialized"]=>
+        string(18) "6281236512384@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1770 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1764 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281236512384"
+        ["_serialized"]=>
+        string(18) "6281236512384@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB016C6219D4576D28B"
+      ["_serialized"]=>
+      string(44) "true_6281236512384@c.us_3EB016C6219D4576D28B"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444101)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6281236512384@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1796 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1785 (18) {
+    ["_data"]=>
+    object(stdClass)#1498 (29) {
+      ["id"]=>
+      object(stdClass)#1781 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1767 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6285956657715"
+          ["_serialized"]=>
+          string(18) "6285956657715@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0B83C33750522C31A"
+        ["_serialized"]=>
+        string(44) "true_6285956657715@c.us_3EB0B83C33750522C31A"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444101)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1789 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285956657715"
+        ["_serialized"]=>
+        string(18) "6285956657715@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1727 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1777 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285956657715"
+        ["_serialized"]=>
+        string(18) "6285956657715@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0B83C33750522C31A"
+      ["_serialized"]=>
+      string(44) "true_6285956657715@c.us_3EB0B83C33750522C31A"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444101)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6285956657715@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1798 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1772 (18) {
+    ["_data"]=>
+    object(stdClass)#1783 (29) {
+      ["id"]=>
+      object(stdClass)#1788 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1775 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0B3BD2BFBA6B6B0C1"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB0B3BD2BFBA6B6B0C1"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444102)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1793 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1791 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1768 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0B3BD2BFBA6B6B0C1"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB0B3BD2BFBA6B6B0C1"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444102)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1800 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1782 (18) {
+    ["_data"]=>
+    object(stdClass)#1764 (29) {
+      ["id"]=>
+      object(stdClass)#1774 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1778 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6281283831896"
+          ["_serialized"]=>
+          string(18) "6281283831896@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0EE8CBA9A07B5D6C2"
+        ["_serialized"]=>
+        string(44) "true_6281283831896@c.us_3EB0EE8CBA9A07B5D6C2"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444102)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1795 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281283831896"
+        ["_serialized"]=>
+        string(18) "6281283831896@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1770 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1789 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281283831896"
+        ["_serialized"]=>
+        string(18) "6281283831896@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0EE8CBA9A07B5D6C2"
+      ["_serialized"]=>
+      string(44) "true_6281283831896@c.us_3EB0EE8CBA9A07B5D6C2"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444102)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6281283831896@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1802 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1763 (18) {
+    ["_data"]=>
+    object(stdClass)#1777 (29) {
+      ["id"]=>
+      object(stdClass)#1780 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1767 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6285270591774"
+          ["_serialized"]=>
+          string(18) "6285270591774@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB01CCB9F119038A9DC"
+        ["_serialized"]=>
+        string(44) "true_6285270591774@c.us_3EB01CCB9F119038A9DC"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444103)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1797 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285270591774"
+        ["_serialized"]=>
+        string(18) "6285270591774@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1727 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1793 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285270591774"
+        ["_serialized"]=>
+        string(18) "6285270591774@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB01CCB9F119038A9DC"
+      ["_serialized"]=>
+      string(44) "true_6285270591774@c.us_3EB01CCB9F119038A9DC"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444103)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6285270591774@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1804 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1786 (18) {
+    ["_data"]=>
+    object(stdClass)#1768 (29) {
+      ["id"]=>
+      object(stdClass)#1766 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1775 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6282315930575"
+          ["_serialized"]=>
+          string(18) "6282315930575@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB05FC04EC506E2E0E2"
+        ["_serialized"]=>
+        string(44) "true_6282315930575@c.us_3EB05FC04EC506E2E0E2"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444103)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1799 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282315930575"
+        ["_serialized"]=>
+        string(18) "6282315930575@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1791 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1795 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282315930575"
+        ["_serialized"]=>
+        string(18) "6282315930575@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB05FC04EC506E2E0E2"
+      ["_serialized"]=>
+      string(44) "true_6282315930575@c.us_3EB05FC04EC506E2E0E2"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444103)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6282315930575@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1806 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1771 (18) {
+    ["_data"]=>
+    object(stdClass)#1789 (29) {
+      ["id"]=>
+      object(stdClass)#1790 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1778 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6285211937866"
+          ["_serialized"]=>
+          string(18) "6285211937866@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0B8174E8E639BC7F9"
+        ["_serialized"]=>
+        string(44) "true_6285211937866@c.us_3EB0B8174E8E639BC7F9"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444103)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1801 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285211937866"
+        ["_serialized"]=>
+        string(18) "6285211937866@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1770 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1797 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285211937866"
+        ["_serialized"]=>
+        string(18) "6285211937866@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0B8174E8E639BC7F9"
+      ["_serialized"]=>
+      string(44) "true_6285211937866@c.us_3EB0B8174E8E639BC7F9"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444103)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6285211937866@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1808 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1498 (18) {
+    ["_data"]=>
+    object(stdClass)#1793 (29) {
+      ["id"]=>
+      object(stdClass)#1773 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1767 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6289517848504"
+          ["_serialized"]=>
+          string(18) "6289517848504@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB02882D881CC475A4C"
+        ["_serialized"]=>
+        string(44) "true_6289517848504@c.us_3EB02882D881CC475A4C"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444104)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1803 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6289517848504"
+        ["_serialized"]=>
+        string(18) "6289517848504@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1727 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1799 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6289517848504"
+        ["_serialized"]=>
+        string(18) "6289517848504@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB02882D881CC475A4C"
+      ["_serialized"]=>
+      string(44) "true_6289517848504@c.us_3EB02882D881CC475A4C"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444104)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6289517848504@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1810 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1783 (18) {
+    ["_data"]=>
+    object(stdClass)#1795 (29) {
+      ["id"]=>
+      object(stdClass)#1781 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1775 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6285954556508"
+          ["_serialized"]=>
+          string(18) "6285954556508@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB04FFE3CC2C6830A3B"
+        ["_serialized"]=>
+        string(44) "true_6285954556508@c.us_3EB04FFE3CC2C6830A3B"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444105)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1805 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285954556508"
+        ["_serialized"]=>
+        string(18) "6285954556508@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1791 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1801 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285954556508"
+        ["_serialized"]=>
+        string(18) "6285954556508@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB04FFE3CC2C6830A3B"
+      ["_serialized"]=>
+      string(44) "true_6285954556508@c.us_3EB04FFE3CC2C6830A3B"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444105)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6285954556508@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1812 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1764 (18) {
+    ["_data"]=>
+    object(stdClass)#1797 (29) {
+      ["id"]=>
+      object(stdClass)#1788 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1778 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6281256738357"
+          ["_serialized"]=>
+          string(18) "6281256738357@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB01A0E77E4241CDD4F"
+        ["_serialized"]=>
+        string(44) "true_6281256738357@c.us_3EB01A0E77E4241CDD4F"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444105)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1807 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281256738357"
+        ["_serialized"]=>
+        string(18) "6281256738357@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1770 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1803 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281256738357"
+        ["_serialized"]=>
+        string(18) "6281256738357@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB01A0E77E4241CDD4F"
+      ["_serialized"]=>
+      string(44) "true_6281256738357@c.us_3EB01A0E77E4241CDD4F"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444105)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6281256738357@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1814 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1777 (18) {
+    ["_data"]=>
+    object(stdClass)#1799 (29) {
+      ["id"]=>
+      object(stdClass)#1774 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1767 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6282148501967"
+          ["_serialized"]=>
+          string(18) "6282148501967@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0A12EF690FA103F52"
+        ["_serialized"]=>
+        string(44) "true_6282148501967@c.us_3EB0A12EF690FA103F52"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444106)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1809 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282148501967"
+        ["_serialized"]=>
+        string(18) "6282148501967@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1727 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1805 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6282148501967"
+        ["_serialized"]=>
+        string(18) "6282148501967@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0A12EF690FA103F52"
+      ["_serialized"]=>
+      string(44) "true_6282148501967@c.us_3EB0A12EF690FA103F52"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444106)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6282148501967@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1816 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1768 (18) {
+    ["_data"]=>
+    object(stdClass)#1801 (29) {
+      ["id"]=>
+      object(stdClass)#1780 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1775 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0088A9396D7135A4D"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB0088A9396D7135A4D"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444106)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1811 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1791 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1807 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0088A9396D7135A4D"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB0088A9396D7135A4D"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444106)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1818 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1789 (18) {
+    ["_data"]=>
+    object(stdClass)#1803 (29) {
+      ["id"]=>
+      object(stdClass)#1766 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1778 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6281381703341"
+          ["_serialized"]=>
+          string(18) "6281381703341@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0F930CE3B564EC25F"
+        ["_serialized"]=>
+        string(44) "true_6281381703341@c.us_3EB0F930CE3B564EC25F"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444106)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1813 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281381703341"
+        ["_serialized"]=>
+        string(18) "6281381703341@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1770 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1809 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281381703341"
+        ["_serialized"]=>
+        string(18) "6281381703341@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0F930CE3B564EC25F"
+      ["_serialized"]=>
+      string(44) "true_6281381703341@c.us_3EB0F930CE3B564EC25F"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444106)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6281381703341@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1820 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1793 (18) {
+    ["_data"]=>
+    object(stdClass)#1805 (29) {
+      ["id"]=>
+      object(stdClass)#1790 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1767 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6281385584749"
+          ["_serialized"]=>
+          string(18) "6281385584749@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0ADBCCA5D9F8E428E"
+        ["_serialized"]=>
+        string(44) "true_6281385584749@c.us_3EB0ADBCCA5D9F8E428E"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444107)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1815 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281385584749"
+        ["_serialized"]=>
+        string(18) "6281385584749@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1727 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1811 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281385584749"
+        ["_serialized"]=>
+        string(18) "6281385584749@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0ADBCCA5D9F8E428E"
+      ["_serialized"]=>
+      string(44) "true_6281385584749@c.us_3EB0ADBCCA5D9F8E428E"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444107)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6281385584749@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1822 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1795 (18) {
+    ["_data"]=>
+    object(stdClass)#1807 (29) {
+      ["id"]=>
+      object(stdClass)#1773 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1775 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6281289557532"
+          ["_serialized"]=>
+          string(18) "6281289557532@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0E707BCF0E544D7A6"
+        ["_serialized"]=>
+        string(44) "true_6281289557532@c.us_3EB0E707BCF0E544D7A6"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444107)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1817 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281289557532"
+        ["_serialized"]=>
+        string(18) "6281289557532@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1791 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1813 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281289557532"
+        ["_serialized"]=>
+        string(18) "6281289557532@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0E707BCF0E544D7A6"
+      ["_serialized"]=>
+      string(44) "true_6281289557532@c.us_3EB0E707BCF0E544D7A6"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444107)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6281289557532@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1824 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1797 (18) {
+    ["_data"]=>
+    object(stdClass)#1809 (29) {
+      ["id"]=>
+      object(stdClass)#1781 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1778 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6287779645363"
+          ["_serialized"]=>
+          string(18) "6287779645363@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB09A1564C796B7B548"
+        ["_serialized"]=>
+        string(44) "true_6287779645363@c.us_3EB09A1564C796B7B548"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444107)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1819 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6287779645363"
+        ["_serialized"]=>
+        string(18) "6287779645363@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1770 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1815 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6287779645363"
+        ["_serialized"]=>
+        string(18) "6287779645363@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB09A1564C796B7B548"
+      ["_serialized"]=>
+      string(44) "true_6287779645363@c.us_3EB09A1564C796B7B548"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444107)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6287779645363@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1826 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1799 (18) {
+    ["_data"]=>
+    object(stdClass)#1811 (29) {
+      ["id"]=>
+      object(stdClass)#1788 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1767 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(12) "628873967958"
+          ["_serialized"]=>
+          string(17) "628873967958@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB06FF802659F268A8E"
+        ["_serialized"]=>
+        string(43) "true_628873967958@c.us_3EB06FF802659F268A8E"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444108)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1821 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(12) "628873967958"
+        ["_serialized"]=>
+        string(17) "628873967958@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1727 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1817 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(12) "628873967958"
+        ["_serialized"]=>
+        string(17) "628873967958@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB06FF802659F268A8E"
+      ["_serialized"]=>
+      string(43) "true_628873967958@c.us_3EB06FF802659F268A8E"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444108)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(17) "628873967958@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1828 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1801 (18) {
+    ["_data"]=>
+    object(stdClass)#1813 (29) {
+      ["id"]=>
+      object(stdClass)#1774 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1775 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6285249802045"
+          ["_serialized"]=>
+          string(18) "6285249802045@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB085D32A40F26BAFD7"
+        ["_serialized"]=>
+        string(44) "true_6285249802045@c.us_3EB085D32A40F26BAFD7"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444108)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1823 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285249802045"
+        ["_serialized"]=>
+        string(18) "6285249802045@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1791 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1819 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285249802045"
+        ["_serialized"]=>
+        string(18) "6285249802045@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB085D32A40F26BAFD7"
+      ["_serialized"]=>
+      string(44) "true_6285249802045@c.us_3EB085D32A40F26BAFD7"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444108)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6285249802045@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1830 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1803 (18) {
+    ["_data"]=>
+    object(stdClass)#1815 (29) {
+      ["id"]=>
+      object(stdClass)#1780 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1778 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6281295536858"
+          ["_serialized"]=>
+          string(18) "6281295536858@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0969B72A157E56BEC"
+        ["_serialized"]=>
+        string(44) "true_6281295536858@c.us_3EB0969B72A157E56BEC"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444108)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1825 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281295536858"
+        ["_serialized"]=>
+        string(18) "6281295536858@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1770 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1821 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281295536858"
+        ["_serialized"]=>
+        string(18) "6281295536858@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0969B72A157E56BEC"
+      ["_serialized"]=>
+      string(44) "true_6281295536858@c.us_3EB0969B72A157E56BEC"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444108)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6281295536858@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1832 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1805 (18) {
+    ["_data"]=>
+    object(stdClass)#1817 (29) {
+      ["id"]=>
+      object(stdClass)#1766 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1767 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6281236512384"
+          ["_serialized"]=>
+          string(18) "6281236512384@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB08EDB653555A06286"
+        ["_serialized"]=>
+        string(44) "true_6281236512384@c.us_3EB08EDB653555A06286"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444109)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1827 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281236512384"
+        ["_serialized"]=>
+        string(18) "6281236512384@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1727 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1823 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281236512384"
+        ["_serialized"]=>
+        string(18) "6281236512384@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB08EDB653555A06286"
+      ["_serialized"]=>
+      string(44) "true_6281236512384@c.us_3EB08EDB653555A06286"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444109)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6281236512384@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1834 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1807 (18) {
+    ["_data"]=>
+    object(stdClass)#1819 (29) {
+      ["id"]=>
+      object(stdClass)#1790 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1775 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6281236512384"
+          ["_serialized"]=>
+          string(18) "6281236512384@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB04158BEFB8AF9B6AD"
+        ["_serialized"]=>
+        string(44) "true_6281236512384@c.us_3EB04158BEFB8AF9B6AD"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444109)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1829 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281236512384"
+        ["_serialized"]=>
+        string(18) "6281236512384@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1791 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1825 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6281236512384"
+        ["_serialized"]=>
+        string(18) "6281236512384@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB04158BEFB8AF9B6AD"
+      ["_serialized"]=>
+      string(44) "true_6281236512384@c.us_3EB04158BEFB8AF9B6AD"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444109)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6281236512384@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1836 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1809 (18) {
+    ["_data"]=>
+    object(stdClass)#1821 (29) {
+      ["id"]=>
+      object(stdClass)#1773 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1778 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6288275169992"
+          ["_serialized"]=>
+          string(18) "6288275169992@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB0F962BDA375901107"
+        ["_serialized"]=>
+        string(44) "true_6288275169992@c.us_3EB0F962BDA375901107"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444110)
+      ["from"]=>
+      object(stdClass)#1779 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1831 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1770 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1827 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6288275169992"
+        ["_serialized"]=>
+        string(18) "6288275169992@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB0F962BDA375901107"
+      ["_serialized"]=>
+      string(44) "true_6288275169992@c.us_3EB0F962BDA375901107"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444110)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6288275169992@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}
+object(stdClass)#1838 (2) {
+  ["status"]=>
+  bool(true)
+  ["response"]=>
+  object(stdClass)#1811 (18) {
+    ["_data"]=>
+    object(stdClass)#1823 (29) {
+      ["id"]=>
+      object(stdClass)#1781 (4) {
+        ["fromMe"]=>
+        bool(true)
+        ["remote"]=>
+        object(stdClass)#1767 (3) {
+          ["server"]=>
+          string(4) "c.us"
+          ["user"]=>
+          string(13) "6285173018039"
+          ["_serialized"]=>
+          string(18) "6285173018039@c.us"
+        }
+        ["id"]=>
+        string(20) "3EB03CB833C67E2A5406"
+        ["_serialized"]=>
+        string(44) "true_6285173018039@c.us_3EB03CB833C67E2A5406"
+      }
+      ["body"]=>
+      string(37) "Judul: coba coba 
+ Pesan: ini present"
+      ["type"]=>
+      string(4) "chat"
+      ["t"]=>
+      int(1676444110)
+      ["from"]=>
+      object(stdClass)#1765 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285888372505"
+        ["_serialized"]=>
+        string(18) "6285888372505@c.us"
+      }
+      ["to"]=>
+      object(stdClass)#1833 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285173018039"
+        ["_serialized"]=>
+        string(18) "6285173018039@c.us"
+      }
+      ["self"]=>
+      string(3) "out"
+      ["ack"]=>
+      int(0)
+      ["isNewMsg"]=>
+      bool(true)
+      ["star"]=>
+      bool(false)
+      ["kicNotified"]=>
+      bool(false)
+      ["isFromTemplate"]=>
+      bool(false)
+      ["pollInvalidated"]=>
+      bool(false)
+      ["isSentCagPollCreation"]=>
+      bool(false)
+      ["latestEditMsgKey"]=>
+      NULL
+      ["latestEditSenderTimestampMs"]=>
+      NULL
+      ["mentionedJidList"]=>
+      array(0) {
+      }
+      ["isVcardOverMmsDocument"]=>
+      bool(false)
+      ["isForwarded"]=>
+      bool(false)
+      ["hasReaction"]=>
+      bool(false)
+      ["disappearingModeInitiator"]=>
+      string(4) "chat"
+      ["productHeaderImageRejected"]=>
+      bool(false)
+      ["lastPlaybackProgress"]=>
+      int(0)
+      ["isDynamicReplyButtonsMsg"]=>
+      bool(false)
+      ["isMdHistoryMsg"]=>
+      bool(false)
+      ["stickerSentTs"]=>
+      int(0)
+      ["isAvatar"]=>
+      bool(false)
+      ["requiresDirectConnection"]=>
+      NULL
+      ["pttForwardedFeaturesEnabled"]=>
+      bool(true)
+    }
+    ["id"]=>
+    object(stdClass)#1727 (4) {
+      ["fromMe"]=>
+      bool(true)
+      ["remote"]=>
+      object(stdClass)#1829 (3) {
+        ["server"]=>
+        string(4) "c.us"
+        ["user"]=>
+        string(13) "6285173018039"
+        ["_serialized"]=>
+        string(18) "6285173018039@c.us"
+      }
+      ["id"]=>
+      string(20) "3EB03CB833C67E2A5406"
+      ["_serialized"]=>
+      string(44) "true_6285173018039@c.us_3EB03CB833C67E2A5406"
+    }
+    ["ack"]=>
+    int(0)
+    ["hasMedia"]=>
+    bool(false)
+    ["body"]=>
+    string(37) "Judul: coba coba 
+ Pesan: ini present"
+    ["type"]=>
+    string(4) "chat"
+    ["timestamp"]=>
+    int(1676444110)
+    ["from"]=>
+    string(18) "6285888372505@c.us"
+    ["to"]=>
+    string(18) "6285173018039@c.us"
+    ["deviceType"]=>
+    string(3) "web"
+    ["isForwarded"]=>
+    bool(false)
+    ["forwardingScore"]=>
+    int(0)
+    ["isStarred"]=>
+    bool(false)
+    ["fromMe"]=>
+    bool(true)
+    ["hasQuotedMsg"]=>
+    bool(false)
+    ["vCards"]=>
+    array(0) {
+    }
+    ["mentionedIds"]=>
+    array(0) {
+    }
+    ["isGif"]=>
+    bool(false)
+  }
+}

@@ -82,22 +82,20 @@ class RoomController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'type' => 'required',
-            'price' => 'required',
-            'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'lantai' => 'required',
+            'gender' => 'required',
+            // 'status' => 'required',
         ]);
 
-        $imageName = time().'.'.$request->image->extension();  
-        $request->image->move(public_path('images'), $imageName);
+        $request->merge([   
+            'name' => $request->name,
+            'lantai' => $request->lantai,
+            'gender' => $request->gender,
+            'status' => 'Available',
+        ]);
 
         $room = Room::find($id);
-        $room->name = $request->name;
-        $room->type = $request->type;
-        $room->price = $request->price;
-        $room->description = $request->description;
-        $room->image = $imageName;
-        $room->save();
+        $room->update($request->all());
 
         return redirect()->route('rooms.index')->withSuccessMessage('Room Updated Successfully');
     }
