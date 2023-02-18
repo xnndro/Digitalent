@@ -50,6 +50,38 @@
                             </div>
                         </div>
                     </div>
+                @elseif($status == 'waiting')
+                <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="d-flex justify-content-center align-items-center flex-wrap mb-5">
+                        <div class="text-center">
+                            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ghg0pifn.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+                            <h5 class="mt-n5">You Have Been Requested</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="p-0 card-body">
+                        <div class="mt-4 table-responsive">
+                            <table id="basic-table" class="table mb-0 table-striped" role="grid">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{$user_request_name}}</td>
+                                        <td>
+                                            <a href="{{ route('roommates.userAccept', $user_request_id) }}" class="btn btn-primary">Accept</a>
+                                            <a href="{{ route('roommates.userReject', $user_request_id) }}" class="btn btn-danger">Reject</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 @else 
                 <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
                     <div class="flex-wrap card-header d-flex justify-content-between">

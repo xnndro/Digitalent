@@ -46,6 +46,25 @@ class BroadcastController extends Controller
 
         $broadcast = BroadcastMessage::create($request->all());
 
+        $users = User::where('role', 'user')->get();
+        foreach($users as $user_data) {
+            if($user_data->phone != null)
+            {
+                $user_phone = $user_data->phone;
+    
+                $datas = [
+                    'toNumber' => $user_phone,
+                    'message' => 'Judul: '.$request->title . " \n " .'Pesan: ' . $request->message,
+                ];
+    
+                $wa = new WhatsAppController();
+                $wa->sendMessage($datas);
+            }
+        }
+        $broadcast->status = 'broadcasted';
+        $broadcast->save();
+        
+
         return redirect()->route('broadcast.index')->withSuccessMessage('Broadcast Created Successfully');
     }
 

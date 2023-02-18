@@ -37,91 +37,67 @@ class TaskList extends Command
      */
     public function handle()
     {
+
+        //remainder buat hari H
         $tanggalSekarang = date('Y-m-d');
-        $table= 'broadcast_messages';
-        $data = DB::table($table)->where('status', 'unbroadcasted')->first();
+        
+        $tables = ['laundries', 'storages'];
+        foreach ($tables as $table) {
+            if($table == 'laundries')
+            {
+                $data = DB::table($table)->where('tanggalAmbil', $tanggalSekarang)->get();
+                foreach ($data as $d) {
+                    $user = User::find($d->user_id);
 
-        if($data != null)
-        {
-            $data_id = $data->id;
-            $title = $data->title;
-            $message = $data->message;
-
-            $users = User::where('role', 'user')->get();
-            foreach($users as $user_data) {
-               if($user_data->phone != null)
-               {
-                    $user_phone = $user_data->phone;
-     
-                    $datas = [
-                        'toNumber' => $user_phone,
-                        'message' => 'Judul: '.$title . " \n " .'Pesan: ' . $message,
+                    $phone = $user->phone;
+                    $data = [
+                        'toNumber' => $phone,
+                        'message' => 'Jangan lupa ambil laundry kamu ya gengs:)',
                     ];
-     
                     $wa = new WhatsAppController();
-                    $wa->sendMessage($datas);
-               }
-            }
-            $data = BroadcastMessage::find($data_id);
-            $data->status = 'broadcasted';
-            $data->save();
-        }else
-        {
-            $tables = ['laundries', 'storages'];
-            foreach ($tables as $table) {
-                if($table == 'laundries')
-                {
-                    $data = DB::table($table)->where('tanggalAmbil', $tanggalSekarang)->get();
-                    foreach ($data as $d) {
-                        $user = User::find($d->user_id);
+                    $wa->sendMessage($data);
 
-                        $phone = $user->phone;
-                        $data = [
-                            'toNumber' => $phone,
-                            'message' => 'Jangan lupa ambil laundry kamu ya gengs:)',
-                        ];
-                        $wa = new WhatsAppController();
-                        $wa->sendMessage($data);
-
-                        $user_id = $user->id;
-                        $events = new Events();
-                        $events = Events::where('user_id', $user->id)->get();
-                        foreach ($events as $event) {
-                            if ($event->status == 'notified') {
-                                $event->status = 'Done';
-                                $event->save();
-                            }
+                    $user_id = $user->id;
+                    $events = new Events();
+                    $events = Events::where('user_id', $user->id)->get();
+                    foreach ($events as $event) {
+                        if ($event->status == 'notified') {
+                            $event->status = 'Done';
+                            $event->save();
                         }
                     }
-                }else
-                {
-                    $data = DB::table($table)->where('tanggalKeluar', $tanggalSekarang)->get();
+                }
+            }else
+            {
+                $data = DB::table($table)->where('tanggalKeluar', $tanggalSekarang)->get();
 
-                    foreach ($data as $d) {
-                        $user = User::find($d->user_id);
+                foreach ($data as $d) {
+                    $user = User::find($d->user_id);
 
-                        $phone = $user->phone;
-                        $data = [
-                            'toNumber' => $phone,
-                            'message' => 'Jangan lupa ambil barang kamu di Kulkas ya gengs:)',
-                        ];
+                    $phone = $user->phone;
+                    $data = [
+                        'toNumber' => $phone,
+                        'message' => 'Jangan lupa ambil barang kamu di Kulkas ya gengs:)',
+                    ];
 
-                        $wa = new WhatsAppController();
-                        $wa->sendMessage($data);
+                    $wa = new WhatsAppController();
+                    $wa->sendMessage($data);
 
-                        $user_id = $user->id;
-                        $events = new Events();
-                        $events = Events::where('user_id', $user->id)->get();
-                        foreach ($events as $event) {
-                            if ($event->status == 'notified') {
-                                $event->status = 'Done';
-                                $event->save();
-                            }
+                    $user_id = $user->id;
+                    $events = new Events();
+                    $events = Events::where('user_id', $user->id)->get();
+                    foreach ($events as $event) {
+                        if ($event->status == 'notified') {
+                            $event->status = 'Done';
+                            $event->save();
                         }
                     }
                 }
             }
         }
+        
+
+        //remainder buat h-1
         // set for events
         $tanggalBesok = Carbon::tomorrow()->format('Y-m-d');
         $tables_to_check = ['laundries','storages'];
@@ -188,7 +164,7 @@ class TaskList extends Command
             }
         }
 
-        //check if tanggalSekarang adalah tanggal 1
+        //buat financials
         $tanggalSekarang = Carbon::now()->format('d');
         if($tanggalSekarang == '01')
         {

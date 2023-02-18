@@ -8,7 +8,6 @@ use App\Models\User;
 use Cart;
 use App\Models\Order;
 use App\Models\OrderDetails;
-// products
 use App\Models\Product;
 use Darryldecode\Cart\CartCondition;
 use App\Services\Midtrans\CreateSnapTokenService;

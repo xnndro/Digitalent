@@ -85,6 +85,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/roommates/{id}/details', [App\Http\Controllers\RoomateController::class, 'details'])->name('roommates.details');
     Route::post('/roommates/{id}/store_details', [App\Http\Controllers\RoomateController::class, 'store_details'])->name('roommates.store_details');
     Route::get('/roommates/{id}/decline', [App\Http\Controllers\RoomateController::class, 'reject'])->name('roommates.reject');
+    Route::get('/roommates/{id}/accept', [App\Http\Controllers\RoomateController::class, 'userAccept'])->name('roommates.userAccept');
+    Route::get('/roommates/{id}/decline', [App\Http\Controllers\RoomateController::class, 'userReject'])->name('roommates.userReject');
 
     // laundry
     Route::get('/laundries', [App\Http\Controllers\LaundryController::class, 'index'])->name('laundries.index');
