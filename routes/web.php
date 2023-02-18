@@ -48,7 +48,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/history/renamehistory/{id}', [App\Http\Controllers\HistoryController::class, 'renameHistory'])->name('history.confirmRename');
     Route::get('/cart/toTake', [App\Http\Controllers\CartController::class, 'toTake'])->name('toTake');
     Route::get('/cart/toTake/{id}', [App\Http\Controllers\CartController::class, 'toTakeOrder'])->name('toTakeOrder');
-    // manage products
 
     // laundry history for user
     Route::get('/user/laundry', [App\Http\Controllers\UserController::class, 'laundry_status'])->name('user.laundry_status');
@@ -103,6 +102,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/laundries/{id}', [App\Http\Controllers\LaundryController::class, 'destroy'])->name('laundries.destroy');
     Route::get('/laundries/{id}/taked', [App\Http\Controllers\LaundryController::class, 'taked'])->name('laundries.taked');
     Route::get('/laundries/{id}/done', [App\Http\Controllers\LaundryController::class, 'done'])->name('laundries.done');
+    //addvendor
+    Route::get('/laundries/vendor', [App\Http\Controllers\LaundryController::class, 'vendor_index'])->name('laundries.vendor');
+    Route::get('/laundries/addvendor', [App\Http\Controllers\LaundryController::class, 'addVendor'])->name('laundries.addVendor');
+    Route::post('/laundries/addvendor', [App\Http\Controllers\LaundryController::class, 'storeVendor'])->name('laundries.storeVendor');
+    Route::get('/laundries/{id}/editvendor', [App\Http\Controllers\LaundryController::class, 'editVendor'])->name('laundries.editVendor');
+    Route::put('/laundries/{id}/updatevendor', [App\Http\Controllers\LaundryController::class, 'updateVendor'])->name('laundries.updateVendor');
+    Route::delete('/laundries/{id}/deletevendor', [App\Http\Controllers\LaundryController::class, 'deleteVendor'])->name('laundries.deleteVendor');
 
     // rooms
     Route::get('/rooms', [App\Http\Controllers\RoomController::class, 'index'])->name('rooms.index');

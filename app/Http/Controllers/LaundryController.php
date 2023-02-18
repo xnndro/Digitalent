@@ -12,6 +12,7 @@ use App\Models\LaundryType;
 use App\Models\TransactionTemp;
 use Carbon\Carbon;
 use Alert;
+use Illuminate\Support\Facades\Crypt;
 
 
 class LaundryController extends Controller
@@ -437,8 +438,88 @@ class LaundryController extends Controller
         return redirect()->route('laundries.vendortoadmin')->withSuccessMessage('Laundry successfully Done');
     }
     
+    public function vendor_index()
+    {
+        $vendors = LaundryVendor::all();
+        if(session()->has('success_message'))
+        {
+            alert()->success('Success', session()->get('success_message'));
+        }
+        return view('admin.pages.laundry.vendor', compact('vendors'));
+    }
+    
     public function addVendor()
     {
-        return view('admin.pages.laundry.addvendor');
+        return view('admin.pages.laundry.addVendor');
     }
+
+    public function storeVendor(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required|starts_with:08',
+            'email' => 'required|email|ends_with:vendor.id',
+            'password' => 'required|min:4',
+        ]);
+
+        $laundryVendor = new LaundryVendor([
+            'name' => $request->get('name'),
+        ]);
+        $laundryVendor->save();
+
+        $user = new User([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'phone' => $request->get('phone'),
+            'password' => Hash::make($request->get('password')),
+        ]);
+        $user->save();
+
+
+        return redirect()->route('laundries.vendor')->withSuccessMessage('Vendor added successfully');
+    }
+
+    public function editVendor($id)
+    {
+        $vendor = LaundryVendor::find($id);
+        //mapping email
+        $user = User::find($vendor->user_id);
+        $vendor->email = $user->email;
+        $vendor->phone = $user->phone;
+        $vendor->password = Crypt::decryptString($user->password);
+        $vendor->phone = $user->phone;
+        return view('admin.pages.laundry.editVendor', compact('vendor'));
+    }
+
+    public function updateVendor(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required|starts_with:08',
+            'email' => 'required|email|ends_with:vendor.id',
+            'password' => 'required|min:4',
+        ]);
+
+        $laundryVendor = LaundryVendor::find($id);
+        $laundryVendor->name = $request->get('name');
+        $laundryVendor->save();
+
+        $user = User::find($laundryVendor->user_id);
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->phone = $request->get('phone');
+        $user->password = Hash::make($request->get('password'));
+        $user->save();
+
+        return redirect()->route('laundries.vendor')->withSuccessMessage('Vendor updated successfully');
+    }
+
+    public function deleteVendor($id)
+    {
+        $laundryVendor = LaundryVendor::find($id);
+        $laundryVendor->delete();
+        return redirect()->route('laundries.vendor')->withSuccessMessage('Vendor deleted successfully');
+    }
+
+
 }
