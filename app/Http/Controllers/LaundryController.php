@@ -414,12 +414,31 @@ class LaundryController extends Controller
         $laundry->save();
         return redirect()->route('laundries.index')->withSuccessMessage('Laundry successfully Taked');
     }
+
     public function done($id)
     {
         $laundry = Laundry::find($id);
         $laundry->status = 'Done';
         $laundry->save();
+
+        // get the user phone number
+        $user = User::find($laundry->user_id);
+        $user_phone = $user->phone;
+
+        $laundry_id = $laundry->laundry_transaction_id;
+
+        $data = [
+            'phone' => $user_phone,
+            'message' => 'Hi, ' . $user->name . ' Laundry dengan ID ' . $laundry_id . ' telah selesai. Terima Kasih.'
+        ];
+
+        $whatsapp = new WhatsAppController();
+        $whatsapp->sendMessage($data);
         return redirect()->route('laundries.vendortoadmin')->withSuccessMessage('Laundry successfully Done');
     }
-   
+    
+    public function addVendor()
+    {
+        return view('admin.pages.laundry.addvendor');
+    }
 }

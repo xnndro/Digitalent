@@ -46,6 +46,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
     Route::get('/history/delhistory/{id}', [App\Http\Controllers\HistoryController::class, 'delHistory'])->name('history.del');
     Route::post('/history/renamehistory/{id}', [App\Http\Controllers\HistoryController::class, 'renameHistory'])->name('history.confirmRename');
+    Route::get('/cart/toTake', [App\Http\Controllers\CartController::class, 'toTake'])->name('toTake');
+    Route::get('/cart/toTake/{id}', [App\Http\Controllers\CartController::class, 'toTakeOrder'])->name('toTakeOrder');
     // manage products
 
     // laundry history for user

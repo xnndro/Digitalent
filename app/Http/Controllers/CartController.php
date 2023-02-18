@@ -69,6 +69,7 @@ class CartController extends Controller
             'number' => $number,
             'total_price' => $total_price,
             'payment_status' => 1,
+            'order_status' => 'pending',
         ]);
 
         foreach(Cart::content() as $item){
@@ -175,9 +176,9 @@ class CartController extends Controller
     }
 
     public function callback(Request $request){
-        // $server_key = $_ENV['MIDTRANS_SERVER_KEY'];
-        // $hash = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount . $server_key);
-        // if($hash == $request->signature_key){
+        $server_key = $_ENV['MIDTRANS_SERVER_KEY'];
+        $hash = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount . $server_key);
+        if($hash == $request->signature_key){
            if($request->transaction_status == 'capture'){
                if($request->status_code == '200'){
                    $order = Order::where('number', $request->order_id)->first();
@@ -186,8 +187,52 @@ class CartController extends Controller
                    ]);
                }
            }
-        // }
+        }
+
+        $user_phone = Auth::user()->phone;
+        $name = Auth::user()->name;
+        $order = Order::where('number', $request->order_id)->first();
+        $order_transaction_id = $order->order_transaction_id;
+        $data =[
+            'toNumber' => $user_phone,
+            'message' => 'Halo '.$name.', Terimakasih telah berbelanja di Kios Talenta, silahkan mengambil barang anda di Kios Talenta dalam 5 menit dengan nomer invoice '. $order_transaction_id .'Terimakasih.',
+        ] ;
+        
+        $whatsapp = new WhatsappController;
+        $whatsapp->sendMessage($data);
+
+        // update order_status
+        $order->update([
+            'order_status' => 'paid',
+        ]);
 
         return view('user.pages.shopping.cart');
+    }
+
+    public function toTake()
+    {
+        $order = Order::where('order_status', 'paid')->get();
+
+        //mapping order details
+        foreach($order as $item){
+            $order_details = OrderDetails::where('order_transaction_id', $item->order_transaction_id)->get();
+            $item->order_details = $order_details;
+
+            //mapping product
+            foreach($order_details as $item2){
+                $product = Product::find($item2->product_id);
+                $item2->product = $product;
+            }
+        }
+        return view('admin.pages.shopping.take', compact('order'));
+    }
+
+    public function toTakeOrder($id)
+    {
+        $order = Order::find($id);
+        $order->update([
+            'order_status' => 'taken',
+        ]);
+        return redirect()->route('toTake');
     }
 }
