@@ -126,29 +126,45 @@ class ComplainController extends Controller
 
             $user_phone = Auth::user()->phone;
             
-            
-            $data = [
-                'toNumber' => $vendor_phone,
-                'message' => 'Order Laundry dengan kode Laundry' . $transaction_name . 'memiliki complain, silahkan cek aplikasi'
-            ];
+            try{
+                $data = [
+                    'toNumber' => $vendor_phone,
+                    'message' => 'Order Laundry dengan kode Laundry' . $transaction_name . 'memiliki complain, silahkan cek aplikasi'
+                ];
+    
+                $whatsapp->sendMessage($data);
+            }catch(\Exception $e){
+                return redirect()->route('complains.index')->with('error_message',"Failed to send message");
+            }
 
-            $whatsapp->sendMessage($data);
-            $user_phone = Auth::user()->phone;
-            $data = [
-                'toNumber' => $user_phone,
-                'message' => 'Komplain order Laundry dengan kode Laundry' . $transaction_name . 'telah berhasil tercomplain, silahkan cek aplikasi untuk updatenya'
-            ];
-            $whatsapp->sendMessage($data);
+            try{
+                $user_phone = Auth::user()->phone;
+                $data = [
+                    'toNumber' => $user_phone,
+                    'message' => 'Komplain order Laundry dengan kode Laundry' . $transaction_name . 'telah berhasil tercomplain, silahkan cek aplikasi untuk updatenya'
+                ];
+                $whatsapp->sendMessage($data);
+            }catch(Exception $e)
+            {
+                return redirect()->route('complains.index')->with('error_message',"Failed to send message");
+            }
+            
         }else if($request->type == 'Fasilitas'){
             //send message
             $whatsapp = new WhatsappController;
             $user_phone = Auth::user()->phone;
-            $data = [
-                'toNumber' => $user_phone,
-                'message' => 'Komplain fasilitas dengan kode complain' . $complain->complain_id . 'telah berhasil tercomplain, silahkan cek aplikasi untuk updatenya'
-            ];
-            $whatsapp->sendMessage($data);
 
+            try{
+
+                $data = [
+                    'toNumber' => $user_phone,
+                    'message' => 'Komplain fasilitas dengan kode complain' . $complain->complain_id . 'telah berhasil tercomplain, silahkan cek aplikasi untuk updatenya'
+                ];
+                $whatsapp->sendMessage($data);
+            }catch(Exception $e)
+            {
+                return redirect()->route('complains.index')->with('error_message',"Failed to send message");
+            }
         }
 
         $complain->save();
@@ -225,11 +241,18 @@ class ComplainController extends Controller
         $user_phone = User::where('id',$complain->user_id)->first();
         $user_phone = $user_phone->phone;
         $whatsapp = new WhatsappController;
-        $data = [
-            'toNumber' => $user_phone,
-            'message' => 'Komplain kamu dengan kode complain '. $complain->complain_id . ' sedang diproses, silahkan cek aplikasi untuk updatenya'
-        ];
-        $whatsapp->sendMessage($data);
+
+        try{
+
+            $data = [
+                'toNumber' => $user_phone,
+                'message' => 'Komplain kamu dengan kode complain '. $complain->complain_id . ' sedang diproses, silahkan cek aplikasi untuk updatenya'
+            ];
+            $whatsapp->sendMessage($data);
+        }catch(Exception $e)
+        {
+         
+        }
         return redirect()->route('complains.show')->with('success_message','Complain has been proceed');
     }
 
@@ -242,11 +265,18 @@ class ComplainController extends Controller
         $user_phone = User::where('id',$complain->user_id)->first();
         $user_phone = $user_phone->phone;
         $whatsapp = new WhatsappController;
-        $data = [
-            'toNumber' => $user_phone,
-            'message' => 'Komplain kamu dengan kode complain '. $complain->complain_id . ' telah selesai diproses, Mohon maaf untuk ketidaknyamanannya'
-        ];
-        $whatsapp->sendMessage($data);
+
+        try{
+
+            $data = [
+                'toNumber' => $user_phone,
+                'message' => 'Komplain kamu dengan kode complain '. $complain->complain_id . ' telah selesai diproses, Mohon maaf untuk ketidaknyamanannya'
+            ];
+            $whatsapp->sendMessage($data);
+        }catch(Exception $e)
+        {
+         
+        }
         return redirect()->route('complains.show')->with('success_message','Complain has been done');
     }
 }

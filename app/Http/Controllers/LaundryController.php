@@ -275,14 +275,20 @@ class LaundryController extends Controller
         $vendor = LaundryVendor::find($request->get('vendor'));
         $vendor = $vendor->name;
 
-        $data = [
-            'toNumber' => $user_phone,
-            'message' => 'Hi, ' . $user_name . ' Transaksi Laundry dengan ID ' . $id . ' dengan Vendor ' . $vendor . '. Silahkan ambil pada tanggal ' . $tanggalAmbil . '. Terima Kasih.'
-        ];
-
-        // send message
-        $whatsapp = new WhatsappController;
-        $whatsapp->sendMessage($data);
+        try
+        {   
+            $data = [
+                'toNumber' => $user_phone,
+                'message' => 'Hi, ' . $user_name . ' Transaksi Laundry dengan ID ' . $id . ' dengan Vendor ' . $vendor . '. Silahkan ambil pada tanggal ' . $tanggalAmbil . '. Terima Kasih.'
+            ];
+            
+            // send message
+            $whatsapp = new WhatsappController;
+            $whatsapp->sendMessage($data);
+        }catch(Exception $e)
+        {
+            
+        }
 
         return redirect()->route('laundries.index')
             ->with('success', 'Laundry created successfully.');
@@ -427,14 +433,19 @@ class LaundryController extends Controller
         $user_phone = $user->phone;
 
         $laundry_id = $laundry->laundry_transaction_id;
-
-        $data = [
-            'phone' => $user_phone,
-            'message' => 'Hi, ' . $user->name . ' Laundry dengan ID ' . $laundry_id . ' telah selesai. Terima Kasih.'
-        ];
-
-        $whatsapp = new WhatsAppController();
-        $whatsapp->sendMessage($data);
+        try
+        {
+            $data = [
+                'phone' => $user_phone,
+                'message' => 'Hi, ' . $user->name . ' Laundry dengan ID ' . $laundry_id . ' telah selesai. Terima Kasih.'
+            ];
+            
+            $whatsapp = new WhatsAppController();
+            $whatsapp->sendMessage($data);
+        }catch(\Exception $e)
+        {
+            return redirect()->route('laundries.index')->withSuccessMessage('Laundry successfully Done');
+        }
         return redirect()->route('laundries.vendortoadmin')->withSuccessMessage('Laundry successfully Done');
     }
     

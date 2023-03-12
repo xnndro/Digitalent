@@ -36,13 +36,13 @@
                                     <td>
                                         <ul>
                                             @foreach($o->order_details as $item)
-                                                <li>{{$item->qty}} {{$item->product}}</li>
+                                                <li>{{$item->qty}} {{$item->product->name}}</li>
                                             @endforeach
                                         </ul>
                                     </td>
-                                    <td>{{$order->total_price}}</td>
+                                    <td>{{$o->total_price}}</td>
                                     <td>
-                                        <a href="{{ route('shopping.toTakeOrder', $o->id) }}" class="btn btn-primary">Take</a>
+                                        <a href="{{ route('toTakeOrder', $o->id) }}" class="btn btn-primary">Take</a>
                                     </td>
                                 </tr>
                             @endforeach

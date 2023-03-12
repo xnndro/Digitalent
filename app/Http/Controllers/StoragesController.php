@@ -112,14 +112,20 @@ class StoragesController extends Controller
         $phone = $user->phone;
         $tanggalKeluar= $tanggalKeluar->format('d-m-Y');
         // data to send to whatsapp
-        $data = [
-            'toNumber' => $phone,
-            'message' => 'Hi, ' . $user->name . ' Silahkan memasukkan ' . $request->get('namaBarang') . ' ke dalam Kulkas, dengan tanggal keluar ' . $tanggalKeluar . '. Terima kasih telah mengisi kulkas:) .'
-        ];
 
-        // send message
-        $whatsapp = new WhatsappController;
-        $whatsapp->sendMessage($data);
+        try{
+
+            $data = [
+                'toNumber' => $phone,
+                'message' => 'Hi, ' . $user->name . ' Silahkan memasukkan ' . $request->get('namaBarang') . ' ke dalam Kulkas, dengan tanggal keluar ' . $tanggalKeluar . '. Terima kasih telah mengisi kulkas:) .'
+            ];
+            
+            // send message
+            $whatsapp = new WhatsappController;
+            $whatsapp->sendMessage($data);
+        }catch(Exception $e){
+            return redirect()->route('storages.index')->withErrorMessage('Storage created successfully, but failed to send message to your phone');
+        }
 
         return redirect()->route('storages.index')->withSuccessMessage('Storage created successfully');
     }

@@ -301,11 +301,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 
-                    {{
-                        Route::is('products.index') ? 'active' : ''
-                    }}
-                    " href="{{route('products.index')}}">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-special4" role="button" aria-expanded="false" aria-controls="sidebar-special">
                         <i class="icon">
                             <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -313,9 +309,44 @@
                                     fill="currentColor"></path>                                   
                             </svg>
                         </i>
-                        <span class="item-name">Manage Products</span>
+                        <span class="item-name">Shopping System</span>
                     </a>
+                    <ul class="sub-nav collapse" id="sidebar-special4" data-bs-parent="#sidebar-menu">
+                        <li class="nav-item">
+                            <a class="nav-link 
+                            {{
+                                Route::is('products.index') ? 'active' : ''
+                            }}
+                            " href="{{route('products.index')}}">
+                                <i class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
+                                        <g>
+                                        <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <span class="item-name">Manage Products</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link 
+                            {{
+                                Route::is('toTake') ? 'active' : ''
+                            }}
+                            " href="{{route('toTake')}}">
+                              <i class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
+                                        <g>
+                                        <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                              <span class="item-name">Order to Take</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+               
                 <li class="nav-item">
                     <a class="
                     nav-link {{

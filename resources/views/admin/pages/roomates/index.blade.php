@@ -56,7 +56,6 @@
                                         <td>
                                             <a href="{{ route('roommates.details', $r->id) }}" class="btn btn-primary">Accept</a>
                                             <a href="{{ route('roommates.reject', $r->id) }}" class="btn btn-soft-danger">Reject</a>
-                                            
                                         </td>
                                        
                                     </tr>

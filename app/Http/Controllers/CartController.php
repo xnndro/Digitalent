@@ -193,13 +193,18 @@ class CartController extends Controller
         $name = Auth::user()->name;
         $order = Order::where('number', $request->order_id)->first();
         $order_transaction_id = $order->order_transaction_id;
-        $data =[
-            'toNumber' => $user_phone,
-            'message' => 'Halo '.$name.', Terimakasih telah berbelanja di Kios Talenta, silahkan mengambil barang anda di Kios Talenta dalam 5 menit dengan nomer invoice '. $order_transaction_id .'Terimakasih.',
-        ] ;
-        
-        $whatsapp = new WhatsappController;
-        $whatsapp->sendMessage($data);
+
+        try{
+            $data =[
+                'toNumber' => $user_phone,
+                'message' => 'Halo '.$name.', Terimakasih telah berbelanja di Kios Talenta, silahkan mengambil barang anda di Kios Talenta dalam 5 menit dengan nomer invoice '. $order_transaction_id .'Terimakasih.',
+                ] ;
+                
+                $whatsapp = new WhatsappController;
+                $whatsapp->sendMessage($data);
+        }catch(\Exception $e){
+            
+        }
 
         // update order_status
         $order->update([
@@ -212,6 +217,7 @@ class CartController extends Controller
     public function toTake()
     {
         $order = Order::where('order_status', 'paid')->get();
+        $count = $order->count();
 
         //mapping order details
         foreach($order as $item){
@@ -224,7 +230,7 @@ class CartController extends Controller
                 $item2->product = $product;
             }
         }
-        return view('admin.pages.shopping.take', compact('order'));
+        return view('admin.pages.shopping.take', compact('order','count'));
     }
 
     public function toTakeOrder($id)

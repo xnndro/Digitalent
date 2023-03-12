@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\Room;
 use App\Http\Controllers\WhatsAppController;
 use Alert;
+use App\Models\UserRequest;
 
 
 class RoomateController extends Controller
@@ -70,51 +71,35 @@ class RoomateController extends Controller
         }else
         {
             //cek dulu apakah dia ni ada di user request atau engga
-            $user_request = Roommate::where('requested_user_id', Auth::user()->id)->first();
-
+            $user_request = UserRequest::where('requested_user_id', Auth::user()->id)
+            ->orWhere('user_id', Auth::user()->id)
+            ->first();
+            // dd($user_request);
+            // dd($user_request, Auth::user()->id);
             if($user_request != null)
             {
                 // maka dia akan di redirect ke halaman waiting
-                $status = 'waiting';
-
-                $user_request_name = User::find($user_request->user_id)->name;
-                $request_id = $user_request->id;
-                return view('user.pages.roomates.index',compact('status','user_request_name', 'request_id'));
+                if($user_request->requested_user_id == Auth::user()->id)
+                {
+                    $status = 'requested';
+                    $user_request_name = User::find($user_request->user_id)->name;
+                    $user_request_id = $user_request->id;
+                    return view('user.pages.roomates.index',compact('status','user_request_name', 'user_request_id'));
+                }else
+                {
+                    $status = 'waiting';
+                    return view('user.pages.roomates.index',compact('status'));
+                }
             }else
             {
-                //disini ngecek dia ada ga di request
+                $rommmate_status = Auth::user()->roommate_status;
                 $roommate = Roommate::where(function($query) {
                     $query->where('user_id', Auth::user()->id)
                     ->orWhere('requested_user_id', Auth::user()->id);
                     })->first();
-                
-                //kalo misal ga ada, maka statusnya tu null, jadi dia bisa milih
-                if($roommate == null){
-                    $status = "not requested";
-                    $dataArray = [];
-                    $user = Auth::user()->name;
-                    $data = escapeshellarg($user);
-            
-                    exec("python python-script/recommend_roommate.py $data", $output, $return);
-                    $output[0] = explode(',', $output[0]);
-                    $result = $output[0];
-
-                    //dia nyari apakah dia udah punya roommate atau belum
-                    foreach($result as $key => $value)
-                    {
-                        $user = User::where('name', $value)->first();
-                        if($user && ($user->roommate_status == '1' || $user->roommate_status == '2'))
-                        {
-                            unset($result[$key]);
-                        }
-                    }
-
-                    return view('user.pages.roomates.index',compact('result', 'status'));
-                }else if($roommate->status == "pending")
+                if($rommmate_status == 1)
                 {
-                    $status = "pending";
-                    return view('user.pages.roomates.index',compact('status'));
-                }else{
+                    $status = 'accepted';
                     if($roommate->user_id == Auth::user()->id){
                         $roomie = User::find($roommate->requested_user_id);
                     }
@@ -126,6 +111,34 @@ class RoomateController extends Controller
                     $floor = $room->lantai;
                     $status = $roommate->status;
                     return view('user.pages.roomates.index',compact('status','roomName','floor','roomie'));
+                }else
+                {
+                    //kalo misal ga ada, maka statusnya tu null, jadi dia bisa milih
+                    if($roommate == null){
+                        $status = "not requested";
+                        $dataArray = [];
+                        $user = Auth::user()->name;
+                        $data = escapeshellarg($user);
+                
+                        exec("python python-script/recommend_roommate.py $data", $output, $return);
+                        $output[0] = explode(',', $output[0]);
+                        $result = $output[0];
+                    
+                        //dia nyari apakah dia udah punya roommate atau belum
+                        foreach($result as $key => $value)
+                        {
+                            $user = User::where('name', $value)->first();
+                            if($user && ($user->roommate_status == '1' || $user->roommate_status == '2'))
+                            {
+                                unset($result[$key]);
+                            }
+                        }
+                        return view('user.pages.roomates.index',compact('result', 'status'));
+                    }else if($roommate->status == "pending")
+                    {
+                        $status = "pending";
+                        return view('user.pages.roomates.index',compact('status'));
+                    }
                 }
             }
         }
@@ -183,7 +196,7 @@ class RoomateController extends Controller
                 'Apakah Anda tertarik pada bidang aesthetic (aktivitas yang berkaitan dengan keindahan)?' => $request->get('aesthetic'),
                 'Apakah Anda tertarik pada budaya Korea (drama, bahasa, lagu , public figure, dll)?' => $request->get('korean'),
                 'Apakah Anda tertarik pada budaya Jepang (film, komik, bahasa, lagu , public figure, dll)?' => $request->get('japan'),
-                'Berapa Range suhu AC yang biasa anda gunakan?' => $request->get('suhu'),
+                'Berapa suhu AC yang biasa anda gunakan?' => $request->get('suhu'),
                 'Apakah agama anda harus sama dengan teman sekamar anda?' => $request->get('agama_sama'),
             ]
         ]);
@@ -260,13 +273,17 @@ class RoomateController extends Controller
             $roommate->class_id = $user_class;
             $roommate->save();
 
-            $data = [
-                'toNumber' => $user_phone,
-                'message' => 'Kamu telah request untuk single room, tunggu konfirmasi dari admin'
-            ];
+            try{
+                $data = [
+                    'toNumber' => $user_phone,
+                    'message' => 'Kamu telah request untuk single room, tunggu konfirmasi dari admin'
+                ];
+    
+                // send message
+                $whatsapp->sendMessage($data);
+            }catch(Exception $e){
 
-            // send message
-            $whatsapp->sendMessage($data);
+            }
         }else
         {
             // kalo misal engga, maka masukin ke table userrequest dan status user ubah jadi 2 
@@ -282,34 +299,37 @@ class RoomateController extends Controller
 
             //masukin ke user request
             $user_request = new UserRequest;
-            $user_request->user_id = $user_id;
+            $user_request->user_id = Auth::user()->id;
             $user_request->requested_user_id = $requested_user_id;
             $user_request->class_id = $user_class;
             $user_request->save();
 
-            //send to wa
-            $data = [
-                'toNumber' => $user_phone,
-                'message' => 'Kamu telah memilih roommate, silahkan tunggu konfirmasi dari admin :)'
-            ];
+            try{
+                //send to wa
+                $data = [
+                    'toNumber' => $user_phone,
+                    'message' => 'Kamu telah memilih roommate, silahkan tunggu konfirmasi dari admin :)'
+                ];
+    
+                // send message
+                $whatsapp->sendMessage($data);
+                // send to wa juga buat yang di request
+                $user_name = Auth::user()->name;
+                $requested_user_phone = User::where('id', $requested_user_id)->first()->phone;
+                $data = [
+                    'toNumber' => $requested_user_phone,
+                    'message' => 'Kamu telah dipilih oleh '. $user_name .' untuk menjadi roommate, silahkan Accept/Rject di website'
+                ];
+                $whatsapp->sendMessage($data);
 
-            // send message
-            $whatsapp->sendMessage($data);
+                $user = new User;
+                // save status 2 to user and user_requested
+                $user->where('id', $user_id)->update(['roommate_status' => '2']);
+                $user->where('id', $requested_user_id)->update(['roommate_status' => '2']);
 
+            }catch(Exception $e){
 
-            // send to wa juga buat yang di request
-            $user_name = Auth::user()->name;
-            $requested_user_phone = User::where('id', $requested_user_id)->first()->phone;
-            $data = [
-                'toNumber' => $requested_user_phone,
-                'message' => 'Kamu telah dipilih oleh '. $user_name .' untuk menjadi roommate, silahkan Accept/Rject di website'
-            ];
-            $whatsapp->sendMessage($data);
-
-            $user = new User;
-            // save status 2 to user and user_requested
-            $user->where('id', $user_id)->update(['roommate_status' => '2']);
-            $user->where('id', $requested_user_id)->update(['roommate_status' => '2']);
+            }
         }
 
 
@@ -376,38 +396,41 @@ class RoomateController extends Controller
         $user_phone = $user->phone;
         $user_name = $user->name;
         
+        try{
+            //send to wa
+            $data = [
+                'toNumber' => $user_phone,
+                'message' => 'Request roommate anda telah diterima, silahkan melihat website untuk mengetahui nomer kamar kamu :)'
+            ];
 
-        //send to wa
-        $data = [
-            'toNumber' => $user_phone,
-            'message' => 'Request roommate anda telah diterima, silahkan melihat website untuk mengetahui nomer kamar kamu :)'
-        ];
-
-        // send message
-        $whatsapp = new WhatsappController;
-        $whatsapp->sendMessage($data);
+            // send message
+            $whatsapp = new WhatsappController;
+            $whatsapp->sendMessage($data);
 
 
-        // send to requested user
-        $requested_user_id_phone = $roommate->requested_user_id;
-        $requested_user = User::find($requested_user_id_phone);
-        $requested_user_phone = $requested_user->phone;
+            // send to requested user
+            $requested_user_id_phone = $roommate->requested_user_id;
+            $requested_user = User::find($requested_user_id_phone);
+            $requested_user_phone = $requested_user->phone;
 
-        //send to wa
-        $data = [
-            'toNumber' => $requested_user_phone,
-            'message' => 'Roommate kamu adalah '.$user_name.', silahkan melihat website untuk mengetahui nomer kamar kamu :)'
-        ];
+            //send to wa
+            $data = [
+                'toNumber' => $requested_user_phone,
+                'message' => 'Roommate kamu adalah '.$user_name.', silahkan melihat website untuk mengetahui nomer kamar kamu :)'
+            ];
 
-        // send message
-        $whatsapp = new WhatsappController;
-        $whatsapp->sendMessage($data);
+            // send message
+            $whatsapp = new WhatsappController;
+            $whatsapp->sendMessage($data);        
+        }catch(Exception $e){
 
+        }
+
+        
         $rooms = new Room;
         $rooms = Room::find($request->get('room_id'));
         $rooms->status = 'Not Available';
         $rooms->save();
-
         // store 1 into roommates_status on user, dan 1 into roommates_status on requested_user
         $user_id = $roommate->user_id;
         $user = User::find($user_id);
@@ -435,14 +458,19 @@ class RoomateController extends Controller
         $user_name = $user->name;
         $requested_user_name = User::find($roommate->requested_user_id)->name;
 
-        $data = [
-            'toNumber' => $user_phone,
-            'message' => 'Request roommate anda dengan '. $requested_user_name.' telah ditolak, silahkan mencari roommate lain :)'
-        ];
+        try{
+            $data = [
+                'toNumber' => $user_phone,
+                'message' => 'Request roommate anda dengan '. $requested_user_name.' telah ditolak, silahkan mencari roommate lain :)'
+            ];
+    
+            $whatsapp = new WhatsappController;
+            $whatsapp->sendMessage($data);
+        }catch(Exception $e){
+        
+        }
 
-        $whatsapp = new WhatsappController;
-        $whatsapp->sendMessage($data);
-
+        
         // send to requested user
         $requested_user_id_phone = $roommate->requested_user_id;
         $requested_user = User::find($requested_user_id_phone);
@@ -450,15 +478,19 @@ class RoomateController extends Controller
         $requested_user->roommate_status = ' ';
         $requested_user->save();
 
-        //send to wa
-        $data = [
-            'toNumber' => $requested_user_phone,
-            'message' => 'Request roommate anda dengan '. $user_name.' telah ditolak, silahkan mencari roommate lain :)'
-        ];
+        try{
+            //send to wa
+            $data = [
+                'toNumber' => $requested_user_phone,
+                'message' => 'Request roommate anda dengan '. $user_name.' telah ditolak, silahkan mencari roommate lain :)'
+            ];
 
-        // send message
-        $whatsapp->sendMessage($data);
-
+            // send message
+            $whatsapp->sendMessage($data);
+        }catch(Exception $e){
+        
+        }
+        
 
         // data hapus dari table roommates
         $roommate->delete();
@@ -482,14 +514,18 @@ class RoomateController extends Controller
         $user_name = $user->name;
         $requested_user_name = User::find($request->requested_user_id)->name;
 
-        $data = [
-            'toNumber' => $user_phone,
-            'message' => 'Request roommate anda dengan '. $requested_user_name.' telah diterima, mohon menunggu admin untuk menyetujui :)'
-        ];
-
-        $whatsapp = new WhatsappController;
-        $whatsapp->sendMessage($data);
-
+        try{
+            $data = [
+                'toNumber' => $user_phone,
+                'message' => 'Request roommate anda dengan '. $requested_user_name.' telah diterima, mohon menunggu admin untuk menyetujui :)'
+            ];
+    
+            $whatsapp = new WhatsappController;
+            $whatsapp->sendMessage($data);    
+        }catch(Exception $e){
+        
+        }
+        
         $request->delete();
 
         return redirect()->route('dashboard')->withSuccessMessage('Request has been sent');
@@ -504,14 +540,18 @@ class RoomateController extends Controller
         $user_name = $user->name;
         $requested_user_name = User::find($request->requested_user_id)->name;
 
-        $data = [
-            'toNumber' => $user_phone,
-            'message' => 'Request roommate anda dengan '. $requested_user_name.' telah ditolak, silahkan mencari roommate lain :)'
-        ];
-
-        $whatsapp = new WhatsappController;
-        $whatsapp->sendMessage($data);
-
+        try{
+            $data = [
+                'toNumber' => $user_phone,
+                'message' => 'Request roommate anda dengan '. $requested_user_name.' telah ditolak, silahkan mencari roommate lain :)'
+            ];
+    
+            $whatsapp = new WhatsappController;
+            $whatsapp->sendMessage($data);    
+        }catch(Exception $e){
+        
+        }
+        
         //ubah status user_roommate menjadi null
         $user_id = $request->user_id;
         $user = User::find($user_id);

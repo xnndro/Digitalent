@@ -98,9 +98,10 @@ def recommendEuclid(name, n=5):
         euclid.append(euclideanDist(datas_filtered[new_idx], data))
 
     euclid = list(zip(euclid, new_names))
+    euclid.pop(new_idx)
 
     euclid.sort()
-    return euclid[1:n]
+    return euclid[0:n-1]
 
 hasil_recommend = recommendEuclid(sys.argv[1], n=8)
 
