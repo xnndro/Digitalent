@@ -28,6 +28,7 @@ class ComplainController extends Controller
             $complain->room_name = $room->name;
             return $complain;
         });
+
         if(session('success_message')){
             Alert::success('Success', session('success_message'));
         }else if(session('error_message'))
@@ -63,18 +64,32 @@ class ComplainController extends Controller
         $laundry = Laundry::where('user_id',Auth::user()->id)->get();
         $laundry_count = $laundry->count();
 
-        if($laundry_count == 0){
-            return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Laundry Transaction");
-        }else
-        {
-
-            $laundries = Laundry::where('user_id',Auth::user()->id)
-            ->where('tanggalMaxComplain', '>=', Carbon::now()->format('Y-m-d'))
-            ->where('status','Done')->get();
-            
-            // dd($laundries);
-            return view('user.pages.complain.laundrycreate',compact('laundries'));
+        $user_room = Roommate::where(function($query) {
+            $query->where('user_id', Auth::user()->id)
+            ->orWhere('requested_user_id', Auth::user()->id);
+            })
+            ->get();
+        
+        foreach($user_room as $room){
+            if($room->status != 'accepted'){
+                return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Room Yet");
+            }else
+            {
+                if($laundry_count == 0){
+                    return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Laundry Transaction");
+                }else
+                {
+        
+                    $laundries = Laundry::where('user_id',Auth::user()->id)
+                    ->where('tanggalMaxComplain', '>=', Carbon::now()->format('Y-m-d'))
+                    ->where('status','Done')->get();
+                    
+                    // dd($laundries);
+                    return view('user.pages.complain.laundrycreate',compact('laundries'));
+                }
+            }
         }
+        
     }
 
     public function store(Request $request)
@@ -94,7 +109,6 @@ class ComplainController extends Controller
         $complain->complain_name = $request->name;
         $complain->description = $request->description;
         $complain->user_room = $user_room->room_id;
-
 
         if($request->type == 'Laundry'){
             if($request->hasFile('fotoBarang')){
@@ -165,6 +179,7 @@ class ComplainController extends Controller
             {
                 return redirect()->route('complains.index')->with('error_message',"Failed to send message");
             }
+
         }
 
         $complain->save();

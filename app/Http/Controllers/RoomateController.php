@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\VerifiedPhones;
 use Illuminate\Http\Request;
 use App\Models\Roommate;
 use Illuminate\Support\Facades\Auth;
@@ -24,93 +25,96 @@ class RoomateController extends Controller
             Alert::success('Success', session('success_message'));
         }
 
-        $user_class_id = Auth::user()->class_id;
-        $user_class = Classes::find($user_class_id);
-        $jumlah_siswa = $user_class->jumlahSiswa;
-
+        $rommmate_status = Auth::user()->roommate_status;
+        $roommate = Roommate::where(function($query) {
+            $query->where('user_id', Auth::user()->id)
+            ->orWhere('requested_user_id', Auth::user()->id);
+            })->first();
         
-        $users_roommates = User::where('class_id', $user_class_id)->where('roommate_status', 1)->get();
-        $count_roomates = $users_roommates->count();
-
-        // split the name of class, take the name without the number
-        $class_name = explode(' ', $user_class->namaKelas);
-
-        $user_status = '';
-        if($jumlah_siswa-1 == $count_roomates){
-            if($class_name[0] == 'PPTI')
-            {
-                if($jumlah_siswa == 35)
-                {
-                    $user_status = 'single';
-                }else
-                {
-                    $user_status = 'wait';
-                }
-            }else if($class_name[0] == 'PPBP')
-            {
-                if($jumlah_siswa == 45)
-                {
-                    $user_status = 'single';
-                }else
-                {
-                    $user_status = 'wait';
-                }
-            }   
-        }
-
-        if($user_status == 'single')
+        if($rommmate_status == 1)
         {
-            $status = 'single';
-
-            return view('user.pages.roomates.index',compact('status'));
-        }else if($user_status == 'wait')
-        {
-            $status = 'wait';
-
-            return view('user.pages.roomates.index',compact('status'));
+            $status = 'accepted';
+            if($roommate->user_id == Auth::user()->id){
+                $roomie = User::find($roommate->requested_user_id);
+            }
+            else{
+                $roomie = User::find($roommate->user_id);
+            }
+            $room = Room::find($roommate->room_id);
+            $roomName = $room->name;
+            $floor = $room->lantai;
+            $status = $roommate->status;
+            return view('user.pages.roomates.index',compact('status','roomName','floor','roomie'));
         }else
         {
-            //cek dulu apakah dia ni ada di user request atau engga
-            $user_request = UserRequest::where('requested_user_id', Auth::user()->id)
-            ->orWhere('user_id', Auth::user()->id)
-            ->first();
-            // dd($user_request);
-            // dd($user_request, Auth::user()->id);
-            if($user_request != null)
-            {
-                // maka dia akan di redirect ke halaman waiting
-                if($user_request->requested_user_id == Auth::user()->id)
+            $user_class_id = Auth::user()->class_id;
+            $user_class = Classes::find($user_class_id);
+            $jumlah_siswa = $user_class->jumlahSiswa;
+
+            
+            $users_roommates = User::where('class_id', $user_class_id)->where('roommate_status', 1)->get();
+            $count_roomates = $users_roommates->count();
+
+            // split the name of class, take the name without the number
+            $class_name = explode(' ', $user_class->namaKelas);
+
+            $user_status = '';
+            if($jumlah_siswa-1 == $count_roomates){
+                if($class_name[0] == 'PPTI')
                 {
-                    $status = 'requested';
-                    $user_request_name = User::find($user_request->user_id)->name;
-                    $user_request_id = $user_request->id;
-                    return view('user.pages.roomates.index',compact('status','user_request_name', 'user_request_id'));
-                }else
-                {
-                    $status = 'waiting';
-                    return view('user.pages.roomates.index',compact('status'));
-                }
-            }else
-            {
-                $rommmate_status = Auth::user()->roommate_status;
-                $roommate = Roommate::where(function($query) {
-                    $query->where('user_id', Auth::user()->id)
-                    ->orWhere('requested_user_id', Auth::user()->id);
-                    })->first();
-                if($rommmate_status == 1)
-                {
-                    $status = 'accepted';
-                    if($roommate->user_id == Auth::user()->id){
-                        $roomie = User::find($roommate->requested_user_id);
+                    if($jumlah_siswa == 35)
+                    {
+                        $user_status = 'single';
+                    }else
+                    {
+                        $user_status = 'wait';
                     }
-                    else{
-                        $roomie = User::find($roommate->user_id);
+                }else if($class_name[0] == 'PPBP')
+                {
+                    if($jumlah_siswa == 45)
+                    {
+                        $user_status = 'single';
+                    }else
+                    {
+                        $user_status = 'wait';
                     }
-                    $room = Room::find($roommate->room_id);
-                    $roomName = $room->name;
-                    $floor = $room->lantai;
-                    $status = $roommate->status;
-                    return view('user.pages.roomates.index',compact('status','roomName','floor','roomie'));
+                }   
+            }
+
+            if($user_status == 'single')
+            {
+                $status = 'single';
+
+                return view('user.pages.roomates.index',compact('status'));
+            }
+            else if($user_status == 'wait')
+            {
+                $status = 'wait';
+
+                return view('user.pages.roomates.index',compact('status'));
+            }
+            else
+            {
+                //cek dulu apakah dia ni ada di user request atau engga
+                $user_request = UserRequest::where('requested_user_id', Auth::user()->id)
+                ->orWhere('user_id', Auth::user()->id)
+                ->first();
+                // dd($user_request);
+                // dd($user_request, Auth::user()->id);
+                if($user_request != null)
+                {
+                    // maka dia akan di redirect ke halaman waiting
+                    if($user_request->requested_user_id == Auth::user()->id)
+                    {
+                        $status = 'requested';
+                        $user_request_name = User::find($user_request->user_id)->name;
+                        $user_request_id = $user_request->id;
+                        return view('user.pages.roomates.index',compact('status','user_request_name', 'user_request_id'));
+                    }else
+                    {
+                        $status = 'waiting';
+                        return view('user.pages.roomates.index',compact('status'));
+                    }
                 }else
                 {
                     //kalo misal ga ada, maka statusnya tu null, jadi dia bisa milih
@@ -120,10 +124,11 @@ class RoomateController extends Controller
                         $user = Auth::user()->name;
                         $data = escapeshellarg($user);
                 
-                        exec("python python-script/recommend_roommate.py $data", $output, $return);
+                        exec("python3 python-script/recommend_roommate.py $data", $output, $return);
                         $output[0] = explode(',', $output[0]);
                         $result = $output[0];
-                    
+                        
+                        // dd($output);
                         //dia nyari apakah dia udah punya roommate atau belum
                         foreach($result as $key => $value)
                         {
@@ -139,6 +144,7 @@ class RoomateController extends Controller
                         $status = "pending";
                         return view('user.pages.roomates.index',compact('status'));
                     }
+                    
                 }
             }
         }
@@ -253,7 +259,31 @@ class RoomateController extends Controller
         $user->gender = $gender;
         $user->save();
 
-        return redirect()->route('dashboard');
+
+        // generate code for verify number and insert to database
+        // 4 digits
+        $code = rand(1000,9999);
+        $verify = new VerifiedPhones;
+        $verify->user_id = Auth::user()->id;
+        $verify->phone = $request->get('phone');
+        $verify->code = $code;
+        $verify->save();
+
+
+        // send message
+        $whatsapp = new WhatsappController;
+        $data = [
+            'toNumber' => $request->get('phone'),
+            'message' => 'Kode verifikasi kamu adalah '.$code
+        ];
+        $whatsapp->sendMessage($data);
+
+        // // execute file WA Sender and send the data
+        // exec("python3 python-script/recommend_roommate.py $data");
+
+        
+
+        return redirect()->route('verification.index');
     }
 
     public function roomates(Request $request)
@@ -269,7 +299,7 @@ class RoomateController extends Controller
         {
             $roommate = new Roommate;
             $roommate->user_id = $user_id;
-            $roomate->requested_user_id ="";
+            $roommate->requested_user_id ="";
             $roommate->class_id = $user_class;
             $roommate->save();
 

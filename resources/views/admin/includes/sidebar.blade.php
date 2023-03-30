@@ -145,6 +145,23 @@
                                 <span class="item-name">Transaction History</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link 
+                            {{
+                                Route::is('laundries.vendor') || Route::is('laundries.addVendor') || Route::is('laundries.editVendor') || Route::is('laundries.showComplain')? 'active' : ''
+                            }}
+                            " href="{{route('laundries.vendor')}}">
+                                <i class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
+                                        <g>
+                                        <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> C </i>
+                                <span class="item-name">All Vendors</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -310,6 +327,11 @@
                             </svg>
                         </i>
                         <span class="item-name">Shopping System</span>
+                        <i class="right-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </i>
                     </a>
                     <ul class="sub-nav collapse" id="sidebar-special4" data-bs-parent="#sidebar-menu">
                         <li class="nav-item">

@@ -13,7 +13,8 @@ use App\Models\TransactionTemp;
 use Carbon\Carbon;
 use Alert;
 use Illuminate\Support\Facades\Crypt;
-
+use Illuminate\Support\Facades\Hash;
+use App\Models\Complain;
 
 class LaundryController extends Controller
 {
@@ -456,7 +457,14 @@ class LaundryController extends Controller
         {
             alert()->success('Success', session()->get('success_message'));
         }
-        return view('admin.pages.laundry.vendor', compact('vendors'));
+        $count = $vendors->count();
+
+        foreach($vendors as $vendor){
+            // get total complaint
+            $complains = Complain::where('laundry_vendor_id', $vendor->id)->get();
+            $vendor->complain = $complains->count();
+        }
+        return view('admin.pages.laundry.vendor', compact('vendors', 'count'));
     }
     
     public function addVendor()
@@ -494,10 +502,10 @@ class LaundryController extends Controller
     {
         $vendor = LaundryVendor::find($id);
         //mapping email
-        $user = User::find($vendor->user_id);
+        $user = User::where('name', $vendor->name)->first();
+        // dd($user,$id);
         $vendor->email = $user->email;
         $vendor->phone = $user->phone;
-        $vendor->password = Crypt::decryptString($user->password);
         $vendor->phone = $user->phone;
         return view('admin.pages.laundry.editVendor', compact('vendor'));
     }
@@ -508,19 +516,23 @@ class LaundryController extends Controller
             'name' => 'required',
             'phone' => 'required|starts_with:08',
             'email' => 'required|email|ends_with:vendor.id',
-            'password' => 'required|min:4',
+            'password' => 'nullable|min:4',
         ]);
 
+        // dd($request->all());
         $laundryVendor = LaundryVendor::find($id);
-        $laundryVendor->name = $request->get('name');
-        $laundryVendor->save();
-
-        $user = User::find($laundryVendor->user_id);
+        $laundry_name = $laundryVendor->name;
+        
+        $user = User::where('name', $laundry_name)->first();
+        // dd($user);
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->phone = $request->get('phone');
         $user->password = Hash::make($request->get('password'));
         $user->save();
+
+        $laundryVendor->name = $request->get('name');
+        $laundryVendor->save();
 
         return redirect()->route('laundries.vendor')->withSuccessMessage('Vendor updated successfully');
     }
@@ -528,9 +540,47 @@ class LaundryController extends Controller
     public function deleteVendor($id)
     {
         $laundryVendor = LaundryVendor::find($id);
+        $laundry_name = $laundryVendor->name;
+        $user = User::where('name', $laundry_name)->first();
+
+        $laundry_transaction = Laundry::where('laundry_vendor_id', $id)->get();
+        foreach($laundry_transaction as $laundry)
+        {
+            $laundry->delete();
+        }
+        $user->delete();
         $laundryVendor->delete();
         return redirect()->route('laundries.vendor')->withSuccessMessage('Vendor deleted successfully');
     }
 
 
+    public function showComplain($id)
+    {
+        $laundry = Laundry::find($id);
+        $complains = Complain::where('laundry_vendor_id', $id)->get();
+
+        // get total kehilangan dari complain_type each complain
+        $total_kehilangan = 0;
+        $total_pakaian_kotor = 0;
+        foreach($complains as $complain)
+        {
+            if($complain->complain_name == "Kehilangan")
+            {
+                $total_kehilangan += $complain->jumlahBarang;
+            }else if($complain->complain_name = "Pakaian Kotor")
+            {
+                $total_pakaian_kotor += $complain->jumlahBarang;
+            }
+        }
+
+        $total_complain = $complains->count();
+
+        // get user name each complain
+        foreach($complains as $complain)
+        {
+            $user = User::find($complain->user_id);
+            $complain->user_name = $user->name;
+        }
+        return view('admin.pages.laundry.complain', compact('laundry', 'complains','total_complain', 'total_kehilangan', 'total_pakaian_kotor'));
+    }
 }

@@ -23,9 +23,18 @@ Auth::routes();
 Route::get('/auth/redirect', [App\Http\Controllers\Auth\LoginController::class, 'redirectToProvider'])->name('login.google');
 Route::get('/auth/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleProviderCallback'])->name('login.google.callback');
 
+
+// Verification WA
+Route::get('/verification', [App\Http\Controllers\VerficationPhonesController::class, 'index'])->name('verification.index');
+Route::post('/verification', [App\Http\Controllers\VerficationPhonesController::class, 'store'])->name('verification.store');
+Route::get('/verification/resend', [App\Http\Controllers\VerficationPhonesController::class, 'resend'])->name('verification.resend');
+Route::get('/verification/inputnewphone', [App\Http\Controllers\VerficationPhonesController::class, 'inputnewphone'])->name('verification.inputnewphone');
+Route::post('/verification/inputnewphone', [App\Http\Controllers\VerficationPhonesController::class, 'storenewphone'])->name('verification.storenewphone');
+
 Route::group(['middleware' => 'auth'], function () {
+    
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
-   
+    
     Route::group(['middleware' => 'user'], function () {
         Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
         Route::get('/financial', [App\Http\Controllers\UserController::class, 'financial_index'])->name('user.financial');
@@ -106,10 +115,11 @@ Route::group(['middleware' => 'auth'], function () {
         //addvendor
         Route::get('/laundries/vendor', [App\Http\Controllers\LaundryController::class, 'vendor_index'])->name('laundries.vendor');
         Route::get('/laundries/addvendor', [App\Http\Controllers\LaundryController::class, 'addVendor'])->name('laundries.addVendor');
-        Route::post('/laundries/addvendor', [App\Http\Controllers\LaundryController::class, 'storeVendor'])->name('laundries.storeVendor');
+        Route::post('/laundries/storevendor', [App\Http\Controllers\LaundryController::class, 'storeVendor'])->name('laundries.storeVendor');
         Route::get('/laundries/{id}/editvendor', [App\Http\Controllers\LaundryController::class, 'editVendor'])->name('laundries.editVendor');
         Route::put('/laundries/{id}/updatevendor', [App\Http\Controllers\LaundryController::class, 'updateVendor'])->name('laundries.updateVendor');
         Route::delete('/laundries/{id}/deletevendor', [App\Http\Controllers\LaundryController::class, 'deleteVendor'])->name('laundries.deleteVendor');
+        Route::get('/laundries/{id}/showcomplain', [App\Http\Controllers\LaundryController::class, 'showComplain'])->name('laundries.showComplain');
 
         // rooms
         Route::get('/rooms', [App\Http\Controllers\RoomController::class, 'index'])->name('rooms.index');

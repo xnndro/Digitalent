@@ -30,6 +30,7 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Total Complains</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -37,13 +38,17 @@
                             @foreach ($vendors as $v)
                             <tr>
                                 <td>
-                                    <h6>{{ $l->name }}</h6>
+                                    <h6>{{ $v->name }}</h6>
                                 </td>
                                 <td>
+                                    <h6>{{ $v->complain }}</h6>
+                                </td>
+                                <td>
+                                    <a href="{{route('laundries.showComplain', $v->id)}}" class="btn btn-soft-warning">See Complain</a>
                                     {{-- button to change status to done --}}
-                                    <a href="{{route('laundries.editVendor',$l->id)}}" class="btn btn-warning">Edit</a>
+                                    <a href="{{route('laundries.editVendor',$v->id)}}" class="btn btn-warning">Edit</a>
                                     {{-- form delete --}}
-                                    <form action="{{ route('laundries.deleteVendor', $l->id) }}" method="post" class="d-inline">
+                                    <form action="{{ route('laundries.deleteVendor', $v->id) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -51,8 +56,6 @@
                                 </td>
                             </tr>
                             @endforeach
-                           
-                            
                         </tbody>
                     </table>
                 </div>

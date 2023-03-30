@@ -49,5 +49,4 @@ class HomeController extends Controller
             return redirect()->route('laundry_vendor.dashboard');
         }
     }
-
 }

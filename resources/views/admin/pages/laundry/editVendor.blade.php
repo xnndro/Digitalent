@@ -6,11 +6,11 @@
         <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
             <div class="card-header d-flex justify-content-between">
                 <div class="header-title">
-                    <h4 class="card-title">Add Laundry Vendors</h4>
+                    <h4 class="card-title">Edit Laundry Vendors</h4>
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('laundries.storeVendor',$vendor->id) }}" method="post">
+                <form action="{{ route('laundries.updateVendor',$vendor->id) }}" method="post">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -21,11 +21,9 @@
                         <label for="email">Laundry Vendor Email</label>
                         <input type="email" name="email" id="email" class="form-control" value="{{$vendor->email}}">
                     </div>
-                    </div>
                     <div class="form-group">
                         <label for="password">Laundry Vendor Password</label>
-                        <input type="password" name="password" id="password" class="form-control" value="{{$vendor->password}}">
-                    </div>
+                        <input type="password" name="password" id="password" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="phone">Laundry Vendor Phone</label>

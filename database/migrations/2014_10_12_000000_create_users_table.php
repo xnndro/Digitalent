@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('form_status')->nullable();
             $table->string('roommate_status')->nullable();
+            $table->string('phone_status')->default('pending');
             $table->rememberToken();
             $table->timestamps();
         });

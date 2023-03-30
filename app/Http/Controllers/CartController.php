@@ -14,8 +14,6 @@ use App\Services\Midtrans\CreateSnapTokenService;
 use Alert;
 use Midtrans\Config;
 
-
-
 class CartController extends Controller
 {
     public function incQty($rowId){
@@ -178,40 +176,37 @@ class CartController extends Controller
     public function callback(Request $request){
         $server_key = $_ENV['MIDTRANS_SERVER_KEY'];
         $hash = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount . $server_key);
-        if($hash == $request->signature_key){
+        // if($hash == $request->signature_key){
            if($request->transaction_status == 'capture'){
                if($request->status_code == '200'){
-                   $order = Order::where('number', $request->order_id)->first();
-                   $order->update([
-                       'payment_status' => 2,
-                   ]);
-               }
-           }
-        }
+                    $order = Order::where('number', $request->order_id)->first();
+                    $order->update([
+                        'payment_status' => 2,
+                        'order_status' => 'paid'
+                    ]);
 
-        $user_phone = Auth::user()->phone;
-        $name = Auth::user()->name;
-        $order = Order::where('number', $request->order_id)->first();
-        $order_transaction_id = $order->order_transaction_id;
-
-        try{
-            $data =[
-                'toNumber' => $user_phone,
-                'message' => 'Halo '.$name.', Terimakasih telah berbelanja di Kios Talenta, silahkan mengambil barang anda di Kios Talenta dalam 5 menit dengan nomer invoice '. $order_transaction_id .'Terimakasih.',
-                ] ;
-                
-                $whatsapp = new WhatsappController;
-                $whatsapp->sendMessage($data);
-        }catch(\Exception $e){
+                    $user_phone = Auth::user()->phone;
+                    $name = Auth::user()->name;
+                    $order = Order::where('number', $request->order_id)->first();
+                    $order_transaction_id = $order->order_transaction_id;
             
+                    try{
+                        $data =[
+                            'toNumber' => $user_phone,
+                            'message' => 'Halo '.$name.', Terimakasih telah berbelanja di Kios Talenta, silahkan mengambil barang anda di Kios Talenta dalam 5 menit dengan nomer invoice '. $order_transaction_id .'Terimakasih.',
+                            ] ;
+                            
+                            $whatsapp = new WhatsappController;
+                            $whatsapp->sendMessage($data);
+                    }catch(\Exception $e){
+                        
+                    }
+                    $role = Auth::user()->role;
+                    return redirect()->route('dashboard');
+               }
+        //    }
         }
-
-        // update order_status
-        $order->update([
-            'order_status' => 'paid',
-        ]);
-
-        return view('user.pages.shopping.cart');
+        // return view('user.pages.shopping.cart');
     }
 
     public function toTake()
