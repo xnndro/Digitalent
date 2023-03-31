@@ -9,6 +9,7 @@ use App\Models\Forum;
 use App\Models\Order;
 use App\Models\Financial;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Complain;
 
 class AdminController extends Controller
 {
@@ -36,10 +37,10 @@ class AdminController extends Controller
             $total_price += $c->total_price;
         }
 
-        $tanggalSekarang = date('Y-m-d');
-        $laundry = Laundry::where('tanggalVendor',$tanggalSekarang)->get();
-        $count_laundry = $laundry->count();
-
+        $complains_total = Complain::where('status','=','pending')
+        ->where('complain_type','=','Fasilitas')
+        ->get();
+        $complains_total = $complains_total->count();
         $femme = Laundry::where('laundry_vendor_id','1')->get();
         $femme = $femme->count();
         $bclean = Laundry::where('laundry_vendor_id','2')->get();
@@ -53,9 +54,12 @@ class AdminController extends Controller
         $forums = $forums->sortByDesc('likes');
         $count_forums = $forums->count();
         $forums = $forums->take(3);
+
+        $ordertotake = Order::where('order_status','=','paid')->get();
+        $order_totals = $ordertotake->count();
         
     
-        return view('admin.pages.admin_dashboard',compact('count_request','total_price','count_laundry','femme','bclean','mills','count_forums','forums'));
+        return view('admin.pages.admin_dashboard',compact('count_request','total_price','complains_total','femme','bclean','mills','count_forums','forums','order_totals'));
     }
 
     public function financials()

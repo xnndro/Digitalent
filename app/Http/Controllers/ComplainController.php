@@ -69,23 +69,27 @@ class ComplainController extends Controller
             ->orWhere('requested_user_id', Auth::user()->id);
             })
             ->get();
-        
-        foreach($user_room as $room){
-            if($room->status != 'accepted'){
-                return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Room Yet");
-            }else
-            {
-                if($laundry_count == 0){
-                    return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Laundry Transaction");
+
+        if($user_room->count() == 0)
+            return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Room Yet");
+        else{
+            foreach($user_room as $room){
+                if($room->status != 'accepted'){
+                    return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Room Yet");
                 }else
                 {
-        
-                    $laundries = Laundry::where('user_id',Auth::user()->id)
-                    ->where('tanggalMaxComplain', '>=', Carbon::now()->format('Y-m-d'))
-                    ->where('status','Done')->get();
-                    
-                    // dd($laundries);
-                    return view('user.pages.complain.laundrycreate',compact('laundries'));
+                    if($laundry_count == 0){
+                        return redirect()->route('complains.index')->with('error_message',"You Don't Have Any Laundry Transaction");
+                    }else
+                    {
+            
+                        $laundries = Laundry::where('user_id',Auth::user()->id)
+                        ->where('tanggalMaxComplain', '>=', Carbon::now()->format('Y-m-d'))
+                        ->where('status','Done')->get();
+                        
+                        // dd($laundries);
+                        return view('user.pages.complain.laundrycreate',compact('laundries'));
+                    }
                 }
             }
         }

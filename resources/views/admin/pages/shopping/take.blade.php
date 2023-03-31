@@ -26,6 +26,7 @@
                                 <th>Order ID</th>
                                 <th>Details</th>
                                 <th>Total Price</th>
+                                <th>Payment Status</th>
                                 <th style="min-width: 100px">Action</th>
                            </tr>
                         </thead>
@@ -40,9 +41,14 @@
                                             @endforeach
                                         </ul>
                                     </td>
-                                    <td>{{$o->total_price}}</td>
+                                    <td>Rp {{number_format($o->total_price)}}</td>
                                     <td>
-                                        <a href="{{ route('toTakeOrder', $o->id) }}" class="btn btn-primary">Take</a>
+                                       @if($o->payment_status == 2)
+                                          <span class="badge bg-success">Paid</span>
+                                       @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('toTakeOrder', $o->id) }}" class="btn btn-primary">Taked by Users</a>
                                     </td>
                                 </tr>
                             @endforeach

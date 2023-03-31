@@ -106,7 +106,11 @@
                                             <h6>{{ $c->jumlahBarang }} pcs</h6>
                                         </td>
                                         <td>
-                                            <h6>{{ $c->status }}</h6>
+                                            @if($c->status == 'pending')
+                                                <span class="badge bg-warning">Pending</span>
+                                            @elseif($c->status == 'done')
+                                                <span class="badge bg-success">Solved</span>
+                                            @endif
                                         </td>
                                         <td>
                                             <h6>{{ date('d-m-Y', strtotime($c->created_at)) }}</h6>

@@ -17,11 +17,21 @@ use Midtrans\Config;
 class CartController extends Controller
 {
     public function incQty($rowId){
+        // get product stock
         $product = Cart::get($rowId);
-        $qty = $product->qty + 1;
-        Cart::update($rowId, $qty);
-        Cart::store(Auth::user()->name);
-        return redirect()->route('cart');
+        $limitstock =(int) $product->qty+1;
+        $stock = Product::where('name','=',$product->name)->first();
+        $stock = $stock->stock;
+        if($stock < $limitstock)
+        {
+            return redirect()->route('cart')->with('error','Cannot Update Qty because the stock is '. $stock);
+        }else
+        {
+            $qty = $product->qty + 1;
+            Cart::update($rowId, $qty);
+            Cart::store(Auth::user()->name);
+            return redirect()->route('cart');
+        }
     }
 
     public function decQty($rowId){

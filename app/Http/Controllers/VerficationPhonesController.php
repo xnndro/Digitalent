@@ -32,8 +32,7 @@ class VerficationPhonesController extends Controller
         $data = VerifiedPhones::where('user_id', $user_id)->first();
 
         if ($data->code == $code) {
-            $data->status = 'verified';
-            $data->save();
+            $data->delete();
             return redirect()->route('dashboard');
         } else {
             return redirect()->back()->with('error', 'Code is not valid');
@@ -44,7 +43,7 @@ class VerficationPhonesController extends Controller
     {
         $user_id = Auth::user()->id;
         $data = VerifiedPhones::where('user_id', $user_id)->first();
-        $data->code = rand(100000, 999999);
+        $data->code = rand(1000, 9999);
         $data->save();
         return redirect()->back()->with('success', 'Code has been sent');
     }
@@ -63,7 +62,7 @@ class VerficationPhonesController extends Controller
         $user_id = Auth::user()->id;
         $data = VerifiedPhones::where('user_id', $user_id)->first();
         $data->phone = $request->phone;
-        $data->code = rand(100000, 999999);
+        $data->code = rand(1000, 9999);
         $data->status = 'pending';
         $data->save();
         return redirect()->route('verification.index')->with('success', 'Phone number has been changed');
