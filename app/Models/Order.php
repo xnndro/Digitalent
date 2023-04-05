@@ -18,6 +18,7 @@ class Order extends Model
         'total_price',
         'payment_status',
         'order_status',
+        'expired_time',
     ];
 
     public function products()

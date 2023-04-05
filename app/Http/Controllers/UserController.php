@@ -60,10 +60,10 @@ class UserController extends Controller
         // get all data order where status is 1 and user_id is auth user id
         $orders = Order::where('payment_status','1')
         ->where('user_id',Auth::user()->id)
+        ->where('expired_time','>',Carbon::now())
         ->get();
 
         $orders_count = $orders->count();
-
 
         $orders_done= Order::where('payment_status','2')
         ->whereMonth('created_at', date('m'))

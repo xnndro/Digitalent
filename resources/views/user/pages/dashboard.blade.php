@@ -212,6 +212,12 @@
                                     </a>
                                 </div>
                             </div>
+                            <div class="">
+                                <form action="{{route('order.cancel', $o->id)}}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Cancel</button>
+                                </form>
+                            </div>
                         </div>
                         
                     </div>

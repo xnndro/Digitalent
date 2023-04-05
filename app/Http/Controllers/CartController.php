@@ -62,13 +62,16 @@ class CartController extends Controller
     public function checkout(){
         $user = User::find(Auth::user()->id);
         $number = rand(10000000, 99999999);
-        $order_transaction_id = 'INV-'.$number;
+        $order_transaction_id = $number;
         $total_price = (int)Cart::total(0, "", "") - (int)Cart::tax(0, "", "");
 
         if($total_price == 0){
             return view('user.pages.shopping.cart');
         }
 
+        // $expired = date('Y-m-d H:i:s', strtotime('+1 day', strtotime(date('Y-m-d H:i:s'))));
+        // make expired 1 minutes
+        $expired = date('Y-m-d H:i:s', strtotime('+2 minutes', strtotime(date('Y-m-d H:i:s'))));
         $order = Order::create([
             'name' => $user->name,
             'order_transaction_id' => $order_transaction_id,
@@ -78,7 +81,10 @@ class CartController extends Controller
             'total_price' => $total_price,
             'payment_status' => 1,
             'order_status' => 'pending',
+            'expired_time' => $expired,
         ]);
+
+        // dd($order);
 
         foreach(Cart::content() as $item){
             //get product
@@ -187,8 +193,8 @@ class CartController extends Controller
         $server_key = $_ENV['MIDTRANS_SERVER_KEY'];
         $hash = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount . $server_key);
         // if($hash == $request->signature_key){
-           if($request->transaction_status == 'capture'){
-               if($request->status_code == '200'){
+            if($request->transaction_status == 'capture'){
+                if($request->status_code == '200'){
                     $order = Order::where('number', $request->order_id)->first();
                     $order->update([
                         'payment_status' => 2,
@@ -213,9 +219,17 @@ class CartController extends Controller
                     }
                     $role = Auth::user()->role;
                     return redirect()->route('dashboard');
-               }
-        //    }
-        }
+                }
+            }elseif($request->transaction_status == 'cancel')
+            {
+                $order = Order::where('number', $request->order_id)->first();
+                $order->update([
+                    'payment_status' => 4,
+                    'order_status' => 'canceled'
+                ]);
+                return redirect()->route('dashboard');
+            }
+        // }
         // return view('user.pages.shopping.cart');
     }
 
@@ -245,5 +259,27 @@ class CartController extends Controller
             'order_status' => 'taken',
         ]);
         return redirect()->route('toTake');
+    }
+
+    public function cancelOrder($id)
+    {
+        $order = Order::find($id);
+
+        // midtrans cancel order
+        \Midtrans\Config::$serverKey = $_ENV['MIDTRANS_SERVER_KEY'];
+        \Midtrans\Config::$isProduction = false;
+        \Midtrans\Config::$isSanitized = true;
+        \Midtrans\Config::$is3ds = true;
+
+        $orderId = $order->number;
+        // dd($orderId);
+        $cancel = \Midtrans\Transaction::cancel($orderId);
+        // dd($cancel);
+
+        $order->update([
+            'order_status' => 'canceled',
+        ]);
+
+        return redirect()->route('dashboard');
     }
 }

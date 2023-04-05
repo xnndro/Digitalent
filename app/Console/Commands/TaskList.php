@@ -13,7 +13,7 @@ use App\Models\Events;
 use App\Models\Financial;
 
 use Carbon\Carbon;
-
+use App\Models\Order;
 class TaskList extends Command
 {
     /**
@@ -284,6 +284,17 @@ class TaskList extends Command
                     $wa->sendMessage($data);
                 }
             }  
+        }
+
+        // buat order transaction
+        $orders = Order::where('payment_status', '2')
+        ->where('expired_time', '<', Carbon::now())
+        ->get();
+
+        foreach($orders as $o)
+        {
+            $o->payment_status = '3';
+            $o->save();
         }
     }
 }

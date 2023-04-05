@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('number', 16);
             $table->integer('total_price');
             $table->enum('payment_status', ['1', '2', '3', '4'])->comment('1=menunggu pembayaran, 2=sudah dibayar, 3=kadaluarsa, 4=batal');
+            $table->dateTime('expired_time')->nullable();
             $table->string('order_status')->nullable();
             $table->string('snap_token', 36)->nullable();
             $table->timestamps();

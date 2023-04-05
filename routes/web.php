@@ -50,6 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
         Route::get('/checkout/{id}', [App\Http\Controllers\CartController::class, 'toPay'])->name('toPay');
         Route::get('/checkout/callback', [App\Http\Controllers\CartController::class, 'callback'])->name('callback');
+        Route::post('/order/{id}/cancel', [App\Http\Controllers\CartController::class, 'cancelOrder'])->name('order.cancel');
         Route::get('/history', [App\Http\Controllers\HistoryController::class, 'index'])->name('history');
         Route::get('/history/delhistory/{id}', [App\Http\Controllers\HistoryController::class, 'delHistory'])->name('history.del');
         Route::post('/history/renamehistory/{id}', [App\Http\Controllers\HistoryController::class, 'renameHistory'])->name('history.confirmRename');
